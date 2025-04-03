@@ -1,0 +1,7 @@
+{
+  "name": "@homestead/config-ts",
+  "version": "1.0.0",
+  "main": "tsconfig.json",
+  "author": "Frederic Bahr",
+  "license": "UNLICENSED"
+}

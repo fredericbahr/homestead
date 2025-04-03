@@ -1,0 +1,25 @@
+{
+  "name": "@homestead/portfolio",
+  "version": "1.0.0",
+  "description": "My personal portfolio, showcasing my work, skills, and projects.",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf dist node_modules",
+    "build": "tsc && vite build",
+    "dev": "vite --host --open",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@homestead/config-prettier": "*"
+  },
+  "author": "Frederic Bahr",
+  "license": "UNLICENSED",
+  "prettier": "@homestead/config-prettier",
+  "volta": {
+    "extends": "../../package.json"
+  }
+}

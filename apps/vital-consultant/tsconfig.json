@@ -1,0 +1,15 @@
+{
+  "extends": "@homestead/config-ts/tsconfig.json",
+  "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ESNext", "WebWorker"],
+    "useDefineForClassFields": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "types": ["vite-plugin-pwa/client", "jest", "./types"]
+  },
+  "include": ["src", "../../packages/components/src/color-mode.tsx", "../../packages/components/src/provider.tsx"]
+}

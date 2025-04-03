@@ -1,0 +1,63 @@
+{
+  "name": "homestead",
+  "version": "1.0.0",
+  "description": "A monorepo designed to unite personal and family-driven web projects under one roof.",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf dist node_modules",
+    "build": "tsc && vite build",
+    "prettier": "prettier --check .",
+    "prettier:fix": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredericbahr/homestead.git"
+  },
+  "keywords": [
+    "Homestead",
+    "portfolio",
+    "business",
+    "website"
+  ],
+  "author": "Frederic Bahr",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/fredericbahr/homestead/issues"
+  },
+  "homepage": "https://github.com/fredericbahr/homestead#readme",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "configs/*"
+  ],
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.0",
+    "prettier": "^3.5.3",
+    "turbo": "^2.4.4"
+  },
+  "lint-staged": {
+    "apps/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "packages/**/*.{js,ts,jsx,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
+  },
+  "volta": {
+    "node": "22.14.0"
+  },
+  "engines": {
+    "node": "22.14.0",
+    "npm": "10.9.2"
+  },
+  "packageManager": "npm@10.9.2"
+}
