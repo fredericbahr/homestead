@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.ts",
+  "dependencies": {
+    "@chakra-ui/react": "^2.10.7",
+    "@phosphor-icons/react": "^2.1.7"
+  },
   "devDependencies": {
-    "@homestead/config-prettier": "*"
+    "@homestead/config-prettier": "*",
+    "@homestead/config-ts": "*"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,8 +19,5 @@
   "prettier": "@homestead/config-prettier",
   "volta": {
     "extends": "../../package.json"
-  },
-  "dependencies": {
-    "@chakra-ui/react": "^3.15.0"
   }
 }

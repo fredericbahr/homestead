@@ -1,5 +1,5 @@
 /*
- * COPYRIGHT (C) 2023 Frederic Bahr
+ * COPYRIGHT (C) 2025 Frederic Bahr
  *
  * The PROGRAM is protected by national and international copyright laws and conventions.
  * The copyright lies with Frederic Bahr, unless expressly stated otherwise.
@@ -10,17 +10,28 @@
  * See LICENSE for licensing information.
  */
 
-import { Badge, Box, Button, Collapse, HStack, Icon, IconButton, Link, useDisclosure } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Collapse,
+  HStack,
+  Icon,
+  IconButton,
+  Link,
+  Text,
+  useDisclosure,
+  useMediaQuery,
+} from "@chakra-ui/react";
 import { List as ListIcon, X } from "@phosphor-icons/react";
-import { Link as RouterLink, useNavigate } from "react-router";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 import { MobileNavigation } from "./Navigation/MobileNavigation";
 import { Navigation } from "./Navigation/Navigation";
-import { useMediaQuery } from "usehooks-ts";
+import { ColorThemeSwitch } from "@homestead/components";
 
 export const Header = () => {
-  const isMobile: boolean = useMediaQuery("(max-width: 62em)");
-  const { open: isMobileNavOpen, onToggle: onToggleMobileNav, onClose: onCloseMobileNav } = useDisclosure();
+  const [isMobile] = useMediaQuery("(max-width: 62em)");
+  const { isOpen: isMobileNavOpen, onToggle: onToggleMobileNav, onClose: onCloseMobileNav } = useDisclosure();
   const navigate = useNavigate();
 
   /** Timeout to delay closing the mobile navigation to ensure that the scrolling position is correct */
@@ -33,17 +44,18 @@ export const Header = () => {
           <HStack width={{ base: "full", lg: "95%" }} justifyContent="space-around" gap={4}>
             <HStack gap={4} width={{ base: "full", lg: "auto" }} justifyContent={{ base: "space-around", lg: "start" }}>
               {isMobile && (
-                <IconButton aria-label="Open Menu" onClick={onToggleMobileNav} variant="ghost" colorScheme="gray">
-                  {isMobileNavOpen ? <Icon as={X} /> : <Icon as={ListIcon} />}
-                </IconButton>
+                <IconButton
+                  aria-label="Open Menu"
+                  icon={isMobileNavOpen ? <Icon as={X} /> : <Icon as={ListIcon} />}
+                  onClick={onToggleMobileNav}
+                  variant="ghost"
+                  colorScheme="gray"
+                />
               )}
               <HStack gap={4}>
                 <Link as={RouterLink} to="/" display="flex" justifyContent="center" aria-label="Home">
-                  <Logo height={20} />
+                  <Text height={20}>Madita Bahr</Text>
                 </Link>
-                <Badge colorScheme={badgeColorTheme} variant="subtle" padding={1}>
-                  Beta
-                </Badge>
               </HStack>
 
               {isMobile && <ColorThemeSwitch />}
@@ -52,7 +64,7 @@ export const Header = () => {
             {!isMobile && (
               <HStack gap={2}>
                 <ColorThemeSwitch />
-                <Button variant="ghost" size="lg" onClick={() => navigate("/contact")}>
+                <Button variant="ghost" size="lg" onClick={() => navigate("/contact?concern=general")}>
                   Kontakt
                 </Button>
               </HStack>

@@ -10,39 +10,32 @@
  * See LICENSE for licensing information.
  */
 
-import { Button, Icon, Link, List, ListItem, Menu, Portal, Text } from "@chakra-ui/react";
+import { Icon, Link, List, ListItem, Menu, MenuButton, MenuItem, MenuList, Text } from "@chakra-ui/react";
 import { CaretDown } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 
-const links = [
-  {
-    title: "",
-    href: "",
-  },
-];
-
-const list = {
-  visible: {
-    opacity: 1,
-    transition: {
-      when: "beforeChildren",
-      staggerChildren: 0.2,
-    },
-  },
-  hidden: {
-    opacity: 0,
-    transition: {
-      when: "afterChildren",
-    },
-  },
-};
-
-const item = {
-  visible: { opacity: 1, x: 0 },
-  hidden: { opacity: 0, x: -150 },
-};
-
 export const Navigation = () => {
+  const list = {
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+      },
+    },
+    hidden: {
+      opacity: 0,
+      transition: {
+        when: "afterChildren",
+      },
+    },
+  };
+
+  const item = {
+    visible: { opacity: 1, x: 0 },
+    hidden: { opacity: 0, x: -150 },
+  };
+
   return (
     <nav>
       <List
@@ -56,35 +49,34 @@ export const Navigation = () => {
         variants={list}
       >
         <ListItem as={motion.li} variants={item}>
-          <Menu.Root closeOnSelect>
-            <Menu.Trigger>
-              <Button
-                as={Link}
-                fontSize="larger"
-                transition="all 0.2s ease-in-out"
-                _hover={{ color: "brand.500" }}
-                variant="plain"
-              >
-                <Text as="span" display="inline-flex" alignItems="center" gap={1}>
-                  Produkt
-                  <Icon as={CaretDown} />
-                </Text>
-              </Button>
-            </Menu.Trigger>
-            <Portal>
-              <Menu.Positioner>
-                <Menu.Content>
-                  {links.map((link) => (
-                    <Menu.Item key={link.href} asChild value={link.title}>
-                      <a href={link.href} target="_blank" rel="noreferrer">
-                        {link.title}
-                      </a>
-                    </Menu.Item>
-                  ))}
-                </Menu.Content>
-              </Menu.Positioner>
-            </Portal>
-          </Menu.Root>
+          <Menu closeOnSelect>
+            <MenuButton
+              as={Link}
+              fontSize="larger"
+              transition="all 0.2s ease-in-out"
+              _hover={{ color: "brand.500" }}
+              variant="unstyled"
+            >
+              <Text as="span" display="inline-flex" alignItems="center" gap={1}>
+                Produkt
+                <Icon as={CaretDown} />
+              </Text>
+            </MenuButton>
+            <MenuList minWidth="240px">
+              <MenuItem as="a" href="/#appointment-heading">
+                Termine
+              </MenuItem>
+              <MenuItem as="a" href="/#photo-heading">
+                Fotos
+              </MenuItem>
+              <MenuItem as="a" href="/#survey-heading">
+                Umfragen
+              </MenuItem>
+              <MenuItem as="a" href="/#customizability-heading">
+                Individuelle Anpassung
+              </MenuItem>
+            </MenuList>
+          </Menu>
         </ListItem>
         <ListItem as={motion.li} variants={item}>
           <Link

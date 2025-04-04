@@ -5,11 +5,12 @@
     "useDefineForClassFields": true,
     "isolatedModules": true,
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
-    "allowImportingTsExtensions": true,
-    "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["./types"]
+    "types": ["jest", "./types"],
+    "outDir": "dist",
+    "allowJs": true,
+    "declaration": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "src/__tests__"]
 }
