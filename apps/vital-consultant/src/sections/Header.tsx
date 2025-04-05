@@ -10,24 +10,14 @@
  * See LICENSE for licensing information.
  */
 
-import {
-  Box,
-  Button,
-  Collapse,
-  HStack,
-  Icon,
-  IconButton,
-  Link,
-  Text,
-  useDisclosure,
-  useMediaQuery,
-} from "@chakra-ui/react";
+import { Box, Button, Collapse, HStack, Icon, IconButton, Link, useDisclosure, useMediaQuery } from "@chakra-ui/react";
 import { List as ListIcon, X } from "@phosphor-icons/react";
 import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 import { MobileNavigation } from "./Navigation/MobileNavigation";
 import { Navigation } from "./Navigation/Navigation";
 import { ColorThemeSwitch } from "@homestead/components";
+import { Logo } from "../Logo";
 
 export const Header = () => {
   const [isMobile] = useMediaQuery("(max-width: 62em)");
@@ -39,9 +29,9 @@ export const Header = () => {
 
   return (
     <>
-      <Box width="full" boxShadow="xl" paddingX={6} paddingY={6}>
+      <Box width="full" boxShadow="xl" padding={2}>
         <header>
-          <HStack width={{ base: "full", lg: "95%" }} justifyContent="space-around" gap={4}>
+          <HStack width={{ base: "full", lg: "full" }} justifyContent="space-around" gap={4}>
             <HStack gap={4} width={{ base: "full", lg: "auto" }} justifyContent={{ base: "space-around", lg: "start" }}>
               {isMobile && (
                 <IconButton
@@ -54,7 +44,7 @@ export const Header = () => {
               )}
               <HStack gap={4}>
                 <Link as={RouterLink} to="/" display="flex" justifyContent="center" aria-label="Home">
-                  <Text height={20}>Madita Bahr</Text>
+                  <Logo height={80} />
                 </Link>
               </HStack>
 
@@ -64,7 +54,7 @@ export const Header = () => {
             {!isMobile && (
               <HStack gap={2}>
                 <ColorThemeSwitch />
-                <Button variant="ghost" size="lg" onClick={() => navigate("/contact?concern=general")}>
+                <Button variant="ghost" size="lg" onClick={() => navigate("/contact")}>
                   Kontakt
                 </Button>
               </HStack>

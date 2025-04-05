@@ -16,7 +16,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
-import { mainTheme } from "./sections/color-scheme";
+import { mainTheme } from "./color-scheme";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <>

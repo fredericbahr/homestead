@@ -58,22 +58,19 @@ export const Navigation = () => {
               variant="unstyled"
             >
               <Text as="span" display="inline-flex" alignItems="center" gap={1}>
-                Produkt
+                Leistungen
                 <Icon as={CaretDown} />
               </Text>
             </MenuButton>
             <MenuList minWidth="240px">
-              <MenuItem as="a" href="/#appointment-heading">
-                Termine
+              <MenuItem as="a" href="/#school-heading">
+                Sport- und Sozialunterricht
               </MenuItem>
-              <MenuItem as="a" href="/#photo-heading">
-                Fotos
+              <MenuItem as="a" href="/#training-heading">
+                Gerätetraining und Trainingsberatung
               </MenuItem>
-              <MenuItem as="a" href="/#survey-heading">
-                Umfragen
-              </MenuItem>
-              <MenuItem as="a" href="/#customizability-heading">
-                Individuelle Anpassung
+              <MenuItem as="a" href="/#workshop-heading">
+                Vorträge und Workshops
               </MenuItem>
             </MenuList>
           </Menu>
@@ -85,7 +82,7 @@ export const Navigation = () => {
             transition="all 0.2s ease-in-out"
             _hover={{ color: "brand.500" }}
           >
-            Team
+            Über mich
           </Link>
         </ListItem>
         <ListItem as={motion.li} variants={item}>
@@ -95,17 +92,7 @@ export const Navigation = () => {
             transition="all 0.2s ease-in-out"
             _hover={{ color: "brand.500" }}
           >
-            Preise
-          </Link>
-        </ListItem>
-        <ListItem as={motion.li} variants={item}>
-          <Link
-            href="/#demo-heading"
-            fontSize="larger"
-            transition="all 0.2s ease-in-out"
-            _hover={{ color: "brand.500" }}
-          >
-            Demo
+            Referenzen
           </Link>
         </ListItem>
       </List>

@@ -15,13 +15,15 @@ import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
 import { Layout } from "@homestead/components";
-import { mainTheme } from "./sections/color-scheme";
+import { mainTheme } from "./color-scheme";
 import { Header } from "./sections/Header";
 import { MobileFooter } from "./sections/Footer/MobileFooter";
 import { Footer } from "./sections/Footer/Footer";
 import { Imprint } from "./sections/Legal/Imprint";
 import { DataProtection } from "./sections/Legal/DataProtection";
 import { Contact } from "./sections/Contact/Contact";
+import { Hero } from "./sections/Hero";
+import { KeyServices } from "./KeyServices";
 
 const Error404 = lazy(() => import("./sections/ErrorPages/Error404").then((module) => ({ default: module.Error404 })));
 
@@ -41,7 +43,10 @@ function App() {
                   display="flex"
                   flexDirection="column"
                   gap={{ base: 20, lg: 36 }}
-                ></Center>
+                >
+                  <Hero />
+                  <KeyServices />
+                </Center>
                 <Center
                   width={{ base: "90%", lg: "70%" }}
                   display="flex"

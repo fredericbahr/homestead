@@ -10,8 +10,7 @@
  * See LICENSE for licensing information.
  */
 
-import { Button, Flex, Grid, HStack, Icon, Link, List, ListItem, Text, VStack } from "@chakra-ui/react";
-import { InstagramLogo } from "@phosphor-icons/react";
+import { Button, Flex, Grid, HStack, Link, List, ListItem, Text, VStack } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
 export const Footer = () => {
@@ -33,23 +32,35 @@ export const Footer = () => {
       <HStack width="full" justifyContent="space-around" alignItems="start" gridColumn="1/5">
         <VStack alignItems="start">
           <Text fontSize="xl" textAlign="start">
-            Links
+            Leistungen
           </Text>
           <List>
             <ListItem>
-              <Link href="/#appointment-heading">Über mich</Link>
+              <Link href="/#school-heading">Sport- und Sozialunterricht</Link>
             </ListItem>
             <ListItem>
-              <Link href="/#photo-heading">Leistungen</Link>
+              <Link href="/#training-heading">Gerätetraining und Trainingsberatung</Link>
             </ListItem>
             <ListItem>
-              <Link href="/#survey-heading">Referenzen</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="/#customizability-heading">Anpassbarkeit</Link>
+              <Link href="/#workshop-heading">Vorträge und Workshops</Link>
             </ListItem>
           </List>
         </VStack>
+
+        <VStack alignItems="start">
+          <Text fontSize="xl" textAlign="start">
+            Anderes
+          </Text>
+          <List>
+            <ListItem>
+              <Link href="/about-me">Über mich</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="/references">Referenzen</Link>
+            </ListItem>
+          </List>
+        </VStack>
+
         <VStack alignItems="start">
           <Text fontSize="xl" textAlign="start">
             Rechtliches
@@ -60,19 +71,6 @@ export const Footer = () => {
             </ListItem>
             <ListItem>
               <Link href="/data-protection">Datenschutz</Link>
-            </ListItem>
-          </List>
-        </VStack>
-        <VStack alignItems="start">
-          <Text fontSize="xl" textAlign="start">
-            Social Media
-          </Text>
-          <List>
-            <ListItem>
-              <Link href="https://www.instagram.com/kirmize_app/" display="flex" gap={2} isExternal>
-                <Icon as={InstagramLogo} boxSize={6} />
-                <Text as="span">Instagram</Text>
-              </Link>
             </ListItem>
           </List>
         </VStack>
@@ -89,7 +87,7 @@ export const Footer = () => {
           Kontakt
         </Button>
       </Flex>
-      <Text width="full" gridColumn="1/span 3" textAlign="center" justifySelf="end">
+      <Text width="full" gridColumn="1/span 5" textAlign="center" justifySelf="end">
         © {new Date().getFullYear()} Madita Bahr - Alle Rechte vorbehalten
       </Text>
     </Grid>

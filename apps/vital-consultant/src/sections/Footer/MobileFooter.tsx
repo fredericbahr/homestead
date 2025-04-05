@@ -25,24 +25,36 @@ export const MobileFooter = () => {
       color="white"
       gap={4}
     >
-      <VStack alignItems="start">
-        <Text fontSize="xl" textAlign="start">
-          Leistungen
-        </Text>
-        <List>
-          <ListItem>
-            <Link href="/#services-heading">Termine</Link>
-          </ListItem>
-          <ListItem>
-            <Link href="/#services-heading">Fotos</Link>
-          </ListItem>
-          <ListItem>
-            <Link href="/#services-heading">Umfragen</Link>
-          </ListItem>
-          <ListItem>
-            <Link href="/#services-heading">Anpassbarkeit</Link>
-          </ListItem>
-        </List>
+      <VStack width="full" alignItems="center" gap={6}>
+        <VStack alignItems="center">
+          <Text fontSize="xl" textAlign="center">
+            Leistungen
+          </Text>
+          <List textAlign="center">
+            <ListItem>
+              <Link href="/#school-heading">Sport- und Sozialunterricht</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="/#training-heading">Gerätetraining und Trainingsberatung</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="/#workshop-heading">Vorträge und Workshops</Link>
+            </ListItem>
+          </List>
+        </VStack>
+        <VStack alignItems="center">
+          <Text fontSize="xl" textAlign="center">
+            Anderes
+          </Text>
+          <List textAlign="center">
+            <ListItem>
+              <Link href="/#about-me">Über mich</Link>
+            </ListItem>
+            <ListItem>
+              <Link href="/#references">Referenzen</Link>
+            </ListItem>
+          </List>
+        </VStack>
       </VStack>
 
       <HStack width="full" justifyContent="space-around">
