@@ -24,6 +24,9 @@ import { DataProtection } from "./sections/Legal/DataProtection";
 import { Contact } from "./sections/Contact/Contact";
 import { Hero } from "./sections/Hero";
 import { KeyServices } from "./KeyServices";
+import { Testimonials } from "./sections/Testimonials/Testimonials";
+import { AboutMe } from "./sections/AboutMe";
+import { Services } from "./sections/Services/Services";
 
 const Error404 = lazy(() => import("./sections/ErrorPages/Error404").then((module) => ({ default: module.Error404 })));
 
@@ -46,6 +49,9 @@ function App() {
                 >
                   <Hero />
                   <KeyServices />
+                  <Services />
+                  <AboutMe />
+                  <Testimonials />
                 </Center>
                 <Center
                   width={{ base: "90%", lg: "70%" }}

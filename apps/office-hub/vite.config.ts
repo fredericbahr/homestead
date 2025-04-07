@@ -8,9 +8,9 @@ export default defineConfig({
       output: {
         manualChunks: {
           react: ["react", "react-dom"],
-          "chakra-ui": ["@chakra-ui/react", "@chakra-ui/icons", "@emotion/react", "@emotion/styled"],
-          "phosphor-icons": ["@phosphor-icons/react"],
           "framer-motion": ["framer-motion"],
+          "chakra-ui": ["@chakra-ui/react", "@emotion/react", "@emotion/styled"],
+          "phosphor-icons": ["@phosphor-icons/react"],
         },
       },
     },

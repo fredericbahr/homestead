@@ -76,22 +76,12 @@ export const Navigation = () => {
           </Menu>
         </ListItem>
         <ListItem as={motion.li} variants={item}>
-          <Link
-            href="/#team-heading"
-            fontSize="larger"
-            transition="all 0.2s ease-in-out"
-            _hover={{ color: "brand.500" }}
-          >
+          <Link href="/#about-me" fontSize="larger" transition="all 0.2s ease-in-out" _hover={{ color: "brand.500" }}>
             Über mich
           </Link>
         </ListItem>
         <ListItem as={motion.li} variants={item}>
-          <Link
-            href="/#pricing-heading"
-            fontSize="larger"
-            transition="all 0.2s ease-in-out"
-            _hover={{ color: "brand.500" }}
-          >
+          <Link href="/#references" fontSize="larger" transition="all 0.2s ease-in-out" _hover={{ color: "brand.500" }}>
             Referenzen
           </Link>
         </ListItem>

@@ -2,7 +2,7 @@
   "compilerOptions": {
     // project options
     "lib": ["ESNext", "dom"],
-    "types": ["node", "jest"],
+    "types": [],
     "outDir": "dist",
     "removeComments": true,
     "target": "ESNext",
