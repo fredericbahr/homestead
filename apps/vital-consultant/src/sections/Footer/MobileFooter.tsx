@@ -32,13 +32,13 @@ export const MobileFooter = () => {
           </Text>
           <List textAlign="center">
             <ListItem>
-              <Link href="/#school-heading">Sport- und Sozialunterricht</Link>
+              <Link href="/#school">Sport- und Sozialunterricht</Link>
             </ListItem>
             <ListItem>
-              <Link href="/#training-heading">Gerätetraining und Trainingsberatung</Link>
+              <Link href="/#training">Gerätetraining und Trainingsberatung</Link>
             </ListItem>
             <ListItem>
-              <Link href="/#workshop-heading">Vorträge und Workshops</Link>
+              <Link href="/#workshop">Vorträge und Workshops</Link>
             </ListItem>
           </List>
         </VStack>

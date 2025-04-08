@@ -63,13 +63,13 @@ export const Navigation = () => {
               </Text>
             </MenuButton>
             <MenuList minWidth="240px">
-              <MenuItem as="a" href="/#school-heading">
+              <MenuItem as="a" href="/#school">
                 Sport- und Sozialunterricht
               </MenuItem>
-              <MenuItem as="a" href="/#training-heading">
+              <MenuItem as="a" href="/#training">
                 Gerätetraining und Trainingsberatung
               </MenuItem>
-              <MenuItem as="a" href="/#workshop-heading">
+              <MenuItem as="a" href="/#workshop">
                 Vorträge und Workshops
               </MenuItem>
             </MenuList>

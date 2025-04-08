@@ -61,7 +61,7 @@ export const Hero = () => {
               </Text>
             </VStack>
           </VStack>
-          <Button size="lg" onClick={() => navigate("/contact")} rightIcon={<Icon as={ArrowRight} />}>
+          <Button size="lg" onClick={() => navigate("/contact?concern=general")} rightIcon={<Icon as={ArrowRight} />}>
             Kontakt
           </Button>
         </VStack>

@@ -8,6 +8,7 @@ export default defineConfig({
       output: {
         manualChunks: {
           react: ["react", "react-dom"],
+          "react-router": ["react-router"],
           "framer-motion": ["framer-motion"],
           "chakra-ui": ["@chakra-ui/react", "@emotion/react", "@emotion/styled"],
           "phosphor-icons": ["@phosphor-icons/react"],

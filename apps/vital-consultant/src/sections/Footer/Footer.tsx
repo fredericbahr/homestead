@@ -36,13 +36,13 @@ export const Footer = () => {
           </Text>
           <List>
             <ListItem>
-              <Link href="/#school-heading">Sport- und Sozialunterricht</Link>
+              <Link href="/#school">Sport- und Sozialunterricht</Link>
             </ListItem>
             <ListItem>
-              <Link href="/#training-heading">Gerätetraining und Trainingsberatung</Link>
+              <Link href="/#training">Gerätetraining und Trainingsberatung</Link>
             </ListItem>
             <ListItem>
-              <Link href="/#workshop-heading">Vorträge und Workshops</Link>
+              <Link href="/#workshop">Vorträge und Workshops</Link>
             </ListItem>
           </List>
         </VStack>
@@ -53,10 +53,10 @@ export const Footer = () => {
           </Text>
           <List>
             <ListItem>
-              <Link href="/about-me">Über mich</Link>
+              <Link href="/#about-me">Über mich</Link>
             </ListItem>
             <ListItem>
-              <Link href="/references">Referenzen</Link>
+              <Link href="/#references">Referenzen</Link>
             </ListItem>
           </List>
         </VStack>
@@ -82,7 +82,7 @@ export const Footer = () => {
           color="white"
           size="lg"
           colorScheme="whiteAlpha"
-          onClick={() => navigate("/contact")}
+          onClick={() => navigate("/contact?concern=general")}
         >
           Kontakt
         </Button>

@@ -33,17 +33,17 @@ export const MobileNavigation = ({ onNavigation }: MobileNavigationProps) => {
           marginLeft={2}
         >
           <ListItem>
-            <Link as={HashLink} smooth to="/#school-heading" onClick={onNavigation}>
+            <Link as={HashLink} smooth to="/#school" onClick={onNavigation}>
               Sport- und Sozialunterricht
             </Link>
           </ListItem>
           <ListItem>
-            <Link as={HashLink} smooth to="/#training-heading" onClick={onNavigation}>
+            <Link as={HashLink} smooth to="/#training" onClick={onNavigation}>
               Gerätetraining und Trainingsberatung
             </Link>
           </ListItem>
           <ListItem>
-            <Link as={HashLink} smooth to="/#workshop-heading" onClick={onNavigation}>
+            <Link as={HashLink} smooth to="/#workshop" onClick={onNavigation}>
               Vorträge und Workshops
             </Link>
           </ListItem>
