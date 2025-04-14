@@ -27,10 +27,7 @@ export const Workshop = () => {
 
         <VStack gap={4} flex={1}>
           <Heading as="h3" id="workshop" size={{ base: "lg", lg: "lg" }} width="full" fontWeight="semibold">
-            Vorträge und{" "}
-            <Text as="span" color="brand.500">
-              Workshops
-            </Text>
+            Vorträge und Workshops
           </Heading>
 
           <Text width="full" textAlign="start">

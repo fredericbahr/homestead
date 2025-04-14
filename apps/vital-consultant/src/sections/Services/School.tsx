@@ -27,10 +27,7 @@ export const School = () => {
 
         <VStack gap={4} flex={1}>
           <Heading as="h3" id="school" size={{ base: "lg", lg: "lg" }} width="full" fontWeight="semibold">
-            Sport- und{" "}
-            <Text as="span" color="brand.500">
-              Sozialunterricht
-            </Text>
+            Sport- und Sozialunterricht
           </Heading>
 
           <Text width="full" textAlign="start">

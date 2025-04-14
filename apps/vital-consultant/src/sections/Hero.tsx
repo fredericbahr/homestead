@@ -53,11 +53,22 @@ export const Hero = () => {
                 sport & health consulting
               </Heading>
             </VStack>
-            <VStack alignItems={{ base: "center", lg: "start" }} gap={0}>
+            <VStack alignItems={{ base: "center", lg: "start" }} gap={2}>
+              <Text color={textColor} fontSize="xl" textAlign={{ base: "center", lg: "start" }} fontWeight="semibold">
+                Gesundheit gestalten. Bewegung fördern. Prävention nachhaltig gestalten.
+              </Text>
+
               <Text color={textColor} fontSize="xl" textAlign={{ base: "center", lg: "start" }}>
-                Hey, Ich bin Sportwissenschaftlerin mit einem Master in Public Health. Mein Fokus liegt auf der
-                Förderung von Gesundheit und Bewegung durch gezielte Trainingsprogramme und Präventionsmaßnahmen –
-                sowohl im Schulbereich als auch in der wissenschaftlichen Weiterbildung und Beratung
+                Individuelle und wissenschaftlich fundierte Konzepte für Training, Gesundheitsförderung und Prävention –
+                bedarfsgerecht für Bildung, Unternehmen und Institutionen.
+              </Text>
+
+              <Text color={textColor} fontSize="xl" textAlign={{ base: "center", lg: "start" }}>
+                Als Sportwissenschaftlerin mit einem Master in Public Health verbinde ich wissenschaftliches Know-how
+                mit praktischer Erfahrung in der Gesundheitsförderung. Mein Fokus liegt auf der Entwicklung und
+                Umsetzung gezielter Trainings- und Präventionsprogramme – sei es im schulischen Kontext, in der
+                Erwachsenenbildung oder in der strategischen Beratung. Ich unterstütze dabei, Bewegung und Gesundheit
+                nachhaltig und langfristig zu verankern – durch innovative Konzepte, Workshops und Weiterbildungen.
               </Text>
             </VStack>
           </VStack>

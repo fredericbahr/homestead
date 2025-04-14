@@ -68,8 +68,8 @@ export const KeyServices = () => {
               Gerätetraining und Trainingsberatung
             </Heading>
             <Text textAlign="center">
-              Speziell konzipierte Trainingsprogramme für Einzelpersonen und Gruppen - fokussiert auf Fitness,
-              Prävention und Leistungssteigerung.
+              Maßgeschneiderte Trainingspläne für Einzelpersonen und Gruppen – entwickelt, um Bewegungsmangel zu
+              reduzieren, Alltagsbelastungen vorzubeugen und die Leistungsfähigkeit langfristig zu steigern.
             </Text>
           </VStack>
         </motion.div>

@@ -18,10 +18,7 @@ export const Training = () => {
       <Stack direction={{ base: "column-reverse", lg: "row" }} width="full" gap={12} alignItems="start">
         <VStack gap={4} flex={1}>
           <Heading as="h3" id="training" size={{ base: "lg", lg: "lg" }} width="full" fontWeight="semibold">
-            <Text as="span" color="brand.500">
-              Gerätetraining
-            </Text>{" "}
-            und Trainingsberatung
+            Gerätetraining und Trainingsberatung
           </Heading>
 
           <Text width="full" textAlign="start">

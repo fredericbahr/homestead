@@ -73,7 +73,7 @@ export const TestimonialSlider = ({ testimonials, index = 0, onIndexChange }: Te
         transition={{ delay: 0.5, duration: 0.3 }}
         viewport={{ once: true }}
       >
-        <HStack gap={4}>
+        <HStack gap={4} marginTop={2}>
           {Array.from({ length: testimonials.length }).map((_, idx: number) => (
             <Box
               minWidth={4}

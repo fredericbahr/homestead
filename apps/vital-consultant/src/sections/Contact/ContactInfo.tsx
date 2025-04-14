@@ -11,7 +11,7 @@
  */
 
 import { Button, Heading, Icon, Text, useColorModeValue, useToken, VStack } from "@chakra-ui/react";
-import { At, MapPinLine } from "@phosphor-icons/react";
+import { EnvelopeSimple, MapPinLine } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 
 export const ContactInfo = () => {
@@ -82,7 +82,7 @@ export const ContactInfo = () => {
             variant="ghost"
             color="white"
             backgroundColor="brand.500"
-            leftIcon={<Icon as={At} color="white" boxSize={5} />}
+            leftIcon={<Icon as={EnvelopeSimple} color="white" boxSize={5} />}
             onClick={handleEmailClick}
             _hover={{ backgroundColor: "brand.400" }}
           >
