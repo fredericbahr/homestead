@@ -60,7 +60,7 @@ export const MobileNavigation = ({ onNavigation }: MobileNavigationProps) => {
         </Link>
       </ListItem>
       <ListItem>
-        <Link href="/contact?concern=general">Kontakt</Link>
+        <Link as={HashLink} to="/contact?concern=general">Kontakt</Link>
       </ListItem>
     </List>
   );
