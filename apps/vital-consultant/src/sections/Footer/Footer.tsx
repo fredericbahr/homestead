@@ -11,7 +11,7 @@
  */
 
 import { Button, Flex, Grid, HStack, Link, List, ListItem, Text, VStack } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link as RouterLink } from "react-router-dom";
 
 export const Footer = () => {
   const navigate = useNavigate();
@@ -67,11 +67,15 @@ export const Footer = () => {
           </Text>
           <List>
             <ListItem>
-              <Link href="/imprint">Impressum</Link>
+              <Link as={RouterLink} to="/imprint">
+                Impressum
+              </Link>
             </ListItem>
-            <ListItem>
-              <Link href="/data-protection">Datenschutz</Link>
-            </ListItem>
+            {/* <ListItem>
+              <Link as={RouterLink} to="/data-protection">
+                Datenschutz
+              </Link>
+            </ListItem> */}
           </List>
         </VStack>
       </HStack>

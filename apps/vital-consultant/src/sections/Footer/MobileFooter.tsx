@@ -12,6 +12,7 @@
 
 import { HStack, Link, List, ListItem, Text, VStack } from "@chakra-ui/react";
 import { ColorThemeSwitch } from "@homestead/components";
+import { Link as RouterLink } from "react-router-dom";
 
 export const MobileFooter = () => {
   return (
@@ -62,12 +63,12 @@ export const MobileFooter = () => {
       </HStack>
 
       <HStack width="full" justifyContent="space-around">
-        <Link href="/imprint">
+        <Link as={RouterLink} to="/imprint">
           <Text>Impressum</Text>
         </Link>
-        <Link href="/data-protection">
+        {/* <Link as={RouterLink} to="/data-protection">
           <Text>Datenschutz</Text>
-        </Link>
+        </Link> */}
       </HStack>
 
       <Text width="full" gridColumn="1/span 3" textAlign="center" justifySelf="end">
