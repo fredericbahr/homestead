@@ -22,7 +22,7 @@ export const MobileNavigation = ({ onNavigation }: MobileNavigationProps) => {
     <List alignSelf="start" spacing={3} fontSize="large">
       <ListItem>
         <Link as={HashLink} smooth to="/#appointment-heading" onClick={onNavigation}>
-          Produkt
+          Leistungen
         </Link>
         <List
           borderLeft="1px solid"
@@ -33,49 +33,34 @@ export const MobileNavigation = ({ onNavigation }: MobileNavigationProps) => {
           marginLeft={2}
         >
           <ListItem>
-            <Link as={HashLink} smooth to="/#appointment-heading" onClick={onNavigation}>
-              Termine
+            <Link as={HashLink} smooth to="/#school" onClick={onNavigation}>
+              Sport- und Sozialunterricht
             </Link>
           </ListItem>
           <ListItem>
-            <Link as={HashLink} smooth to="/#photo-heading" onClick={onNavigation}>
-              Fotos
+            <Link as={HashLink} smooth to="/#training" onClick={onNavigation}>
+              Gerätetraining und Trainingsberatung
             </Link>
           </ListItem>
           <ListItem>
-            <Link as={HashLink} smooth to="/#survey-heading" onClick={onNavigation}>
-              Umfragen
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link as={HashLink} smooth to="/#customizability-heading" onClick={onNavigation}>
-              Individuelle Anpassungen
+            <Link as={HashLink} smooth to="/#workshop" onClick={onNavigation}>
+              Vorträge und Workshops
             </Link>
           </ListItem>
         </List>
       </ListItem>
       <ListItem>
-        <Link as={HashLink} smooth to="/#team-heading" onClick={onNavigation}>
-          Team
+        <Link as={HashLink} smooth to="/#about-me" onClick={onNavigation}>
+          Über mich
         </Link>
       </ListItem>
       <ListItem>
-        <Link as={HashLink} smooth to="/#pricing-heading" onClick={onNavigation}>
-          Preise
+        <Link as={HashLink} smooth to="/#references" onClick={onNavigation}>
+          Referenzen
         </Link>
       </ListItem>
       <ListItem>
-        <Link href="/donate" onClick={onNavigation}>
-          Spenden
-        </Link>
-      </ListItem>
-      <ListItem>
-        <Link as={HashLink} smooth to="/#demo-heading" onClick={onNavigation}>
-          Demo
-        </Link>
-      </ListItem>
-      <ListItem>
-        <Link href="/contact?concern=general">Kontakt</Link>
+        <Link as={HashLink} to="/contact?concern=general">Kontakt</Link>
       </ListItem>
     </List>
   );

@@ -1,15 +1,30 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { App } from "./App";
-import { Provider } from "./components/provider.tsx";
-import { BrowserRouter } from "react-router";
+/*
+ * COPYRIGHT (C) 2023 Frederic Bahr
+ *
+ * The PROGRAM is protected by national and international copyright laws and conventions.
+ * The copyright lies with Frederic Bahr, unless expressly stated otherwise.
+ * All rights reserved.
+ * Especially the reproduction and distribution of the PROGRAM without written permission of
+ * the copyright owner is prohibited.
+ *
+ * See LICENSE for licensing information.
+ */
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <Provider>
+import { ColorModeScript } from "@chakra-ui/react";
+import { StrictMode } from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+
+import App from "./App";
+import { mainTheme } from "./color-scheme";
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <>
+    <ColorModeScript initialColorMode={mainTheme.config.initialColorMode} />
+    <StrictMode>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </Provider>
-  </StrictMode>,
+    </StrictMode>
+  </>,
 );
