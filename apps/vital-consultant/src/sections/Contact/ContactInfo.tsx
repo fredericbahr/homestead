@@ -11,7 +11,7 @@
  */
 
 import { Button, Heading, Icon, Text, useColorModeValue, useToken, VStack } from "@chakra-ui/react";
-import { EnvelopeSimple, MapPinLine } from "@phosphor-icons/react";
+import { EnvelopeSimpleIcon, MapPinLineIcon } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 
 export const ContactInfo = () => {
@@ -82,7 +82,7 @@ export const ContactInfo = () => {
             variant="ghost"
             color="white"
             backgroundColor="brand.500"
-            leftIcon={<Icon as={EnvelopeSimple} color="white" boxSize={5} />}
+            leftIcon={<Icon as={EnvelopeSimpleIcon} color="white" boxSize={5} />}
             onClick={handleEmailClick}
             _hover={{ backgroundColor: "brand.400" }}
           >
@@ -101,7 +101,7 @@ export const ContactInfo = () => {
             variant="ghost"
             color={buttonColor}
             _hover={{ border: `2px solid ${brand500}` }}
-            leftIcon={<Icon as={MapPinLine} color={buttonColor} boxSize={5} />}
+            leftIcon={<Icon as={MapPinLineIcon} color={buttonColor} boxSize={5} />}
             onClick={handleLocationClick}
           >
             Fulda, Hessen

@@ -1,10 +1,10 @@
 import { Heading, Image, Text, Flex, Button, VStack, Icon, Stack } from "@chakra-ui/react";
-import { ArrowRight } from "@phosphor-icons/react";
-import { useNavigate } from "react-router";
+import { ArrowRightIcon } from "@phosphor-icons/react";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export const School = () => {
-  const navigate = useNavigate();
+  const navigate: NavigateFunction = useNavigate();
 
   return (
     <Stack direction={{ base: "column", lg: "row" }} width="full" gap={12} alignItems="start">
@@ -38,11 +38,23 @@ export const School = () => {
         </Heading>
 
         <Text width="full" textAlign="start">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium cumque amet, distinctio tenetur maiores
-          facere? Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, nisi animi. Laudantium ab quas minus
-          inventore saepe suscipit excepturi laboriosam, voluptas, exercitationem minima vel at! Lorem, ipsum dolor sit
-          amet consectetur adipisicing elit. Eum numquam illo voluptas, quae provident quia beatae? Eligendi atque
-          necessitatibus dolorum!
+          Auf Basis meines akademischen Hintergrunds in Sonderpädagogik und Sportwissenschaften biete ich ein ein
+          kombiniertes Unterrichts- und Betreuungskonzept an, das gezielt körperliche Aktivität mit pädagogischer
+          Begleitung und Entwicklung verbindet.{" "}
+        </Text>
+        <Text width="full" textAlign="start">
+          Dabei gestalte ich Sporteinheiten, die nicht nur die motorische Entwicklung und körperliche Fitness fördert,
+          sondern auch zentrale soziale Kompetenzen wie Teamfähigkeit, Fairness und Rücksichtnahme stärkt und
+          vermittelt.{" "}
+        </Text>
+        <Text width="full" textAlign="start">
+          Zusätzlich übernehme ich die Betreuung der Kinder und begleite sie bei ihren Hausaufgaben in ruhiger,
+          strukturierter Atmosphäre und stehe unterstützend zur Seite. Darüber hinaus biete ich Raum für soziales
+          Lernen, Gesprächsangebote und gemeinsame Aktivitäten.
+        </Text>
+        <Text width="full" textAlign="start">
+          Mein Angebot richtet sich insbesondere an Schulen mit Ganztagsbetrieb, Förderzentren sowie Einrichtungen, die
+          Wert auf Bewegung, soziale Entwicklung und individuelle Förderung legen.
         </Text>
 
         <Flex width="full">
@@ -50,7 +62,7 @@ export const School = () => {
             variant="ghost"
             paddingX={2}
             colorScheme="brand"
-            rightIcon={<Icon as={ArrowRight} />}
+            rightIcon={<Icon as={ArrowRightIcon} />}
             onClick={() => navigate("/contact?concern=school")}
           >
             Jetzt anfragen

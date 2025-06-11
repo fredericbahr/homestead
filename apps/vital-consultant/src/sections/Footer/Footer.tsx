@@ -10,7 +10,8 @@
  * See LICENSE for licensing information.
  */
 
-import { Button, Flex, Grid, HStack, Link, List, ListItem, Text, VStack } from "@chakra-ui/react";
+import { Button, Flex, Grid, HStack, Icon, Link, List, ListItem, Text, VStack } from "@chakra-ui/react";
+import { BinaryIcon } from "@phosphor-icons/react";
 import { useNavigate, Link as RouterLink } from "react-router-dom";
 
 export const Footer = () => {
@@ -71,11 +72,6 @@ export const Footer = () => {
                 Impressum
               </Link>
             </ListItem>
-            {/* <ListItem>
-              <Link as={RouterLink} to="/data-protection">
-                Datenschutz
-              </Link>
-            </ListItem> */}
           </List>
         </VStack>
       </HStack>
@@ -91,9 +87,14 @@ export const Footer = () => {
           Kontakt
         </Button>
       </Flex>
-      <Text width="full" gridColumn="1/span 5" textAlign="center" justifySelf="end">
-        © {new Date().getFullYear()} Madita Bahr - Alle Rechte vorbehalten
-      </Text>
+      <VStack gap={0} gridColumn="1/span 5" alignItems="center">
+        <Text width="full" textAlign="center" justifySelf="end">
+          © {new Date().getFullYear()} Madita Bahr - Alle Rechte vorbehalten
+        </Text>
+        <Text>
+          Entwickelt von <Link href="https://fredericbahr.github.io">Frederic Bahr</Link> mit <Icon as={BinaryIcon} />
+        </Text>
+      </VStack>
     </Grid>
   );
 };

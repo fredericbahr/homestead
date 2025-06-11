@@ -23,7 +23,7 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import emailjs from "@emailjs/browser";
-import { PaperPlaneTilt } from "@phosphor-icons/react";
+import { PaperPlaneTiltIcon } from "@phosphor-icons/react";
 import { Select, SingleValue } from "chakra-react-select";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -230,7 +230,7 @@ export const ContactForm = () => {
             size="lg"
             colorScheme="brand"
             width="full"
-            rightIcon={<Icon as={PaperPlaneTilt} />}
+            rightIcon={<Icon as={PaperPlaneTiltIcon} />}
             isLoading={isSending}
             onClick={handleContactSend}
           >

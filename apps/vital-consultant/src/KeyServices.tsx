@@ -11,7 +11,7 @@
  */
 
 import { Card, Heading, Icon, Stack, Text, useColorModeValue, useMediaQuery, VStack } from "@chakra-ui/react";
-import { Barbell, ChalkboardTeacher, Presentation } from "@phosphor-icons/react";
+import { BarbellIcon, ChalkboardTeacherIcon, PresentationIcon } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 
 export const KeyServices = () => {
@@ -45,7 +45,7 @@ export const KeyServices = () => {
           viewport={{ once: true }}
         >
           <VStack spacing={2}>
-            <Icon boxSize={{ base: 7, lg: 9 }} as={ChalkboardTeacher} />
+            <Icon boxSize={{ base: 7, lg: 9 }} as={ChalkboardTeacherIcon} />
             <Heading as="h3" size="md" textAlign="center">
               Sport- und Sozialunterricht
             </Heading>
@@ -63,7 +63,7 @@ export const KeyServices = () => {
           viewport={{ once: true }}
         >
           <VStack spacing={2}>
-            <Icon boxSize={{ base: 7, lg: 9 }} as={Barbell} />
+            <Icon boxSize={{ base: 7, lg: 9 }} as={BarbellIcon} />
             <Heading as="h3" size="md" textAlign="center">
               Gerätetraining und Trainingsberatung
             </Heading>
@@ -81,7 +81,7 @@ export const KeyServices = () => {
           viewport={{ once: true }}
         >
           <VStack spacing={2}>
-            <Icon boxSize={{ base: 7, lg: 9 }} as={Presentation} />
+            <Icon boxSize={{ base: 7, lg: 9 }} as={PresentationIcon} />
             <Heading as="h3" size="md" textAlign="center">
               Vorträge und Workshops
             </Heading>

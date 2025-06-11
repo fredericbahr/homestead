@@ -11,7 +11,7 @@
  */
 
 import { Icon, Link, List, ListItem, Menu, MenuButton, MenuItem, MenuList, Text } from "@chakra-ui/react";
-import { CaretDown } from "@phosphor-icons/react";
+import { CaretDownIcon } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 
 export const Navigation = () => {
@@ -59,7 +59,7 @@ export const Navigation = () => {
             >
               <Text as="span" display="inline-flex" alignItems="center" gap={1}>
                 Leistungen
-                <Icon as={CaretDown} />
+                <Icon as={CaretDownIcon} />
               </Text>
             </MenuButton>
             <MenuList minWidth="240px">

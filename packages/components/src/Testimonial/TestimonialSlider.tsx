@@ -10,8 +10,8 @@
  * See LICENSE for licensing information.
  */
 
-import { Box, Grid, Heading, HStack, Icon, IconButton, Image, Text, Tooltip, VStack } from "@chakra-ui/react";
-import { CaretLeft, CaretRight } from "@phosphor-icons/react";
+import { Box, Grid, HStack, Icon, IconButton, Tooltip, VStack } from "@chakra-ui/react";
+import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 import { useSwipeable } from "react-swipeable";
 import { Testimonial, TestimonialProps } from "./Testimonial";
@@ -43,24 +43,24 @@ export const TestimonialSlider = ({ testimonials, index = 0, onIndexChange }: Te
         viewport={{ once: true }}
       >
         <Grid gridTemplateColumns="auto 1fr auto" width="full" placeItems="center" gap={4} {...swipeHandlers}>
-          <Tooltip label="Vorheriger" hasArrow openDelay={300}>
+          <Tooltip label="Vorherige" hasArrow openDelay={300}>
             <IconButton
               variant="ghost"
               aria-label="Previous"
               isDisabled={index === 0}
-              icon={<Icon as={CaretLeft} />}
+              icon={<Icon as={CaretLeftIcon} />}
               onClick={() => onIndexChange(modulo(index - 1, testimonials.length))}
             />
           </Tooltip>
 
           <Testimonial {...testimonials[index]} />
 
-          <Tooltip label="Nächster" hasArrow openDelay={300}>
+          <Tooltip label="Nächste" hasArrow openDelay={300}>
             <IconButton
               variant="ghost"
               aria-label="Next"
               isDisabled={index === testimonials.length - 1}
-              icon={<Icon as={CaretRight} />}
+              icon={<Icon as={CaretRightIcon} />}
               onClick={() => onIndexChange(modulo(index + 1, testimonials.length))}
             />
           </Tooltip>

@@ -1,7 +1,7 @@
 import { Button, Flex, Heading, Stack, Icon, Image, Text, VStack } from "@chakra-ui/react";
-import { ArrowRight } from "@phosphor-icons/react";
+import { ArrowRightIcon } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 export const Workshop = () => {
   const navigate = useNavigate();
@@ -38,11 +38,25 @@ export const Workshop = () => {
         </Heading>
 
         <Text width="full" textAlign="start">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium cumque amet, distinctio tenetur maiores
-          facere? Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, nisi animi. Laudantium ab quas minus
-          inventore saepe suscipit excepturi laboriosam, voluptas, exercitationem minima vel at! Lorem, ipsum dolor sit
-          amet consectetur adipisicing elit. Eum numquam illo voluptas, quae provident quia beatae? Eligendi atque
-          necessitatibus dolorum!
+          Ergänzend zu meinen praktischen Angeboten im schulischen und gesundheitlichen Kontext biete ich auch fachliche
+          Vorträge und interaktive Workshops an Hochschulen und Universitäten an. Mein Ziel ist es, wissenschaftliche
+          Inhalte praxisnah aufzubereiten und Studierende sowie Fachpersonal für Schnittstellen zwischen Bildung,
+          Bewegung und Gesundheit zu sensibilisieren.
+        </Text>
+
+        <Text width="full" textAlign="start">
+          Auf Grundlage meiner akademischen Ausbildung in Sportwissenschaft, Sonderpädagogik und Public Health entwickle
+          ich Formate, die aktuelle Forschung mit konkreten Anwendungsbezügen verknüpfen.
+        </Text>
+
+        <Text width="full" textAlign="start">
+          Die Inhalte können als Einzelvortrag, Tagesworkshop oder im Rahmen von Ringvorlesungen, Lehraufträgen oder
+          Projektwochen angeboten werden – gerne auch in enger Abstimmung mit den jeweiligen Studiengängen.
+        </Text>
+        <Text width="full" textAlign="start">
+          Mit meinem fachübergreifenden Blick und praxisnahen Erfahrungshintergrund unterstütze ich Hochschulen dabei,
+          aktuelle Herausforderungen im Bereich Bewegung, Bildung und Gesundheit fundiert und interdisziplinär zu
+          vermitteln.
         </Text>
 
         <Flex width="full">
@@ -50,7 +64,7 @@ export const Workshop = () => {
             variant="ghost"
             paddingX={2}
             colorScheme="brand"
-            rightIcon={<Icon as={ArrowRight} />}
+            rightIcon={<Icon as={ArrowRightIcon} />}
             onClick={() => navigate("/contact?concern=workshop")}
           >
             Jetzt anfragen

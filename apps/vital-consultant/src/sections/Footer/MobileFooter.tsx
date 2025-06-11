@@ -10,8 +10,9 @@
  * See LICENSE for licensing information.
  */
 
-import { HStack, Link, List, ListItem, Text, VStack } from "@chakra-ui/react";
+import { HStack, Icon, Link, List, ListItem, Text, VStack } from "@chakra-ui/react";
 import { ColorThemeSwitch } from "@homestead/components";
+import { BinaryIcon } from "@phosphor-icons/react";
 import { Link as RouterLink } from "react-router-dom";
 
 export const MobileFooter = () => {
@@ -66,14 +67,16 @@ export const MobileFooter = () => {
         <Link as={RouterLink} to="/imprint">
           <Text>Impressum</Text>
         </Link>
-        {/* <Link as={RouterLink} to="/data-protection">
-          <Text>Datenschutz</Text>
-        </Link> */}
       </HStack>
 
-      <Text width="full" gridColumn="1/span 3" textAlign="center" justifySelf="end">
-        © {new Date().getFullYear()} Madita Bahr - Alle Rechte vorbehalten
-      </Text>
+      <VStack gap={0} gridColumn="1/span 5" alignItems="center">
+        <Text width="full" textAlign="center" justifySelf="end">
+          © {new Date().getFullYear()} Madita Bahr - Alle Rechte vorbehalten
+        </Text>
+        <Text>
+          Entwickelt von <Link href="https://fredericbahr.github.io">Frederic Bahr</Link> mit <Icon as={BinaryIcon} />
+        </Text>
+      </VStack>
     </VStack>
   );
 };
