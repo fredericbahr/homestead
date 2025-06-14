@@ -1,4 +1,4 @@
-import { Button, Flex, Heading, Stack, Icon, Image, Text, VStack } from "@chakra-ui/react";
+import { Button, Flex, Heading, Stack, Icon, Image, VStack } from "@chakra-ui/react";
 import { ArrowRightIcon } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -21,28 +21,6 @@ export const OfficeServices = () => {
         <Heading as="h3" id="office-services" size={{ base: "lg", lg: "lg" }} width="full" fontWeight="semibold">
           Bürodienstleistungen
         </Heading>
-
-        <Text width="full" textAlign="start">
-          Ergänzend zu meinem bewegungs- und betreuungsorientierten Angebot im schulischen Kontext biete ich auch
-          gesundheitsorientiertes Gerätetraining sowie individuelle Trainingsberatung an – für Jugendliche, Erwachsene
-          oder Mitarbeitende im Rahmen von Gesundheitsprojekten und Präventionsmaßnahmen.
-        </Text>
-        <Text width="full" textAlign="start">
-          Auf Basis meines akademischen Hintergrunds in Public Health, meiner Qualifikation in Krankengymnastik am Gerät
-          (KGG) sowie der C-Lizenz im Fußball, entwickle ich zielgerichtete Trainingskonzepte, die auf Prävention,
-          Rehabilitation und nachhaltiger Leistungssteigerung basieren.
-        </Text>
-
-        <Text width="full" textAlign="start">
-          Ich leite funktionelle Einheiten an Geräten zur Kräftigung, Stabilisierung und Verbesserung der Körperhaltung.
-          Das Training ist individuell abgestimmt – ob im Aufbau nach Verletzungen, zur allgemeinen Gesundheitsförderung
-          oder als Ergänzung zum Vereinssport.
-        </Text>
-
-        <Text width="full" textAlign="start">
-          Dieses Angebot kann flexibel in bestehende Ganztagskonzepte, Projektwochen oder als separates Gesundheitsmodul
-          für Schulen, Einrichtungen oder Vereine eingebunden werden.
-        </Text>
 
         <Flex width="full">
           <Button

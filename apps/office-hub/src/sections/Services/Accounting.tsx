@@ -1,4 +1,4 @@
-import { Heading, Image, Text, Flex, Button, VStack, Icon, Stack } from "@chakra-ui/react";
+import { Heading, Image, Flex, Button, VStack, Icon, Stack } from "@chakra-ui/react";
 import { ArrowRightIcon } from "@phosphor-icons/react";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -36,26 +36,6 @@ export const Accounting = () => {
         <Heading as="h3" id="accounting" size={{ base: "lg", lg: "lg" }} width="full" fontWeight="semibold">
           Buchführung
         </Heading>
-
-        <Text width="full" textAlign="start">
-          Auf Basis meines akademischen Hintergrunds in Sonderpädagogik und Sportwissenschaften biete ich ein ein
-          kombiniertes Unterrichts- und Betreuungskonzept an, das gezielt körperliche Aktivität mit pädagogischer
-          Begleitung und Entwicklung verbindet.{" "}
-        </Text>
-        <Text width="full" textAlign="start">
-          Dabei gestalte ich Sporteinheiten, die nicht nur die motorische Entwicklung und körperliche Fitness fördert,
-          sondern auch zentrale soziale Kompetenzen wie Teamfähigkeit, Fairness und Rücksichtnahme stärkt und
-          vermittelt.{" "}
-        </Text>
-        <Text width="full" textAlign="start">
-          Zusätzlich übernehme ich die Betreuung der Kinder und begleite sie bei ihren Hausaufgaben in ruhiger,
-          strukturierter Atmosphäre und stehe unterstützend zur Seite. Darüber hinaus biete ich Raum für soziales
-          Lernen, Gesprächsangebote und gemeinsame Aktivitäten.
-        </Text>
-        <Text width="full" textAlign="start">
-          Mein Angebot richtet sich insbesondere an Schulen mit Ganztagsbetrieb, Förderzentren sowie Einrichtungen, die
-          Wert auf Bewegung, soziale Entwicklung und individuelle Förderung legen.
-        </Text>
 
         <Flex width="full">
           <Button

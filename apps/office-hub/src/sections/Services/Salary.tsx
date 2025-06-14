@@ -1,4 +1,4 @@
-import { Button, Flex, Heading, Stack, Icon, Image, Text, VStack } from "@chakra-ui/react";
+import { Button, Flex, Heading, Stack, Icon, Image, VStack } from "@chakra-ui/react";
 import { ArrowRightIcon } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -36,28 +36,6 @@ export const Salary = () => {
         <Heading as="h3" id="salary" size={{ base: "lg", lg: "lg" }} width="full" fontWeight="semibold">
           Lohn- und Gehaltsabrechnungen
         </Heading>
-
-        <Text width="full" textAlign="start">
-          Ergänzend zu meinen praktischen Angeboten im schulischen und gesundheitlichen Kontext biete ich auch fachliche
-          Vorträge und interaktive Workshops an Hochschulen und Universitäten an. Mein Ziel ist es, wissenschaftliche
-          Inhalte praxisnah aufzubereiten und Studierende sowie Fachpersonal für Schnittstellen zwischen Bildung,
-          Bewegung und Gesundheit zu sensibilisieren.
-        </Text>
-
-        <Text width="full" textAlign="start">
-          Auf Grundlage meiner akademischen Ausbildung in Sportwissenschaft, Sonderpädagogik und Public Health entwickle
-          ich Formate, die aktuelle Forschung mit konkreten Anwendungsbezügen verknüpfen.
-        </Text>
-
-        <Text width="full" textAlign="start">
-          Die Inhalte können als Einzelvortrag, Tagesworkshop oder im Rahmen von Ringvorlesungen, Lehraufträgen oder
-          Projektwochen angeboten werden – gerne auch in enger Abstimmung mit den jeweiligen Studiengängen.
-        </Text>
-        <Text width="full" textAlign="start">
-          Mit meinem fachübergreifenden Blick und praxisnahen Erfahrungshintergrund unterstütze ich Hochschulen dabei,
-          aktuelle Herausforderungen im Bereich Bewegung, Bildung und Gesundheit fundiert und interdisziplinär zu
-          vermitteln.
-        </Text>
 
         <Flex width="full">
           <Button
