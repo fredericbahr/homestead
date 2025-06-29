@@ -37,10 +37,10 @@ export const MobileFooter = () => {
               <Link href="/#accounting">Buchführung</Link>
             </ListItem>
             <ListItem>
-              <Link href="/#office-services">Bürodienstleistungen</Link>
+              <Link href="/#salary">Lohn- und Gehaltsabrechnungen</Link>
             </ListItem>
             <ListItem>
-              <Link href="/#salary">Lohn- ud Gehaltsabrechnungen</Link>
+              <Link href="/#office-services">Bürodienstleistungen</Link>
             </ListItem>
           </List>
         </VStack>

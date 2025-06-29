@@ -40,10 +40,10 @@ export const Footer = () => {
               <Link href="/#accounting">Buchführung</Link>
             </ListItem>
             <ListItem>
-              <Link href="/#office-services">Bürodienstleistungen</Link>
+              <Link href="/#salary">Lohn- und Gehaltsabrechnungen</Link>
             </ListItem>
             <ListItem>
-              <Link href="/#salary">Lohn- und Gehaltsabrechnungen</Link>
+              <Link href="/#office-services">Bürodienstleistungen</Link>
             </ListItem>
           </List>
         </VStack>

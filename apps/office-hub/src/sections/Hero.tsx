@@ -35,7 +35,7 @@ export const Hero = () => {
       >
         <VStack alignItems={{ base: "center", lg: "start" }} alignContent="start" gap={{ base: 8, lg: 12 }}>
           <VStack alignItems={{ base: "center", lg: "start" }} gap={{ base: 4, lg: 8 }}>
-            <VStack alignItems={{ base: "center", lg: "start" }}>
+            <VStack alignItems={{ base: "center", lg: "start" }} gap={{ base: 4, lg: 8 }}>
               <Heading
                 as="h1"
                 size={{ base: "xl", lg: "3xl" }}
@@ -47,7 +47,7 @@ export const Hero = () => {
               <Heading
                 as="h2"
                 size={{ base: "md", lg: "xl" }}
-                color="accent.500"
+                color="accent.200"
                 textAlign={{ base: "center", lg: "start" }}
               >
                 Buchführung & Bürodienstleistungen
@@ -55,11 +55,30 @@ export const Hero = () => {
             </VStack>
             <VStack alignItems={{ base: "center", lg: "start" }} gap={2}>
               <Text color={textColor} fontSize="xl" textAlign={{ base: "center", lg: "start" }} fontWeight="semibold">
-                Digitale Buchführung. Intelligente Büroprozesse. Sichere Lohn- und Gehaltsabrechnung.
+                Digitale Buchführung. Intelligente Büroprozesse. Sichere Lohn- und Gehaltsabrechnungen.
+              </Text>
+
+              <Text color={textColor} fontSize="xl" textAlign={{ base: "center", lg: "start" }}>
+                Mit über 25 Jahren Erfahrung in der Buchhaltung biete ich Ihnen fundiertes Know-how und zuverlässige
+                Unterstützung. Meine Expertise umfasst insbesondere die effiziente Nutzung der Programme DATEV, Lexware
+                und orgaMAX, wodurch ich Ihre Buchführung schnell und präzise erledige.
+              </Text>
+              <Text color={textColor} fontSize="xl" textAlign={{ base: "center", lg: "start" }}>
+                Dank meiner ausgeprägten analytischen Fähigkeiten arbeite ich stets strukturiert, genau und mit hohem
+                Qualitätsbewusstsein. Mein Fokus liegt dabei auf klaren, ergebnisorientierten Lösungen, die Ihren
+                geschäftlichen Erfolg unterstützen, indem Sie sich auf{" "}
+                <Text as="span" fontWeight="semibold">
+                  ihre Kernaufgaben
+                </Text>{" "}
+                konzentrieren können.
               </Text>
             </VStack>
           </VStack>
-          <Button size="lg" onClick={() => navigate("/contact?concern=general")} rightIcon={<Icon as={ArrowRightIcon} />}>
+          <Button
+            size="lg"
+            onClick={() => navigate("/contact?concern=general")}
+            rightIcon={<Icon as={ArrowRightIcon} />}
+          >
             Kontakt
           </Button>
         </VStack>

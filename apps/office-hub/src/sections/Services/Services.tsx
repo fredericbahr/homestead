@@ -14,9 +14,9 @@ export const Services = () => {
       <VStack gap={16} width="full">
         <Accounting />
 
-        <OfficeServices />
-
         <Salary />
+
+        <OfficeServices />
       </VStack>
     </VStack>
   );

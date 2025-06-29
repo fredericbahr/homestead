@@ -50,8 +50,8 @@ export const ContactForm = () => {
   const reasonForContactOptions = [
     { value: "general", label: "Allgemeine Anfrage" },
     { value: "accounting", label: "Buchführung" },
-    { value: "office-services", label: "Bürodienstleistungen" },
     { value: "salary", label: "Lohn- und Gehaltsabrechnungen" },
+    { value: "office-services", label: "Bürodienstleistungen" },
     { value: "other", label: "Sonstiges" },
   ];
 

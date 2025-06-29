@@ -66,11 +66,11 @@ export const Navigation = () => {
               <MenuItem as="a" href="/#accounting">
                 Buchführung
               </MenuItem>
-              <MenuItem as="a" href="/#office-services">
-                Bürodienstleistungen
-              </MenuItem>
               <MenuItem as="a" href="/#salary">
                 Lohn- und Gehaltsabrechnungen
+              </MenuItem>
+              <MenuItem as="a" href="/#office-services">
+                Bürodienstleistungen
               </MenuItem>
             </MenuList>
           </Menu>

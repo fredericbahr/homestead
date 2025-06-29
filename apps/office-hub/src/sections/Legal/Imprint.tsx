@@ -35,7 +35,7 @@ export const Imprint = () => {
 
           <VStack width="full" alignItems="start" spacing={1}>
             <Text fontWeight="bold">Kontakt:</Text>
-            <Text>Telefon: 06656/6419</Text>
+            <Text>Telefon: 01578-2030949</Text>
             <Text>
               E-Mail:{" "}
               <Link href="mailto:gb.bueroservice@gmail.com" color="brand.500">

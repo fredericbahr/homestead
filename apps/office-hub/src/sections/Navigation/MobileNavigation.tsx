@@ -38,13 +38,13 @@ export const MobileNavigation = ({ onNavigation }: MobileNavigationProps) => {
             </Link>
           </ListItem>
           <ListItem>
-            <Link as={HashLink} smooth to="/#office-services" onClick={onNavigation}>
-              Bürodienstleistungen
+            <Link as={HashLink} smooth to="/#salary" onClick={onNavigation}>
+              Lohn- und Gehaltsabrechnungen
             </Link>
           </ListItem>
           <ListItem>
-            <Link as={HashLink} smooth to="/#salary" onClick={onNavigation}>
-              Lohn- und Gehaltsabrechnungen
+            <Link as={HashLink} smooth to="/#office-services" onClick={onNavigation}>
+              Bürodienstleistungen
             </Link>
           </ListItem>
         </List>

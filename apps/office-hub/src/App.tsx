@@ -10,7 +10,7 @@
  * See LICENSE for licensing information.
  */
 
-import { Center, ChakraProvider, Spinner, useMediaQuery } from "@chakra-ui/react";
+import { Center, ChakraProvider, Spinner, useMediaQuery, Text } from "@chakra-ui/react";
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 
@@ -59,6 +59,15 @@ function App() {
                   flexDirection="column"
                   gap={{ base: 20, lg: 36 }}
                 ></Center>
+
+                <Text width="70%" marginTop={{ base: 6, lg: 12 }}>
+                  * Das Steuerberatungsgesetz erlaubt gemäß § 6 Ziff. 3 und 4 sowie § 8 einem Personenkreis mit
+                  besonderen Voraussetzungen an die berufliche Ausbildung, das Kontieren, Erfassen und Auswerten der
+                  lfd. Buchhaltung eines Unternehmens anzubieten und durchzuführen. Auch die lfd. Lohnabrechnung bis hin
+                  zur Lohnsteuer-Anmeldung beim Finanzamt gehören zum Leistungsumfang. Beratung und Jahresabschluss
+                  bleiben weiterhin in den bewährten Händen Ihres Steuerberaters, der einfach mit den von uns erstellten
+                  Daten und Auswertungen weiterarbeiten kann.
+                </Text>
                 {isMobile ? <MobileFooter /> : <Footer />}
               </Layout>
             }

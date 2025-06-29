@@ -63,12 +63,13 @@ export const KeyServices = () => {
           viewport={{ once: true }}
         >
           <VStack spacing={2}>
-            <Icon boxSize={{ base: 7, lg: 9 }} as={PencilRulerIcon} />
+            <Icon boxSize={{ base: 7, lg: 9 }} as={CoinsIcon} />
             <Heading as="h3" size="md" textAlign="center">
-              Bürodienstleistungen
+              Lohn- und Gehaltsabrechnungen
             </Heading>
             <Text textAlign="center">
-              Effiziente und intelligente Bürodienstleistungen – von Terminplanung und Korrespondenz bis zu Dokumentenmanagement und organisatorischer Unterstützung
+              Zuverlässige Lohn- und Gehaltsabrechnungen – inklusive Sozialabgaben, Steueranmeldungen, rechtssicherer
+              Dokumentation, Personal­an- und -abmeldungen sowie Verwaltung von Krankheitstagen und Zeiterfassung
             </Text>
           </VStack>
         </motion.div>
@@ -80,12 +81,13 @@ export const KeyServices = () => {
           viewport={{ once: true }}
         >
           <VStack spacing={2}>
-            <Icon boxSize={{ base: 7, lg: 9 }} as={CoinsIcon} />
+            <Icon boxSize={{ base: 7, lg: 9 }} as={PencilRulerIcon} />
             <Heading as="h3" size="md" textAlign="center">
-              Lohn- ud Gehaltsabrechnungen
+              Bürodienstleistungen
             </Heading>
             <Text textAlign="center">
-              Zuverlässige Lohn- und Gehaltsabrechnung – inklusive Abführung von Sozialabgaben, Steueranmeldungen und rechtssicherer Dokumentation
+              Effiziente und intelligente Bürodienstleistungen – von Dokumentenmanagement und organisatorischer
+              Unterstützung bis hin zur Faktuierung ihrer Leistungen
             </Text>
           </VStack>
         </motion.div>

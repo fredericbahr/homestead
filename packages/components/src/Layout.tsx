@@ -11,7 +11,7 @@
  */
 
 import React from "react";
-import { VStack } from "@chakra-ui/react";
+import { VStack, Text } from "@chakra-ui/react";
 
 interface LayoutProps {
   header: React.ReactNode;
