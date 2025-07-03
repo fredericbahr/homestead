@@ -4,8 +4,8 @@
   "description": "",
   "main": "src/index.ts",
   "dependencies": {
-    "@chakra-ui/react": "^2.10.7",
-    "@phosphor-icons/react": "^2.1.7",
+    "@chakra-ui/react": "^2.10.9",
+    "@phosphor-icons/react": "^2.1.10",
     "react-swipeable": "^7.0.2"
   },
   "devDependencies": {
