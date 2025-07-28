@@ -11,24 +11,27 @@
  */
 
 import { Center, ChakraProvider, Spinner, useMediaQuery } from "@chakra-ui/react";
+import { Layout } from "@homestead/components";
 import { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-
-import { Layout } from "@homestead/components";
 import { mainTheme } from "./color-scheme";
-import { Header } from "./sections/Header";
-import { MobileFooter } from "./sections/Footer/MobileFooter";
-import { Footer } from "./sections/Footer/Footer";
-import { Imprint } from "./sections/Legal/Imprint";
-import { DataProtection } from "./sections/Legal/DataProtection";
-import { Contact } from "./sections/Contact/Contact";
-import { Hero } from "./sections/Hero";
 import { KeyServices } from "./KeyServices";
-import { Testimonials } from "./sections/Testimonials/Testimonials";
 import { AboutMe } from "./sections/AboutMe";
+import { Contact } from "./sections/Contact/Contact";
+import { Footer } from "./sections/Footer/Footer";
+import { MobileFooter } from "./sections/Footer/MobileFooter";
+import { Header } from "./sections/Header";
+import { Hero } from "./sections/Hero";
+import { DataProtection } from "./sections/Legal/DataProtection";
+import { Imprint } from "./sections/Legal/Imprint";
 import { Services } from "./sections/Services/Services";
+import { Testimonials } from "./sections/Testimonials/Testimonials";
 
-const Error404 = lazy(() => import("./sections/ErrorPages/Error404").then((module) => ({ default: module.Error404 })));
+const Error404 = lazy(() =>
+  import("./sections/ErrorPages/Error404").then((module) => ({
+    default: module.Error404,
+  }))
+);
 
 function App() {
   const [isMobile] = useMediaQuery("(max-width: 62em)");
@@ -38,14 +41,13 @@ function App() {
       <Suspense fallback={<Spinner />}>
         <Routes>
           <Route
-            path="/"
             element={
               <Layout header={<Header />}>
                 <Center
-                  width={{ base: "90%", lg: "70%" }}
                   display="flex"
                   flexDirection="column"
                   gap={{ base: 20, lg: 36 }}
+                  width={{ base: "90%", lg: "70%" }}
                 >
                   <Hero />
                   <KeyServices />
@@ -54,41 +56,42 @@ function App() {
                   <Testimonials />
                 </Center>
                 <Center
-                  width={{ base: "90%", lg: "70%" }}
                   display="flex"
                   flexDirection="column"
                   gap={{ base: 20, lg: 36 }}
-                ></Center>
+                  width={{ base: "90%", lg: "70%" }}
+                />
                 {isMobile ? <MobileFooter /> : <Footer />}
               </Layout>
             }
+            path="/"
           />
           <Route
-            path="/contact"
             element={
               <Layout header={<Header />}>
                 <Contact />
                 {isMobile ? <MobileFooter /> : <Footer />}
               </Layout>
             }
+            path="/contact"
           />
           <Route
-            path="/imprint"
             element={
               <Layout header={<Header />}>
                 <Imprint />
               </Layout>
             }
+            path="/imprint"
           />
           <Route
-            path="/data-protection"
             element={
               <Layout header={<Header />}>
                 <DataProtection />
               </Layout>
             }
+            path="/data-protection"
           />
-          <Route path="*" element={<Error404 />} />
+          <Route element={<Error404 />} path="*" />
         </Routes>
       </Suspense>
     </ChakraProvider>

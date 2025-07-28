@@ -39,25 +39,25 @@ export const Navigation = () => {
   return (
     <nav>
       <List
+        animate="visible"
         as={motion.ul}
         display="flex"
         flexDirection="row"
-        justifyContent="center"
         gap={{ base: 8, lg: 16 }}
         initial="hidden"
-        animate="visible"
+        justifyContent="center"
         variants={list}
       >
         <ListItem as={motion.li} variants={item}>
           <Menu closeOnSelect>
             <MenuButton
+              _hover={{ color: "brand.500" }}
               as={Link}
               fontSize="larger"
               transition="all 0.2s ease-in-out"
-              _hover={{ color: "brand.500" }}
               variant="unstyled"
             >
-              <Text as="span" display="inline-flex" alignItems="center" gap={1}>
+              <Text alignItems="center" as="span" display="inline-flex" gap={1}>
                 Leistungen
                 <Icon as={CaretDownIcon} />
               </Text>
@@ -76,12 +76,12 @@ export const Navigation = () => {
           </Menu>
         </ListItem>
         <ListItem as={motion.li} variants={item}>
-          <Link href="/#about-me" fontSize="larger" transition="all 0.2s ease-in-out" _hover={{ color: "brand.500" }}>
+          <Link _hover={{ color: "brand.500" }} fontSize="larger" href="/#about-me" transition="all 0.2s ease-in-out">
             Über mich
           </Link>
         </ListItem>
         <ListItem as={motion.li} variants={item}>
-          <Link href="/#references" fontSize="larger" transition="all 0.2s ease-in-out" _hover={{ color: "brand.500" }}>
+          <Link _hover={{ color: "brand.500" }} fontSize="larger" href="/#references" transition="all 0.2s ease-in-out">
             Referenzen
           </Link>
         </ListItem>

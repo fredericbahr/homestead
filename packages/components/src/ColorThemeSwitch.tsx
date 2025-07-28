@@ -10,7 +10,7 @@
  * See LICENSE for licensing information.
  */
 
-import { Icon, IconButton, IconButtonProps, Tooltip, useColorMode } from "@chakra-ui/react";
+import { Icon, IconButton, type IconButtonProps, Tooltip, useColorMode } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@phosphor-icons/react";
 
 export interface IColorThemeSwitchProps extends Omit<IconButtonProps, "aria-label"> {
@@ -25,12 +25,12 @@ export const ColorThemeSwitch = ({ boxSize, ...rest }: IColorThemeSwitchProps) =
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Tooltip label={colorMode === "light" ? "Dunkles Theme" : "Helles Theme"} hasArrow openDelay={300}>
+    <Tooltip hasArrow label={colorMode === "light" ? "Dunkles Theme" : "Helles Theme"} openDelay={300}>
       <IconButton
-        icon={<Icon as={colorMode === "light" ? MoonIcon : SunIcon} boxSize={boxSize ?? 5} />}
-        variant="ghost"
         colorScheme="gray"
+        icon={<Icon as={colorMode === "light" ? MoonIcon : SunIcon} boxSize={boxSize ?? 5} />}
         onClick={toggleColorMode}
+        variant="ghost"
         {...rest}
         aria-label="Color theme switch"
       />

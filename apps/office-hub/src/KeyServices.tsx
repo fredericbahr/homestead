@@ -21,31 +21,31 @@ export const KeyServices = () => {
 
   return (
     <Card
-      width={{ base: "75%", lg: "full" }}
+      backgroundColor={backgroundColor}
       borderRadius="sm"
+      boxShadow="md"
       justifyContent="space-evenly"
+      marginTop={{ base: 4, lg: 0 }}
       paddingX={{ base: 4, lg: 6 }}
       paddingY={{ base: 4, lg: 8 }}
       variant="filled"
-      boxShadow="md"
-      marginTop={{ base: 4, lg: 0 }}
-      backgroundColor={backgroundColor}
+      width={{ base: "75%", lg: "full" }}
     >
       <Stack
-        direction={{ base: "column", lg: "row" }}
         columnGap={{ base: "none", lg: 8 }}
+        direction={{ base: "column", lg: "row" }}
+        margin="0 auto"
         rowGap={{ base: 8, lg: "none" }}
         width={{ base: "full", lg: "full" }}
-        margin="0 auto"
       >
         <motion.div
           initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: isMobile ? 0.2 : 0.8, duration: 0.3 }}
           viewport={{ once: true }}
+          whileInView={{ opacity: 1, y: 0 }}
         >
           <VStack spacing={2}>
-            <Icon boxSize={{ base: 7, lg: 9 }} as={InvoiceIcon} />
+            <Icon as={InvoiceIcon} boxSize={{ base: 7, lg: 9 }} />
             <Heading as="h3" size="md" textAlign="center">
               Buchführung
             </Heading>
@@ -58,12 +58,12 @@ export const KeyServices = () => {
 
         <motion.div
           initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: isMobile ? 0.3 : 0.9, duration: 0.3 }}
           viewport={{ once: true }}
+          whileInView={{ opacity: 1, y: 0 }}
         >
           <VStack spacing={2}>
-            <Icon boxSize={{ base: 7, lg: 9 }} as={CoinsIcon} />
+            <Icon as={CoinsIcon} boxSize={{ base: 7, lg: 9 }} />
             <Heading as="h3" size="md" textAlign="center">
               Lohn- und Gehaltsabrechnungen
             </Heading>
@@ -76,12 +76,12 @@ export const KeyServices = () => {
 
         <motion.div
           initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: isMobile ? 0.4 : 1.0, duration: 0.3 }}
           viewport={{ once: true }}
+          whileInView={{ opacity: 1, y: 0 }}
         >
           <VStack spacing={2}>
-            <Icon boxSize={{ base: 7, lg: 9 }} as={PencilRulerIcon} />
+            <Icon as={PencilRulerIcon} boxSize={{ base: 7, lg: 9 }} />
             <Heading as="h3" size="md" textAlign="center">
               Bürodienstleistungen
             </Heading>

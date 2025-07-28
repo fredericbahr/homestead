@@ -34,22 +34,21 @@
     "configs/*"
   ],
   "devDependencies": {
+    "@biomejs/biome": "2.1.2",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.2",
-    "prettier": "^3.6.2",
-    "turbo": "^2.5.4"
+    "turbo": "^2.5.4",
+    "ultracite": "5.0.35"
   },
   "lint-staged": {
     "apps/**/*.{js,ts,jsx,tsx}": [
-      "eslint --fix",
-      "prettier --write"
+      "npx ultracite format"
     ],
     "packages/**/*.{js,ts,jsx,tsx}": [
-      "eslint --fix",
-      "prettier --write"
+      "npx ultracite format"
     ],
     "*.{json,md}": [
-      "prettier --write"
+      "npx ultracite format"
     ]
   },
   "volta": {

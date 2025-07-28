@@ -1,4 +1,4 @@
-import { TestimonialProps } from "@homestead/components";
+import type { TestimonialProps } from "@homestead/components";
 
 export const testimonials: TestimonialProps[] = [
   {
@@ -9,7 +9,7 @@ export const testimonials: TestimonialProps[] = [
       "Die Zusammenarbeit war eine große Unterstützung für unser Team. Sie überzeugt durch fachliche Kompetenz im Gerätetraining und eine klare, freundliche Kommunikation. Unsere Patient:innen fühlten sich bei ihr bestens betreut.",
     image: "./logo_mieterbund_fulda.png",
   },
-    {
+  {
     name: "Florian Wehner",
     title: "Geschäftsführer",
     company: "FW Gruppe",

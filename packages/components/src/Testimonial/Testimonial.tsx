@@ -1,4 +1,4 @@
-import { HStack, Image, Link, Text, VStack } from "@chakra-ui/react";
+import { Image, Link, Text, VStack } from "@chakra-ui/react";
 
 export interface TestimonialProps {
   /** The name of the person giving the testimonial */
@@ -29,18 +29,18 @@ export const Testimonial = ({ testimonial, name, company, title, image, link }: 
     <VStack gap={8}>
       <VStack gap={4}>
         {image && (
-          <Link href={link} isExternal cursor={link ? "pointer" : "default"}>
-            <Image src={image} alt={name} />
+          <Link cursor={link ? "pointer" : "default"} href={link} isExternal>
+            <Image alt={name} src={image} />
           </Link>
         )}
-        <Text fontSize="lg" fontWeight="500" textAlign="center" letterSpacing="wider">
+        <Text fontSize="lg" fontWeight="500" letterSpacing="wider" textAlign="center">
           "{testimonial}"
         </Text>
       </VStack>
 
-      <VStack textAlign="center" spacing={0}>
+      <VStack spacing={0} textAlign="center">
         <Text fontWeight="semibold">{name}</Text>
-        <Text fontSize="sm" color="gray.500">
+        <Text color="gray.500" fontSize="sm">
           {title}, {company}
         </Text>
       </VStack>

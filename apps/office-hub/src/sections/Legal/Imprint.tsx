@@ -14,41 +14,41 @@ import { Box, Heading, Link, Text, VStack } from "@chakra-ui/react";
 
 export const Imprint = () => {
   return (
-    <Box width="95%" marginX="auto" marginBottom={4}>
+    <Box marginBottom={4} marginX="auto" width="95%">
       <Box width={{ base: "100%", lg: "50%" }}>
         <Heading as="h1">Impressum</Heading>
         <VStack marginTop={4} spacing={4}>
-          <VStack width="full" alignItems="start" spacing={1}>
+          <VStack alignItems="start" spacing={1} width="full">
             <Text>Angaben gemäß § 5 TMG</Text>
 
-            <VStack width="full" alignItems="start" spacing={0}>
+            <VStack alignItems="start" spacing={0} width="full">
               <Text>Gabriela Bahr</Text>
               <Text>Halsbachweg 18</Text>
               <Text>36124 Eichenzell</Text>
             </VStack>
           </VStack>
 
-          <VStack width="full" alignItems="start" spacing={1}>
+          <VStack alignItems="start" spacing={1} width="full">
             <Text fontWeight="bold">Vertreten durch:</Text>
             <Text>Gabriela Bahr</Text>
           </VStack>
 
-          <VStack width="full" alignItems="start" spacing={1}>
+          <VStack alignItems="start" spacing={1} width="full">
             <Text fontWeight="bold">Kontakt:</Text>
             <Text>Telefon: 01578-2030949</Text>
             <Text>
               E-Mail:{" "}
-              <Link href="mailto:gb.bueroservice@gmail.com" color="brand.500">
+              <Link color="brand.500" href="mailto:gb.bueroservice@gmail.com">
                 gb.bueroservice@gmail.com
               </Link>
             </Text>
           </VStack>
 
-          <VStack width="full" alignItems="start" spacing={2}>
+          <VStack alignItems="start" spacing={2} width="full">
             <Heading as="h2" fontSize="larger">
               Haftungsausschluss:
             </Heading>
-            <VStack width="full" alignItems="start" spacing={1}>
+            <VStack alignItems="start" spacing={1} width="full">
               <Heading as="h3" fontSize="lg">
                 Haftung für Inhalte
               </Heading>
@@ -64,7 +64,7 @@ export const Imprint = () => {
                 Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
               </Text>
             </VStack>
-            <VStack width="full" alignItems="start" spacing={1}>
+            <VStack alignItems="start" spacing={1} width="full">
               <Heading as="h3" fontSize="lg">
                 Haftung für Links
               </Heading>
@@ -78,7 +78,7 @@ export const Imprint = () => {
                 zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
               </Text>
             </VStack>
-            <VStack width="full" alignItems="start" spacing={1}>
+            <VStack alignItems="start" spacing={1} width="full">
               <Heading as="h3" fontSize="lg">
                 Urheberrecht
               </Heading>
@@ -93,7 +93,7 @@ export const Imprint = () => {
                 Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
               </Text>
             </VStack>
-            <VStack width="full" alignItems="start" spacing={1}>
+            <VStack alignItems="start" spacing={1} width="full">
               <Heading as="h3" fontSize="lg">
                 Datenschutz
               </Heading>
@@ -116,13 +116,13 @@ export const Imprint = () => {
               </Text>
               <Text>
                 Weitere Informationen finden Sie{" "}
-                <Link href="/data-protection" color="brand.500">
+                <Link color="brand.500" href="/data-protection">
                   hier
                 </Link>
                 .
               </Text>
             </VStack>
-            <VStack width="full" alignItems="start" spacing={1}>
+            <VStack alignItems="start" spacing={1} width="full">
               <Heading as="h3" fontSize="lg">
                 Google Analytics
               </Heading>
@@ -144,7 +144,7 @@ export const Imprint = () => {
                 Weise und zu dem zuvor benannten Zweck einverstanden.
               </Text>
             </VStack>
-            <VStack width="full" alignItems="start" spacing={1}>
+            <VStack alignItems="start" spacing={1} width="full">
               <Heading as="h3" fontSize="lg">
                 Google AdSense
               </Heading>
@@ -173,11 +173,11 @@ export const Imprint = () => {
             </VStack>
             <Text>
               Website Impressum erstellt durch{" "}
-              <Link isExternal href="https://www.impressum-generator.de">
+              <Link href="https://www.impressum-generator.de" isExternal>
                 impressum-generator.de
               </Link>{" "}
               von der{" "}
-              <Link isExternal href="https://www.kanzlei-hasselbach.de/" rel="nofollow">
+              <Link href="https://www.kanzlei-hasselbach.de/" isExternal rel="nofollow">
                 Kanzlei Hasselbach
               </Link>
             </Text>

@@ -1,29 +1,24 @@
 {
   "compilerOptions": {
-    // project options
     "lib": ["ESNext", "dom"],
     "types": [],
     "outDir": "dist",
     "removeComments": true,
     "target": "ESNext",
 
-    // Module resolution
     "esModuleInterop": true,
     "module": "ESNext",
     "moduleResolution": "node",
 
-    // Declarations/Maps
     "sourceMap": true,
     "declaration": true,
 
-    // Strict Checks
     "strict": true,
     "alwaysStrict": true,
     "allowUnreachableCode": false,
     "noImplicitAny": true,
     "strictNullChecks": true,
 
-    // Type Checking
     "skipLibCheck": true
   },
   "include": ["src/**/*.ts"],

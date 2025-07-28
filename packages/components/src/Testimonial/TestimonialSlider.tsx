@@ -14,7 +14,7 @@ import { Box, Grid, HStack, Icon, IconButton, Tooltip, VStack } from "@chakra-ui
 import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 import { useSwipeable } from "react-swipeable";
-import { Testimonial, TestimonialProps } from "./Testimonial";
+import { Testimonial, type TestimonialProps } from "./Testimonial";
 
 export interface TestimonialSliderProps {
   testimonials: TestimonialProps[];
@@ -38,30 +38,30 @@ export const TestimonialSlider = ({ testimonials, index = 0, onIndexChange }: Te
     <VStack>
       <motion.div
         initial={{ opacity: 0, y: -150 }}
-        whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1, duration: 0.3 }}
         viewport={{ once: true }}
+        whileInView={{ opacity: 1, y: 0 }}
       >
-        <Grid gridTemplateColumns="auto 1fr auto" width="full" placeItems="center" gap={4} {...swipeHandlers}>
-          <Tooltip label="Vorherige" hasArrow openDelay={300}>
+        <Grid gap={4} gridTemplateColumns="auto 1fr auto" placeItems="center" width="full" {...swipeHandlers}>
+          <Tooltip hasArrow label="Vorherige" openDelay={300}>
             <IconButton
-              variant="ghost"
               aria-label="Previous"
-              isDisabled={index === 0}
               icon={<Icon as={CaretLeftIcon} />}
+              isDisabled={index === 0}
               onClick={() => onIndexChange(modulo(index - 1, testimonials.length))}
+              variant="ghost"
             />
           </Tooltip>
 
           <Testimonial {...testimonials[index]} />
 
-          <Tooltip label="Nächste" hasArrow openDelay={300}>
+          <Tooltip hasArrow label="Nächste" openDelay={300}>
             <IconButton
-              variant="ghost"
               aria-label="Next"
-              isDisabled={index === testimonials.length - 1}
               icon={<Icon as={CaretRightIcon} />}
+              isDisabled={index === testimonials.length - 1}
               onClick={() => onIndexChange(modulo(index + 1, testimonials.length))}
+              variant="ghost"
             />
           </Tooltip>
         </Grid>
@@ -69,21 +69,21 @@ export const TestimonialSlider = ({ testimonials, index = 0, onIndexChange }: Te
 
       <motion.div
         initial={{ opacity: 0, y: -100 }}
-        whileInView={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.5, duration: 0.3 }}
         viewport={{ once: true }}
+        whileInView={{ opacity: 1, y: 0 }}
       >
         <HStack gap={4} marginTop={2}>
-          {Array.from({ length: testimonials.length }).map((_, idx: number) => (
+          {testimonials.map((testimonial, idx: number) => (
             <Box
-              minWidth={4}
-              minHeight={1}
-              backgroundColor={index === idx ? "accent.600" : "brand.900"}
               _hover={{ cursor: "pointer", transform: "scale(1.2)" }}
-              transition="all 0.2s ease-in-out"
+              backgroundColor={index === idx ? "accent.600" : "brand.900"}
+              key={`${testimonial.title}-${idx}`}
+              minHeight={1}
+              minWidth={4}
               onClick={() => onIndexChange(idx)}
-              key={idx}
-            ></Box>
+              transition="all 0.2s ease-in-out"
+            />
           ))}
         </HStack>
       </motion.div>

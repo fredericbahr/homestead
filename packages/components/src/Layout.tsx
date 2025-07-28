@@ -10,8 +10,8 @@
  * See LICENSE for licensing information.
  */
 
-import React from "react";
-import { VStack, Text } from "@chakra-ui/react";
+import { VStack } from "@chakra-ui/react";
+import type React from "react";
 
 interface LayoutProps {
   header: React.ReactNode;
@@ -20,7 +20,7 @@ interface LayoutProps {
 
 export const Layout = ({ header, children }: LayoutProps) => {
   return (
-    <VStack width="100%" gap={12} minHeight="100vh">
+    <VStack gap={12} minHeight="100vh" width="100%">
       {header}
       {children}
     </VStack>

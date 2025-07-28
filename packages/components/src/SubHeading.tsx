@@ -1,4 +1,4 @@
-import { Box, Heading, HStack, Text } from "@chakra-ui/react";
+import { Box, Heading, HStack } from "@chakra-ui/react";
 
 export interface SubHeadingProps {
   /** The text to display as the subheading */
@@ -9,9 +9,9 @@ export interface SubHeadingProps {
 
 export const SubHeading = ({ children, dash }: SubHeadingProps) => {
   return (
-    <HStack width="full" alignItems="center" gap={2}>
-      {dash && <Box width={{ base: "60px", lg: "100px" }} height="5px" backgroundColor="brand.500"></Box>}
-      <Heading as="h2" fontSize={{ base: "3xl", lg: "4xl" }} color="brand.500" fontWeight="semibold">
+    <HStack alignItems="center" gap={2} width="full">
+      {dash && <Box backgroundColor="brand.500" height="5px" width={{ base: "60px", lg: "100px" }} />}
+      <Heading as="h2" color="brand.500" fontSize={{ base: "3xl", lg: "4xl" }} fontWeight="semibold">
         {children}
       </Heading>
     </HStack>

@@ -21,40 +21,40 @@ export const Hero = () => {
 
   return (
     <Grid
+      columnGap={{ base: 0, lg: 12 }}
       gridTemplateColumns={{ base: "1fr", lg: "repeat(3, 1fr)" }}
       gridTemplateRows={{ bg: "1fr 1fr", lg: "1fr" }}
-      columnGap={{ base: 0, lg: 12 }}
       rowGap={{ base: 16, lg: 0 }}
     >
       <motion.div
         initial={{ opacity: 0, x: -300 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        style={{ alignSelf: "center", gridColumn: "1/span 2" }}
         transition={{ delay: 0.5, duration: 0.3 }}
         viewport={{ once: true }}
-        style={{ alignSelf: "center", gridColumn: "1/span 2" }}
+        whileInView={{ opacity: 1, x: 0 }}
       >
-        <VStack alignItems={{ base: "center", lg: "start" }} alignContent="start" gap={{ base: 8, lg: 12 }}>
+        <VStack alignContent="start" alignItems={{ base: "center", lg: "start" }} gap={{ base: 8, lg: 12 }}>
           <VStack alignItems={{ base: "center", lg: "start" }} gap={{ base: 4, lg: 8 }}>
             <VStack alignItems={{ base: "center", lg: "start" }}>
               <Heading
                 as="h1"
-                size={{ base: "xl", lg: "3xl" }}
                 color="brand.500"
+                size={{ base: "xl", lg: "3xl" }}
                 textAlign={{ base: "center", lg: "start" }}
               >
                 <Text>Madita Bahr</Text>
               </Heading>
               <Heading
                 as="h2"
-                size={{ base: "md", lg: "xl" }}
                 color="accent.500"
+                size={{ base: "md", lg: "xl" }}
                 textAlign={{ base: "center", lg: "start" }}
               >
                 sport & health consulting
               </Heading>
             </VStack>
             <VStack alignItems={{ base: "center", lg: "start" }} gap={2}>
-              <Text color={textColor} fontSize="xl" textAlign={{ base: "center", lg: "start" }} fontWeight="semibold">
+              <Text color={textColor} fontSize="xl" fontWeight="semibold" textAlign={{ base: "center", lg: "start" }}>
                 Gesundheit gestalten. Bewegung fördern. Prävention nachhaltig gestalten.
               </Text>
 
@@ -72,19 +72,23 @@ export const Hero = () => {
               </Text>
             </VStack>
           </VStack>
-          <Button size="lg" onClick={() => navigate("/contact?concern=general")} rightIcon={<Icon as={ArrowRight} />}>
+          <Button onClick={() => navigate("/contact?concern=general")} rightIcon={<Icon as={ArrowRight} />} size="lg">
             Kontakt
           </Button>
         </VStack>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, x: 300 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        style={{
+          position: "relative",
+          display: "flex",
+          justifyContent: "center",
+        }}
         transition={{ delay: 0.5, duration: 0.3 }}
         viewport={{ once: true }}
-        style={{ position: "relative", display: "flex", justifyContent: "center" }}
+        whileInView={{ opacity: 1, x: 0 }}
       >
-        <Image src="hero.jpg" alt="Hero Image" zIndex={10} maxWidth={{ base: "70%", lg: "70%" }} borderRadius="xl" />
+        <Image alt="Hero Image" borderRadius="xl" maxWidth={{ base: "70%", lg: "70%" }} src="hero.jpg" zIndex={10} />
       </motion.div>
     </Grid>
   );

@@ -12,25 +12,25 @@
 
 import { Button, Flex, Grid, HStack, Icon, Link, List, ListItem, Text, VStack } from "@chakra-ui/react";
 import { BinaryIcon } from "@phosphor-icons/react";
-import { useNavigate, Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router-dom";
 
 export const Footer = () => {
   const navigate = useNavigate();
 
   return (
     <Grid
-      gridTemplateColumns="repeat(5, 1fr)"
-      width="full"
-      backgroundColor="brand.500"
-      paddingTop={24}
-      paddingBottom={8}
-      paddingX={8}
-      color="white"
-      clipPath="polygon(0 20%, 100% 0, 100% 100%, 0% 100%);"
       alignItems="center"
+      backgroundColor="brand.500"
+      clipPath="polygon(0 20%, 100% 0, 100% 100%, 0% 100%);"
+      color="white"
+      gridTemplateColumns="repeat(5, 1fr)"
+      paddingBottom={8}
+      paddingTop={24}
+      paddingX={8}
       rowGap={16}
+      width="full"
     >
-      <HStack width="full" justifyContent="space-around" alignItems="start" gridColumn="1/5">
+      <HStack alignItems="start" gridColumn="1/5" justifyContent="space-around" width="full">
         <VStack alignItems="start">
           <Text fontSize="xl" textAlign="start">
             Leistungen
@@ -77,18 +77,18 @@ export const Footer = () => {
       </HStack>
       <Flex alignItems="center" justifyContent="center">
         <Button
-          variant="solid"
           backgroundColor="brand.700"
           color="white"
-          size="lg"
           colorScheme="whiteAlpha"
           onClick={() => navigate("/contact?concern=general")}
+          size="lg"
+          variant="solid"
         >
           Kontakt
         </Button>
       </Flex>
-      <VStack gap={0} gridColumn="1/span 5" alignItems="center">
-        <Text width="full" textAlign="center" justifySelf="end">
+      <VStack alignItems="center" gap={0} gridColumn="1/span 5">
+        <Text justifySelf="end" textAlign="center" width="full">
           © {new Date().getFullYear()} Madita Bahr - Alle Rechte vorbehalten
         </Text>
         <Text>

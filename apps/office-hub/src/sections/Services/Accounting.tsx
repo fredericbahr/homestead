@@ -1,29 +1,29 @@
-import { Heading, Image, Flex, Box, Button, VStack, Icon, Stack, UnorderedList, ListItem } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Icon, Image, ListItem, Stack, UnorderedList, VStack } from "@chakra-ui/react";
 import { ArrowRightIcon } from "@phosphor-icons/react";
-import { NavigateFunction, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { type NavigateFunction, useNavigate } from "react-router-dom";
 
 export const Accounting = () => {
   const navigate: NavigateFunction = useNavigate();
 
   return (
-    <Stack direction={{ base: "column-reverse", lg: "row" }} width="full" gap={12} alignItems="start">
+    <Stack alignItems="start" direction={{ base: "column-reverse", lg: "row" }} gap={12} width="full">
       <VStack
-        gap={4}
-        flex={2}
         as={motion.div}
+        flex={2}
+        gap={4}
         initial={{ opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // biome-ignore lint/suspicious/noExplicitAny: <explanation>
         transition={{ delay: 0.1, duration: 0.3 } as any}
         viewport={{ amount: "some", once: true }}
+        whileInView={{ opacity: 1, x: 0 }}
       >
-        <Heading as="h3" id="accounting" size={{ base: "lg", lg: "lg" }} width="full" fontWeight="semibold">
+        <Heading as="h3" fontWeight="semibold" id="accounting" size={{ base: "lg", lg: "lg" }} width="full">
           Buchführung *
         </Heading>
 
         <Box marginLeft={4} width="full">
-          <UnorderedList spacing={2} width="full" textAlign="start"  paddingRight={{ base: 4, lg: 0 }}>
+          <UnorderedList paddingRight={{ base: 4, lg: 0 }} spacing={2} textAlign="start" width="full">
             <ListItem>Sortieren und Ordnen Ihrer Buchhaltungsunterlagen</ListItem>
 
             <ListItem>Buchen der laufenden Geschäftsvorfälle</ListItem>
@@ -44,11 +44,11 @@ export const Accounting = () => {
 
         <Flex width="full">
           <Button
-            variant="ghost"
-            paddingX={2}
             colorScheme="brand"
-            rightIcon={<Icon as={ArrowRightIcon} />}
             onClick={() => navigate("/contact?concern=accounting")}
+            paddingX={2}
+            rightIcon={<Icon as={ArrowRightIcon} />}
+            variant="ghost"
           >
             Jetzt anfragen
           </Button>
@@ -56,19 +56,19 @@ export const Accounting = () => {
       </VStack>
 
       <Image
-        src="./accounting.webp"
+        alignSelf="center"
         alt="Buchführung"
         as={motion.img}
+        borderRadius="lg"
+        flex={1}
+        height="auto"
         initial={{ opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        src="./accounting.webp"
+        // biome-ignore lint/suspicious/noExplicitAny: <explanation>
         transition={{ delay: 0.1, duration: 0.3 } as any}
         viewport={{ amount: "some", once: true }}
+        whileInView={{ opacity: 1, x: 0 }}
         width={{ base: "90%", lg: "25%" }}
-        height="auto"
-        borderRadius="lg"
-        alignSelf="center"
-        flex={1}
       />
     </Stack>
   );

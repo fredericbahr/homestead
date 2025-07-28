@@ -24,7 +24,7 @@ import {
 } from "@chakra-ui/react";
 import emailjs from "@emailjs/browser";
 import { PaperPlaneTiltIcon } from "@phosphor-icons/react";
-import { Select, SingleValue } from "chakra-react-select";
+import { Select, type SingleValue } from "chakra-react-select";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
@@ -87,7 +87,7 @@ export const ContactForm = () => {
     selectedOption: SingleValue<{
       value: string;
       label: string;
-    }>,
+    }>
   ) => setReasonForContact(selectedOption?.value || "general");
 
   /**
@@ -111,7 +111,7 @@ export const ContactForm = () => {
         reasonForContact,
       from_emailcontact: email,
       from_phone: phoneNumber,
-      message: message,
+      message,
     };
 
     if (!verifyEmail(email)) {
@@ -130,7 +130,7 @@ export const ContactForm = () => {
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        templateParams,
+        templateParams
       );
 
       toast({
@@ -145,6 +145,7 @@ export const ContactForm = () => {
       setEmailError(false);
       setPhoneError(false);
     } catch (error) {
+      // biome-ignore lint/suspicious/noConsole: explicit error handling
       console.error("Error sending contact form data", error);
       setIsSending(false);
       toast({
@@ -159,80 +160,80 @@ export const ContactForm = () => {
 
   return (
     <form style={{ flex: 1 }}>
-      <VStack width="full" alignItems="center" spacing={4}>
-        <Stack width="full" spacing={{ base: 4, lg: 8 }} direction={{ base: "column", lg: "row" }}>
+      <VStack alignItems="center" spacing={4} width="full">
+        <Stack direction={{ base: "column", lg: "row" }} spacing={{ base: 4, lg: 8 }} width="full">
           <FormControl isRequired>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1, duration: 0.8 }}>
+            <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ delay: 0.1, duration: 0.8 }}>
               <FormLabel>Vorname</FormLabel>
-              <Input type="text" placeholder="Max" autoComplete="given-name" onChange={handleFirstNameChange} />
+              <Input autoComplete="given-name" onChange={handleFirstNameChange} placeholder="Max" type="text" />
             </motion.div>
           </FormControl>
 
           <FormControl isRequired>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1, duration: 0.8 }}>
+            <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ delay: 0.1, duration: 0.8 }}>
               <FormLabel>Nachname</FormLabel>
-              <Input type="text" placeholder="Mustermann" autoComplete="family-name" onChange={handleLastNameChange} />
+              <Input autoComplete="family-name" onChange={handleLastNameChange} placeholder="Mustermann" type="text" />
             </motion.div>
           </FormControl>
         </Stack>
 
-        <Stack width="full" spacing={{ base: 4, lg: 8 }} direction={{ base: "column", lg: "row" }}>
-          <FormControl isRequired isInvalid={emailError}>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3, duration: 0.8 }}>
+        <Stack direction={{ base: "column", lg: "row" }} spacing={{ base: 4, lg: 8 }} width="full">
+          <FormControl isInvalid={emailError} isRequired>
+            <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ delay: 0.3, duration: 0.8 }}>
               <FormLabel>E-Mail</FormLabel>
               <Input
-                type="email"
-                placeholder="maxmustermann@gmail.com"
                 autoComplete="email"
                 onChange={handleEmailChange}
+                placeholder="maxmustermann@gmail.com"
+                type="email"
               />
               {emailError && <FormErrorMessage>Ungültige E-Mail-Adresse.</FormErrorMessage>}
             </motion.div>
           </FormControl>
 
           <FormControl isInvalid={phoneError}>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3, duration: 0.8 }}>
+            <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ delay: 0.3, duration: 0.8 }}>
               <FormLabel>Telefonnummer</FormLabel>
-              <Input type="tel" placeholder="0176 12345678" autoComplete="tel" onChange={handlePhoneNumberChange} />
+              <Input autoComplete="tel" onChange={handlePhoneNumberChange} placeholder="0176 12345678" type="tel" />
               {phoneError && <FormErrorMessage>Ungültige Telefonnummer.</FormErrorMessage>}
             </motion.div>
           </FormControl>
         </Stack>
 
         <FormControl isRequired>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.8 }}>
+          <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ delay: 0.5, duration: 0.8 }}>
             <FormLabel>Grund der Kontaktaufnahme</FormLabel>
             <Select
-              placeholder="Wähle eine Option"
-              options={reasonForContactOptions}
-              onChange={handleReasonForContactChange}
-              value={reasonForContactOptions.find((contactReason) => contactReason.value === reasonForContact)}
               menuPortalTarget={document.body}
+              onChange={handleReasonForContactChange}
+              options={reasonForContactOptions}
+              placeholder="Wähle eine Option"
+              value={reasonForContactOptions.find((contactReason) => contactReason.value === reasonForContact)}
             />
           </motion.div>
         </FormControl>
 
         <FormControl isRequired>
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7, duration: 0.8 }}>
+          <motion.div animate={{ opacity: 1 }} initial={{ opacity: 0 }} transition={{ delay: 0.7, duration: 0.8 }}>
             <FormLabel>Nachricht</FormLabel>
-            <Textarea placeholder="Deine Nachricht" onChange={handleMessageChange} />
+            <Textarea onChange={handleMessageChange} placeholder="Deine Nachricht" />
           </motion.div>
         </FormControl>
 
         <motion.div
-          initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.9, duration: 0.8 }}
+          initial={{ opacity: 0 }}
           style={{ width: "100%" }}
+          transition={{ delay: 0.9, duration: 0.8 }}
         >
           <Button
-            type="submit"
-            size="lg"
             colorScheme="brand"
-            width="full"
-            rightIcon={<Icon as={PaperPlaneTiltIcon} />}
             isLoading={isSending}
             onClick={handleContactSend}
+            rightIcon={<Icon as={PaperPlaneTiltIcon} />}
+            size="lg"
+            type="submit"
+            width="full"
           >
             Absenden
           </Button>

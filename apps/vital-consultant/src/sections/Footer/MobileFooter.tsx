@@ -18,16 +18,16 @@ import { Link as RouterLink } from "react-router-dom";
 export const MobileFooter = () => {
   return (
     <VStack
-      width="full"
-      justifyContent="space-around"
-      paddingTop={16}
-      paddingBottom={6}
       backgroundColor="brand.500"
       clipPath="polygon(0 15%, 100% 0, 100% 100%, 0% 100%);"
       color="white"
       gap={4}
+      justifyContent="space-around"
+      paddingBottom={6}
+      paddingTop={16}
+      width="full"
     >
-      <VStack width="full" alignItems="center" gap={6}>
+      <VStack alignItems="center" gap={6} width="full">
         <VStack alignItems="center">
           <Text fontSize="xl" textAlign="center">
             Leistungen
@@ -59,18 +59,18 @@ export const MobileFooter = () => {
         </VStack>
       </VStack>
 
-      <HStack width="full" justifyContent="space-around">
-        <ColorThemeSwitch color="white" boxSize={6} />
+      <HStack justifyContent="space-around" width="full">
+        <ColorThemeSwitch boxSize={6} color="white" />
       </HStack>
 
-      <HStack width="full" justifyContent="space-around">
+      <HStack justifyContent="space-around" width="full">
         <Link as={RouterLink} to="/imprint">
           <Text>Impressum</Text>
         </Link>
       </HStack>
 
-      <VStack gap={0} gridColumn="1/span 5" alignItems="center">
-        <Text width="full" textAlign="center" justifySelf="end">
+      <VStack alignItems="center" gap={0} gridColumn="1/span 5">
+        <Text justifySelf="end" textAlign="center" width="full">
           © {new Date().getFullYear()} Madita Bahr - Alle Rechte vorbehalten
         </Text>
         <Text>

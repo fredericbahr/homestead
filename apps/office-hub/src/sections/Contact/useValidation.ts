@@ -12,13 +12,16 @@
 
 /** Custom hook for validation contact information */
 export const useValidation = () => {
+  const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+  // biome-ignore lint/performance/useTopLevelRegex: hook its top-level regex
+  const phoneRegex = /[0-9]*\/*(\+49)*[ ]*(\([0-9]+\))*([ ]*(-|–)*[ ]*[0-9]+)*/;
+
   /**
    * Verifies if the given email is valid
    * @param email - email to be validated
    * @returns true if email is valid, false otherwise
    */
   const verifyEmail = (email: string): boolean => {
-    const emailRegex = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     return emailRegex.test(email);
   };
 
@@ -28,7 +31,6 @@ export const useValidation = () => {
    * @returns true if phone number is valid, false otherwise
    */
   const verifyPhone = (phone: string): boolean => {
-    const phoneRegex = /[0-9]*\/*(\+49)*[ ]*(\([0-9]+\))*([ ]*(-|–)*[ ]*[0-9]+)*/;
     return phoneRegex.test(phone);
   };
 

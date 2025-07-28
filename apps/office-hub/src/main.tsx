@@ -18,6 +18,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { mainTheme } from "./color-scheme";
 
+// biome-ignore lint/style/noNonNullAssertion: reacts ways
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <>
     <ColorModeScript initialColorMode={mainTheme.config.initialColorMode} />
@@ -26,5 +27,5 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <App />
       </BrowserRouter>
     </StrictMode>
-  </>,
+  </>
 );

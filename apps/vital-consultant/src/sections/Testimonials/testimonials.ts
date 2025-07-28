@@ -1,4 +1,4 @@
-import { TestimonialProps } from "@homestead/components";
+import type { TestimonialProps } from "@homestead/components";
 
 export const testimonials: TestimonialProps[] = [
   {

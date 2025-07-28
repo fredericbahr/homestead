@@ -10,7 +10,7 @@
  * See LICENSE for licensing information.
  */
 
-import { ColorModeWithSystem, extendTheme, type ThemeConfig, withDefaultColorScheme } from "@chakra-ui/react";
+import { type ColorModeWithSystem, extendTheme, type ThemeConfig, withDefaultColorScheme } from "@chakra-ui/react";
 
 /** The config of the theme */
 const config: ThemeConfig = {
@@ -49,5 +49,5 @@ export const mainTheme = extendTheme(
       },
     },
   },
-  withDefaultColorScheme({ colorScheme: "brand" }),
+  withDefaultColorScheme({ colorScheme: "brand" })
 );

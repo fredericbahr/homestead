@@ -25,16 +25,16 @@ export const Contact = () => {
   }, []);
 
   return (
-    <Center width="80%" display="flex" flexDirection="column" justifyContent="start" minHeight="full" flex={1}>
+    <Center display="flex" flex={1} flexDirection="column" justifyContent="start" minHeight="full" width="80%">
       <Grid
+        gap={{ base: 8, lg: 0 }}
         gridTemplateColumns={{ base: "1fr", lg: "1fr 1fr" }}
         gridTemplateRows={{ base: "", lg: "1fr" }}
-        gap={{ base: 8, lg: 0 }}
       >
         <GridItem>
           <ContactInfo />
         </GridItem>
-        <GridItem width="full" display="flex" alignItems="center" justifyContent="center">
+        <GridItem alignItems="center" display="flex" justifyContent="center" width="full">
           <ContactForm />
         </GridItem>
       </Grid>

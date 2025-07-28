@@ -1,6 +1,7 @@
 {
   "extends": "@homestead/config-ts/tsconfig.json",
   "compilerOptions": {
+    "strict": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext", "WebWorker"],
     "useDefineForClassFields": true,
     "isolatedModules": true,

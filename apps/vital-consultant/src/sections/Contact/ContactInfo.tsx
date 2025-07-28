@@ -32,59 +32,59 @@ export const ContactInfo = () => {
   const handleLocationClick = (): void => {
     window.open(
       "https://www.google.com/maps/place/Fulda/@50.582862,9.4255003,10z/data=!3m1!4b1!4m6!3m5!1s0x47a337c78acc4d2b:0x377adbfb47a9813b!8m2!3d50.5557877!4d9.68084!16zL20vMDFjeDY3?entry=ttu",
-      "_blank",
+      "_blank"
     );
   };
 
   return (
     <VStack
-      spacing={{ base: 6, lg: 12 }}
       alignItems={{ base: "center", lg: "start" }}
       height="full"
       justifyContent={{ lg: "space-evenly" }}
+      spacing={{ base: 6, lg: 12 }}
     >
-      <VStack spacing={{ base: 2, lg: 6 }} alignItems={{ base: "center", lg: "start" }}>
+      <VStack alignItems={{ base: "center", lg: "start" }} spacing={{ base: 2, lg: 6 }}>
         <Heading as="h2" color="brand.500" fontSize={{ base: "5xl", lg: "6xl" }}>
           <motion.span
             initial={{ opacity: 0, y: -50 }}
-            whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.5 }}
             viewport={{ once: true }}
+            whileInView={{ opacity: 1, y: 0 }}
           >
             Kontakt
           </motion.span>
         </Heading>
         <Text
-          maxWidth={{ base: "full", lg: "50%" }}
-          textAlign={{ base: "center", lg: "start" }}
           color={textColor}
           fontSize="lg"
+          maxWidth={{ base: "full", lg: "50%" }}
+          textAlign={{ base: "center", lg: "start" }}
         >
           <motion.span
             initial={{ opacity: 0, y: -50 }}
-            whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
             viewport={{ once: true }}
+            whileInView={{ opacity: 1, y: 0 }}
           >
             Irgendwelche Fragen? Kontaktiere mich und ich werde mich so schnell wie möglich bei Ihnen melden.
           </motion.span>
         </Text>
       </VStack>
-      <VStack spacing={4} alignItems={{ base: "center", lg: "start" }}>
+      <VStack alignItems={{ base: "center", lg: "start" }} spacing={4}>
         <motion.div
           initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.5 }}
           viewport={{ once: true }}
+          whileInView={{ opacity: 1, y: 0 }}
         >
           <Button
+            _hover={{ backgroundColor: "brand.400" }}
+            backgroundColor="brand.500"
+            color="white"
+            leftIcon={<Icon as={EnvelopeSimpleIcon} boxSize={5} color="white" />}
+            onClick={handleEmailClick}
             size="lg"
             variant="ghost"
-            color="white"
-            backgroundColor="brand.500"
-            leftIcon={<Icon as={EnvelopeSimpleIcon} color="white" boxSize={5} />}
-            onClick={handleEmailClick}
-            _hover={{ backgroundColor: "brand.400" }}
           >
             maditabahr@web.de
           </Button>
@@ -92,17 +92,17 @@ export const ContactInfo = () => {
 
         <motion.div
           initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.5 }}
           viewport={{ once: true }}
+          whileInView={{ opacity: 1, y: 0 }}
         >
           <Button
+            _hover={{ border: `2px solid ${brand500}` }}
+            color={buttonColor}
+            leftIcon={<Icon as={MapPinLineIcon} boxSize={5} color={buttonColor} />}
+            onClick={handleLocationClick}
             size="lg"
             variant="ghost"
-            color={buttonColor}
-            _hover={{ border: `2px solid ${brand500}` }}
-            leftIcon={<Icon as={MapPinLineIcon} color={buttonColor} boxSize={5} />}
-            onClick={handleLocationClick}
           >
             Fulda, Hessen
           </Button>

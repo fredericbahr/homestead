@@ -1,4 +1,4 @@
-import { Button, Flex, Heading, Stack, Icon, Image, Box, UnorderedList, ListItem, VStack } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Icon, Image, ListItem, Stack, UnorderedList, VStack } from "@chakra-ui/react";
 import { ArrowRightIcon } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -7,41 +7,41 @@ export const Salary = () => {
   const navigate = useNavigate();
 
   return (
-    <Stack direction={{ base: "column", lg: "row" }} width="full" gap={12} alignItems="start">
+    <Stack alignItems="start" direction={{ base: "column", lg: "row" }} gap={12} width="full">
       <Flex flex={1}>
         <Image
-          src="https://t4.ftcdn.net/jpg/00/90/48/29/240_F_90482998_ruHGNp73UJ5GbK0gv5LMqaHhl7HNLMK3.jpg"
+          alignSelf="center"
           alt="Buchführung"
           as={motion.img}
+          borderRadius="lg"
+          height="auto"
           initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          src="https://t4.ftcdn.net/jpg/00/90/48/29/240_F_90482998_ruHGNp73UJ5GbK0gv5LMqaHhl7HNLMK3.jpg"
+          // biome-ignore lint/suspicious/noExplicitAny: <explanation>
           transition={{ delay: 0.1, duration: 0.3 } as any}
           viewport={{ amount: "some", once: true }}
+          whileInView={{ opacity: 1, x: 0 }}
           width={{ base: "90%", lg: "55%" }}
-          height="auto"
-          borderRadius="lg"
-          alignSelf="center"
         />
       </Flex>
 
       <VStack
-        gap={4}
+        alignSelf="end"
         as={motion.div}
+        flex={1}
+        gap={4}
         initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // biome-ignore lint/suspicious/noExplicitAny: <explanation>
         transition={{ delay: 0.1, duration: 0.3 } as any}
         viewport={{ amount: "some", once: true }}
-        alignSelf="end"
-        flex={1}
+        whileInView={{ opacity: 1, x: 0 }}
       >
-        <Heading as="h3" id="salary" size={{ base: "lg", lg: "lg" }} width="full" fontWeight="semibold">
+        <Heading as="h3" fontWeight="semibold" id="salary" size={{ base: "lg", lg: "lg" }} width="full">
           Lohn- und Gehaltsabrechnungen *
         </Heading>
 
         <Box marginLeft={4} width="full">
-          <UnorderedList spacing={2} width="full" textAlign="start" paddingRight={{ base: 4, lg: 0 }}>
+          <UnorderedList paddingRight={{ base: 4, lg: 0 }} spacing={2} textAlign="start" width="full">
             <ListItem>Monatliche lfd. Lohn- und Gehaltsabrechnungen</ListItem>
 
             <ListItem>Sämtliche Arbeiten des Sozialversicherungsmeldewesens</ListItem>
@@ -56,11 +56,11 @@ export const Salary = () => {
 
         <Flex width="full">
           <Button
-            variant="ghost"
-            paddingX={2}
             colorScheme="brand"
-            rightIcon={<Icon as={ArrowRightIcon} />}
             onClick={() => navigate("/contact?concern=salary")}
+            paddingX={2}
+            rightIcon={<Icon as={ArrowRightIcon} />}
+            variant="ghost"
           >
             Jetzt anfragen
           </Button>

@@ -1,4 +1,4 @@
-import { Button, Flex, Heading, Stack, Icon, Image, VStack, Box, ListItem, UnorderedList } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Icon, Image, ListItem, Stack, UnorderedList, VStack } from "@chakra-ui/react";
 import { ArrowRightIcon } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -7,23 +7,23 @@ export const OfficeServices = () => {
   const navigate = useNavigate();
 
   return (
-    <Stack direction={{ base: "column-reverse", lg: "row" }} width="full" gap={12} alignItems="start">
+    <Stack alignItems="start" direction={{ base: "column-reverse", lg: "row" }} gap={12} width="full">
       <VStack
-        gap={4}
-        flex={1}
         as={motion.div}
+        flex={1}
+        gap={4}
         initial={{ opacity: 0, x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        // biome-ignore lint/suspicious/noExplicitAny: <explanation>
         transition={{ delay: 0.1, duration: 0.3 } as any}
         viewport={{ amount: "some", once: true }}
+        whileInView={{ opacity: 1, x: 0 }}
       >
-        <Heading as="h3" id="office-services" size={{ base: "lg", lg: "lg" }} width="full" fontWeight="semibold">
+        <Heading as="h3" fontWeight="semibold" id="office-services" size={{ base: "lg", lg: "lg" }} width="full">
           Bürodienstleistungen
         </Heading>
 
         <Box marginLeft={4} width="full">
-          <UnorderedList spacing={2} width="full" textAlign="start"  paddingRight={{ base: 4, lg: 0 }}>
+          <UnorderedList paddingRight={{ base: 4, lg: 0 }} spacing={2} textAlign="start" width="full">
             <ListItem>Rechtssicherere digitale Dokumentanablage</ListItem>
             <ListItem>Beleggutarchivierung</ListItem>
             <ListItem>Faktuierung ihrer Dienstleistungen und Produkte & Mahnwesen</ListItem>
@@ -32,11 +32,11 @@ export const OfficeServices = () => {
 
         <Flex width="full">
           <Button
-            variant="ghost"
-            paddingX={2}
             colorScheme="brand"
-            rightIcon={<Icon as={ArrowRightIcon} />}
             onClick={() => navigate("/contact?concern=office-services")}
+            paddingX={2}
+            rightIcon={<Icon as={ArrowRightIcon} />}
+            variant="ghost"
           >
             Jetzt anfragen
           </Button>
@@ -44,18 +44,18 @@ export const OfficeServices = () => {
       </VStack>
 
       <Image
-        src="./office-services.webp"
+        alignSelf="center"
         alt="Bürodienstleistungen"
         as={motion.img}
+        borderRadius="lg"
+        height="auto"
         initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        src="./office-services.webp"
+        // biome-ignore lint/suspicious/noExplicitAny: <explanation>
         transition={{ delay: 0.1, duration: 0.3 } as any}
         viewport={{ amount: "some", once: true }}
+        whileInView={{ opacity: 1, x: 0 }}
         width={{ base: "70%", lg: "30%" }}
-        height="auto"
-        borderRadius="lg"
-        alignSelf="center"
       />
     </Stack>
   );

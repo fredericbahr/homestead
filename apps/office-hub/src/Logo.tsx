@@ -1,14 +1,15 @@
 export const Logo = (props: { height: number } & { light?: boolean }) => {
   return (
     <svg
+      preserveAspectRatio="xMidYMid meet"
+      version="1.0"
+      viewBox="117.16 153.93 275.84 206.07"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       zoomAndPan="magnify"
-      viewBox="117.16 153.93 275.84 206.07"
-      preserveAspectRatio="xMidYMid meet"
-      version="1.0"
       {...props}
     >
+      <title>Logo</title>
       <g fill="#096">
         <path d="M187.2 155.2c-1.8 1.8-1.7 62.8.1 62.8.6 0 2.2.3 3.5.6l2.2.6V162h106v32h8v-19c0-17.7-.1-19-1.9-20-3-1.5-116.3-1.4-117.9.2" />
         <path d="M210 183v2.9l37-.2 37-.2V180h-74zm0 15.5v2.5h28.3l28.2-.1 1.8-2.4 1.8-2.5H210zm64.2 3.7c-.8.8-1.2 6.2-1.2 17.5V236h81v-16.3c0-11.3-.4-16.7-1.2-17.5-1.7-1.7-76.9-1.7-78.6 0m71.3 16.8v9.5l-32.2.3-32.3.2v-20l32.3.2 32.2.3z" />

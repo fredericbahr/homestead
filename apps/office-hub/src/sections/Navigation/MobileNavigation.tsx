@@ -19,43 +19,43 @@ interface MobileNavigationProps {
 
 export const MobileNavigation = ({ onNavigation }: MobileNavigationProps) => {
   return (
-    <List alignSelf="start" spacing={3} fontSize="large">
+    <List alignSelf="start" fontSize="large" spacing={3}>
       <ListItem>
-        <Link as={HashLink} smooth to="/#appointment-heading" onClick={onNavigation}>
+        <Link as={HashLink} onClick={onNavigation} smooth to="/#appointment-heading">
           Leistungen
         </Link>
         <List
           borderLeft="1px solid"
           borderLeftColor="gray.300"
+          marginLeft={2}
+          marginTop={2}
           paddingLeft={3}
           spacing={1}
-          marginTop={2}
-          marginLeft={2}
         >
           <ListItem>
-            <Link as={HashLink} smooth to="/#accounting" onClick={onNavigation}>
+            <Link as={HashLink} onClick={onNavigation} smooth to="/#accounting">
               Buchführung
             </Link>
           </ListItem>
           <ListItem>
-            <Link as={HashLink} smooth to="/#salary" onClick={onNavigation}>
+            <Link as={HashLink} onClick={onNavigation} smooth to="/#salary">
               Lohn- und Gehaltsabrechnungen
             </Link>
           </ListItem>
           <ListItem>
-            <Link as={HashLink} smooth to="/#office-services" onClick={onNavigation}>
+            <Link as={HashLink} onClick={onNavigation} smooth to="/#office-services">
               Bürodienstleistungen
             </Link>
           </ListItem>
         </List>
       </ListItem>
       <ListItem>
-        <Link as={HashLink} smooth to="/#about-me" onClick={onNavigation}>
+        <Link as={HashLink} onClick={onNavigation} smooth to="/#about-me">
           Über mich
         </Link>
       </ListItem>
       <ListItem>
-        <Link as={HashLink} smooth to="/#references" onClick={onNavigation}>
+        <Link as={HashLink} onClick={onNavigation} smooth to="/#references">
           Referenzen
         </Link>
       </ListItem>
