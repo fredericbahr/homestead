@@ -34,11 +34,11 @@
     "configs/*"
   ],
   "devDependencies": {
-    "@biomejs/biome": "2.1.2",
+    "@biomejs/biome": "2.2.5",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.2",
-    "turbo": "^2.5.4",
-    "ultracite": "5.0.35"
+    "turbo": "^2.5.8",
+    "ultracite": "5.6.1"
   },
   "lint-staged": {
     "apps/**/*.{js,ts,jsx,tsx}": [
@@ -58,5 +58,5 @@
     "node": "22.14.0",
     "npm": "10.9.2"
   },
-  "packageManager": "npm@10.9.3"
+  "packageManager": "npm@10.9.4"
 }
