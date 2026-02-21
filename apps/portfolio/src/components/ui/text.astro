@@ -1,0 +1,31 @@
+---
+import { cn } from "@lib/utils";
+
+interface Props {
+  variant?: TextVariant;
+  as?: "p" | "span";
+  class?: string;
+}
+
+type TextVariant = "p" | "blockquote" | "lead" | "large" | "small" | "muted";
+
+const { variant = "p", as = "p", class: className = "" } = Astro.props;
+
+const baseClasses: Record<TextVariant, string> = {
+  p: "leading-7",
+  blockquote: "mt-6 border-l-2 pl-6 italic",
+  lead: "text-muted-foreground text-xl",
+  large: "text-lg font-semibold",
+  small: "text-sm leading-5",
+  muted: "text-muted-foreground text-sm",
+} as const;
+
+const Tag = variant === "blockquote" ? "blockquote" : as;
+const classes = cn(
+  `${baseClasses[variant as TextVariant]} ${className}`.trim(),
+);
+---
+
+<Tag class={classes}>
+  <slot />
+</Tag>

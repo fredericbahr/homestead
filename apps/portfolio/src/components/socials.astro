@@ -1,0 +1,58 @@
+---
+import Tooltip from "@components/ui/tooltip.astro";
+---
+
+<div class="md:fixed bottom-0 left-[4%] pb-8 md:pb-0">
+  <ul
+    class="flex md:flex-col items-center gap-4 w-full justify-center
+           md:after:content-['']
+           md:after:block
+           md:after:h-22.5
+           md:after:w-px
+           md:after:mt-4
+           after:bg-gray-600
+           dark:after:bg-gray-200"
+  >
+    <!-- Github -->
+    <li>
+      <div class="relative group">
+        <a
+          href="https://github.com/fredericbahr"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Github"
+          class="text-2xl transition-all duration-200 ease-in-out
+                 hover:text-primary
+                 hover:-translate-y-1
+                 hover:scale-110
+                 inline-block"
+        >
+          <i class="ph ph-github-logo"></i>
+        </a>
+
+        <Tooltip> GitHub </Tooltip>
+      </div>
+    </li>
+
+    <!-- Linkedin -->
+    <li>
+      <div class="relative group">
+        <a
+          href="https://www.linkedin.com/in/frederic-bahr-446925251/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Linkedin"
+          class="text-2xl transition-all duration-200 ease-in-out
+                 hover:text-primary
+                 hover:-translate-y-1
+                 hover:scale-110
+                 inline-block"
+        >
+          <i class="ph ph-linkedin-logo"></i>
+        </a>
+
+        <Tooltip>LinkedIn</Tooltip>
+      </div>
+    </li>
+  </ul>
+</div>

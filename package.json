@@ -42,13 +42,13 @@
   },
   "lint-staged": {
     "apps/**/*.{js,ts,jsx,tsx}": [
-      "npx ultracite format"
+      "npx ultracite fix"
     ],
     "packages/**/*.{js,ts,jsx,tsx}": [
-      "npx ultracite format"
+      "npx ultracite fix"
     ],
     "*.{json,md}": [
-      "npx ultracite format"
+      "npx ultracite fix"
     ]
   },
   "volta": {

@@ -1,0 +1,93 @@
+---
+import "../styles/global.css";
+import { getLangFromUrl } from "@i18n/utils";
+import { SEO } from "astro-seo";
+import logo from "../assets/logo.png";
+import Header from "@components/header.astro";
+import Footer from "@components/footer.astro";
+import Socials from "@components/socials.astro";
+import ThemeScript from "@lib/theme.astro";
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const lang = getLangFromUrl(Astro.url);
+const title = "Portfolio | Frederic Bahr";
+const description =
+  "Portfolio von Frederic Bahr - Software Developer für skalierbare Design Systeme und innovative Anwendungen, die Nutzerprobleme lösen und Prozesse vereinfachen.";
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <SEO
+      title={title}
+      description={description}
+      openGraph={{
+        basic: {
+          type: "website",
+          url: Astro.url,
+          title,
+          image: new URL(logo.src, Astro.url).href,
+        },
+        optional: {
+          description,
+          locale: "de_DE",
+        },
+        image: {
+          url: new URL(logo.src, Astro.url).href,
+          width: logo.width,
+          height: logo.height,
+          alt: title,
+          type: logo.format ? `image/${logo.format}` : undefined,
+        },
+      }}
+      twitter={{
+        card: "summary_large_image",
+        title,
+        description,
+        image: new URL(logo.src, Astro.url).href,
+      }}
+    />
+    <ThemeScript />
+
+    <link rel="icon" type="image/x-icon" href="/logo.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+      rel="preconnect"
+    />
+
+    <!-- Phosphor Icons -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      rel="preconnect"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"
+    />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body class="flex flex-col gap-8 mt:gap-12">
+    <Header />
+    <main class="max-w-[90%] md:max-w-[80%] mx-auto">
+      <slot />
+    </main>
+    <Footer />
+    <Socials />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

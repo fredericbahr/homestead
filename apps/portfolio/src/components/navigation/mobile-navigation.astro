@@ -1,0 +1,71 @@
+---
+import { ModeToggle } from "@components/ui/mode-toggle";
+import { Separator } from "@components/ui/separator";
+
+import { getLangFromUrl } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<nav class="flex flex-col gap-4 mt-2" style="counter-reset: navitem 0;">
+  <ol class="flex flex-col gap-3 list-none text-lg">
+    <li style="counter-increment: navitem 1;">
+      <a
+        href="/#about"
+        class="relative hover:text-primary hover:no-underline
+               before:content-['0'counter(navitem)'.']
+               before:mr-2
+               before:text-xs
+               before:text-primary"
+      >
+        Über mich
+      </a>
+    </li>
+
+    <li style="counter-increment: navitem 1;">
+      <a
+        href="/#experience"
+        class="relative hover:text-primary hover:no-underline
+               before:content-['0'counter(navitem)'.']
+               before:mr-2
+               before:text-xs
+               before:text-primary"
+      >
+        Erfahrung
+      </a>
+    </li>
+
+    <li style="counter-increment: navitem 1;">
+      <a
+        href="/#projects"
+        class="relative hover:text-primary hover:no-underline
+               before:content-['0'counter(navitem)'.']
+               before:mr-2
+               before:text-xs
+               before:text-primary"
+      >
+        Projekte
+      </a>
+    </li>
+
+    <li style="counter-increment: navitem 1;">
+      <a
+        href="/contact"
+        class="relative hover:text-primary hover:no-underline
+               before:content-['0'counter(navitem)'.']
+               before:mr-2
+               before:text-xs
+               before:text-primary"
+      >
+        Kontakt
+      </a>
+    </li>
+  </ol>
+
+  <Separator />
+
+  <!-- Bottom controls -->
+  <div class="flex flex-row items-center justify-start gap-8">
+    <ModeToggle client:idle lang={lang} />
+  </div>
+</nav>

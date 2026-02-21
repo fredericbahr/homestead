@@ -1,0 +1,68 @@
+---
+import Group from "@components/ui/group.astro";
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+
+<nav style="counter-reset: navitem 0;">
+  <Group as="ol" class="flex flex-row gap-8 list-none">
+    <li style="counter-increment: navitem 1;">
+      <a
+        href={translatePath("/#home")}
+        class="relative text-base hover:text-primary hover:no-underline
+               before:content-['0'counter(navitem)'.']
+               before:mr-2
+               before:text-sm
+               before:text-primary"
+      >
+        {t("nav.about")}
+      </a>
+    </li>
+
+    <li style="counter-increment: navitem 1;">
+      <a
+        href={translatePath("/#experience")}
+        class="relative text-base hover:text-primary hover:no-underline
+               before:content-['0'counter(navitem)'.']
+               before:mr-2
+               before:text-sm
+               before:text-primary"
+      >
+        {t("nav.experience")}
+      </a>
+    </li>
+
+    <li style="counter-increment: navitem 1;">
+      <a
+        href={translatePath("/#projects")}
+        class="relative text-base hover:text-primary hover:no-underline
+               before:content-['0'counter(navitem)'.']
+               before:mr-2
+               before:text-sm
+               before:text-primary"
+      >
+        {t("nav.projects")}
+      </a>
+    </li>
+
+    <li style="counter-increment: navitem 1;">
+      <a
+        href={translatePath("/contact")}
+        class="relative text-base hover:text-primary hover:no-underline
+               before:content-['0'counter(navitem)'.']
+               before:mr-2
+               before:text-sm
+               before:text-primary"
+      >
+        {t("nav.contact")}
+      </a>
+    </li>
+  </Group>
+</nav>

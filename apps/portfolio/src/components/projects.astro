@@ -1,0 +1,17 @@
+---
+import Heading from "@components/ui/heading.astro";
+import Stack from "@components/ui/stack.astro";
+
+import { ProjectTabs } from "@components/ui/project/project-tabs";
+
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Stack spacing={8} class="w-full">
+  <Heading class="mb-4" id="projects">{t("projects.heading")}</Heading>
+
+  <ProjectTabs lang={lang}/>
+</Stack>

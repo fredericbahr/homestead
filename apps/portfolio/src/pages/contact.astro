@@ -1,0 +1,44 @@
+---
+import Group from "@components/ui/group.astro";
+import Link from "@components/ui/link.astro";
+import { Input } from "@components/ui/input";
+import { Textarea } from "@components/ui/textarea";
+import Stack from "@components/ui/stack.astro";
+import Text from "@components/ui/text.astro";
+import Layout from "@layouts/Layout.astro";
+import { DencryptButton } from "@components/ui/button-deycrpt";
+---
+
+<Layout>
+  <Stack spacing={18}>
+    <h1 class="text-3xl text-start font-bold">
+      Komm mit mir ins Gespräch - Ich bin nur eine Nachricht entfernt!
+    </h1>
+
+    <Text class="lg:max-w-[65%]">
+      Für eine gute Unterhaltung bin ich immer zu haben, sei es über ein
+      Projekt, ein Jobangebot oder einfach nur, um Hallo zu sagen. Zögere nicht,
+      mich über das Kontaktformular oder direkt per E-Mail zu erreichen.
+    </Text>
+
+    <Group>
+      <i class="ph ph-envelope-simple text-xl"></i>
+      <Link href="mailto:fredericbahr1@gmail.com">fredericbahr1@gmail.com</Link>
+    </Group>
+
+    <Stack class="w-full">
+      <Text>Schreib mir eine Nachricht!</Text>
+      <form class="grid grid-cols-1 lg:grid-cols-2 grid-rows-2 gap-4 w-full h-full">
+        <Input placeholder="Name" autoComplete="name" className="row-start-1" />
+        <Input
+          placeholder="E-Mail"
+          autoComplete="email"
+          className="row-start-2"
+        />
+        <Textarea placeholder="Nachricht" className="row-span-2" />
+      </form>
+
+      <DencryptButton label="Senden" client:load className="self-end" />
+    </Stack>
+  </Stack>
+</Layout>

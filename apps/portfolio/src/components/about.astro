@@ -1,0 +1,50 @@
+---
+import Heading from "@components/ui/heading.astro";
+import Stack from "@components/ui/stack.astro";
+import Text from "@components/ui/text.astro";
+import {List} from "@components/ui/list";
+
+import {
+  getLangFromUrl,
+  useTranslations,
+} from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Stack spacing={4}>
+  <Heading class="mb-4" id="about">{t("about.heading")}</Heading>
+
+  <Text>
+    {t("about.sectionOne")}
+  </Text>
+
+  <Text>
+    {t("about.sectionTwo")}
+  </Text>
+
+  <Text>
+    {t("about.sectionThree")}
+  </Text>
+
+  <Text>
+    {t("about.sectionFour")}
+  </Text>
+
+  <List
+    icon
+    className="grid grid-cols-2 gap-x-4"
+    items={[
+      "TypeScript",
+      "React",
+      "Web Components",
+      "Node.js",
+      "Express",
+      "Jest",
+      "Playwright",
+      "Lit",
+      "Astro",
+    ]}
+  />
+</Stack>

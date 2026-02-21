@@ -1,0 +1,47 @@
+---
+export interface Props {
+  id?: string;
+  class?: string;
+}
+
+const { id, class: className } = Astro.props;
+---
+
+<h2
+  id={id}
+  class={`relative flex items-center justify-center w-full
+          mt-4 lg:mt-12
+          text-3xl lg:text-4xl font-normal
+          ${className ?? ""}`}
+  style="counter-increment: heading 1;"
+>
+  <!-- Counter -->
+  <span
+    class="
+      before:content-['0'counter(heading)'.']
+      before:mr-3
+      before:text-lg
+      before:text-primary
+      before:self-end
+      before:mb-1.5
+    "
+  />
+
+  <!-- Title -->
+  <span class="whitespace-nowrap">
+    <slot />
+  </span>
+
+  <!-- Dash -->
+  <span
+    class="
+      hidden lg:block
+      flex-1
+      h-px
+      bg-gray-300
+      ml-8
+      mt-3
+      min-w-[16rem]
+    "
+  />
+</h2>

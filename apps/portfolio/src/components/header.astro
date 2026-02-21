@@ -1,0 +1,34 @@
+---
+import Group from "@components/ui/group.astro";
+import Navigation from "@components/navigation/navigation.astro";
+import MobileNavigation from "@components/navigation/mobile-navigation.astro";
+import NavbarDrawer from "@components/ui/drawer/navbar-drawer";
+import { ModeToggle } from "@components/ui/mode-toggle";
+import logo from "../assets/logo.png";
+import { Image } from "astro:assets";
+
+import { getLangFromUrl } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<header class="mt-2 mx-8">
+  <Group align="center" spacing="0.5rem" class="justify-between">
+    <a href="/">
+      <Image src={logo} alt="Logo" width={32} height={32} />
+    </a>
+
+    <div class="hidden md:block">
+      <Group>
+        <Navigation />
+        <ModeToggle client:idle lang={lang} />
+      </Group>
+    </div>
+
+    <div class="block md:hidden">
+      <NavbarDrawer client:idle>
+        <MobileNavigation />
+      </NavbarDrawer>
+    </div>
+  </Group>
+</header>

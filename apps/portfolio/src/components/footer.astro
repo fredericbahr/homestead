@@ -1,0 +1,20 @@
+---
+import Text from "@components/ui/text.astro";
+import Binary from "@assets/binary.svg";
+import { Image } from "astro:assets";
+
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="mt-2 md:pb-12 max-w-[80%] mx-auto text-xs md:text-sm text-start">
+  <div class="flex flex-col md:flex-row items-center gap-2">
+    <Text>&copy; {currentYear}</Text>
+    <Text> {t("footer.developedBy")} </Text>
+    <Image src={Binary} alt="Binär" />
+    <Text>{t("footer.rights")} </Text>
+  </div>
+</footer>

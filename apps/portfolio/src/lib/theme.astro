@@ -1,0 +1,40 @@
+<script is:inline>
+  const storageAvailable = typeof localStorage !== "undefined";
+
+  const getStoredTheme = () => {
+    if (!storageAvailable) return null;
+    return localStorage.getItem("theme");
+  };
+
+  const getSystemTheme = () =>
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+
+  const resolveTheme = () => {
+    return getStoredTheme() ?? getSystemTheme();
+  };
+
+  const applyTheme = (theme) => {
+    const isDark = theme === "dark";
+    document.documentElement.classList.toggle("dark", isDark);
+  };
+
+  const persistThemeOnChange = () => {
+    if (!storageAvailable) return;
+
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  };
+
+  const theme = resolveTheme();
+  applyTheme(theme);
+  persistThemeOnChange();
+</script>

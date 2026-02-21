@@ -1,0 +1,112 @@
+---
+import { Badge } from "@components/ui/badge";
+import Link from "@components/ui/link.astro";
+import { ProjectBreadcrumb } from "@components/ui/project/project-breadcrumb";
+import { Separator } from "@components/ui/separator";
+import Stack from "@components/ui/stack.astro";
+import Text from "@components/ui/text.astro";
+import Layout from "@layouts/Layout.astro";
+import { projects, type Project } from "@lib/projects";
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+export function getStaticPaths() {
+  return projects
+    .map((proj: Project | null) => {
+      if (!proj) {
+        return null;
+      }
+
+      return {
+        params: {
+          pageSlug: proj.url.replace("/", ""),
+        },
+      };
+    })
+    .filter((path): path is NonNullable<typeof path> => path !== null);
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const { pageSlug } = Astro.params;
+
+const project: Project | null | undefined = projects.find(
+  (proj: Project | null) => proj?.url.replace("/", "") === pageSlug,
+);
+
+if (!project) {
+  throw new Error(`Project with slug "${pageSlug}" not found.`);
+}
+---
+
+<Layout>
+  <Stack spacing={8} class="w-full">
+    <ProjectBreadcrumb projectTitle={project.title} lang={lang} />
+
+    <h1 class="text-4xl text-primary font-bold">{project.title}</h1>
+    {project.description && <p class="text-lg">{project.description}</p>}
+
+    <Separator className="border-primary border-2" />
+
+    <div class="flex gap-8">
+      <div class="flex flex-col">
+        <Text class="font-semibold">{t("projects.detail.time-range")}</Text>
+        <span class="text-sm">{project.period}</span>
+      </div>
+
+      <div class="flex flex-col">
+        <Text class="font-semibold">{t("projects.detail.focus")}</Text>
+        <Text as="span" class="text-sm">{project.focus}</Text>
+      </div>
+    </div>
+
+    <div class="flex gap-4">
+      {
+        project.links?.website && (
+          <Link
+            class="flex gap-2 items-center hover:text-primary hover:no-underline"
+            href={project.links.website}
+          >
+            <i class="ph ph-link flex" />
+            <Text as="span">{t("projects.tooltip.website")}</Text>
+          </Link>
+        )
+      }
+
+      {
+        project.links?.github && (
+          <Link
+            class="flex gap-2 items-center hover:text-primary hover:no-underline"
+            href={project.links.github}
+          >
+            <i class="ph ph-github-logo" />
+            <Text as="span">{t("projcets.tooltip.github")}</Text>
+          </Link>
+        )
+      }
+    </div>
+
+    <div class="flex flex-col gap-4">
+      <h2 class="text-3xl font-bold">{t("projects.detail.goal")}</h2>
+
+      <Text>{project.goal}</Text>
+    </div>
+
+    <div class="flex flex-col gap-4">
+      <h2 class="text-3xl font-bold">{t("projects.detail.implementation")}</h2>
+      <Text>{project.realization}</Text>
+    </div>
+
+    <div class="flex flex-col gap-4">
+      <h2 class="text-3xl font-bold">{t("projects.detail.technologies")}</h2>
+
+      <div class="flex flex-wrap gap-2">
+        {project.technologies.map((tech) => <Badge>{tech}</Badge>)}
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-4">
+      <h2 class="text-3xl font-bold">{t("projects.detail.screenshots")}</h2>
+    </div>
+  </Stack>
+</Layout>

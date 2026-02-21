@@ -1,0 +1,32 @@
+---
+import Heading from "@components/ui/heading.astro";
+import Stack from "@components/ui/stack.astro";
+import ExperienceCollapsible from "@components/ui/collapsable/experience-collapsible";
+import { experiences } from "@lib/experience";
+import { DencryptButton } from "./ui/button-deycrpt";
+
+import { getLangFromUrl, useTranslations } from "@i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Stack spacing={8} class="w-full">
+  <Heading class="mb-2 md:mb-4" id="experience"
+    >{t("experience.heading")}</Heading
+  >
+
+  <h3 class="w-full font-bold text-lg md:text-xl text-center">
+    {t("experience.subheading")}
+  </h3>
+
+  {
+    experiences.map((experience) => (
+      <ExperienceCollapsible client:idle experience={experience} lang={lang} />
+    ))
+  }
+
+  <a href="/lebenslauf.pdf" download class="self-center">
+    <DencryptButton label={t("experience.cv")} client:load />
+  </a>
+</Stack>

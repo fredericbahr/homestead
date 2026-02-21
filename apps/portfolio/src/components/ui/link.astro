@@ -1,0 +1,27 @@
+---
+import { cn } from "@lib/utils";
+
+interface Props {
+  href?: string;
+  underline?: boolean;
+  isExternal?: boolean;
+  rel?: string;
+  as?: keyof HTMLElementTagNameMap;
+  class?: string;
+}
+
+const { href = "#", underline = false, isExternal = false, rel, as = "a", class: className = "" } = Astro.props as Props;
+
+const underlineClass = underline ? "underline" : "no-underline";
+
+const Tag = as;
+---
+
+<Tag
+  href={href}
+  target={isExternal ? "_blank" : "_self"}
+  rel={rel}
+  class={cn(`hover:text-primary transition-colors duration-200 hover:underline ${underlineClass} ${className}`)}
+>
+  <slot />
+</Tag>
