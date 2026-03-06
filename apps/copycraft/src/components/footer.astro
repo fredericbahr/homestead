@@ -1,0 +1,98 @@
+---
+import Button from "./ui/button.astro";
+import { Image } from "astro:assets";
+import LogoImage from "@assets/logo.png";
+---
+
+<footer class="border-border/40 relative border-t bg-white px-6 py-16">
+  <div class="mx-auto max-w-7xl">
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-8 lg:gap-12 items-start">
+      {/* Left Column: Brand */}
+      <Image alt="Logo" class="h-auto w-[95%] rounded-[3rem] md:w-[45%]" src={LogoImage} />
+
+      {/* Center Column: Links by Category */}
+      <div class="flex flex-col justify-center space-y-4">
+        <div class="space-y-2">
+          <h4 class="font-heading text-foreground font-bold">Seiten</h4>
+          <div class="flex flex-col">
+            <a
+              href="/"
+              class="flex gap-2 items-center text-muted-foreground hover:text-primary w-fit transition-colors"
+            >
+              Start
+            </a>
+            <a
+              href="/angebote"
+              class="flex gap-2 items-center text-muted-foreground hover:text-primary w-fit transition-colors"
+            >
+              Angebote
+            </a>
+            <a
+              href="/ueber-mich"
+              class="flex gap-2 items-center text-muted-foreground hover:text-primary w-fit transition-colors"
+            >
+              Über mich
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Center Column: Links by Category */}
+      <div class="flex flex-col justify-center space-y-4">
+        <div class="space-y-2">
+          <h4 class="font-heading text-foreground font-bold">Rechtliches</h4>
+          <div class="flex flex-col">
+            <a
+              href="/impressum"
+              class="flex gap-2 items-center text-muted-foreground hover:text-primary w-fit transition-colors"
+              ><i class="ph ph-user"></i>Impressum</a
+            >
+            <a
+              href="/datenschutz"
+              class="flex gap-2 items-center text-muted-foreground hover:text-primary w-fit transition-colors"
+              ><i class="ph ph-cookie"></i> Datenschutz</a
+            >
+          </div>
+        </div>
+      </div>
+
+      {/* Right Column: CTA */}
+      <div class="flex flex-col justify-center space-y-4">
+        <div class="space-y-2">
+          <h4 class="font-heading text-foreground font-bold">Kontakt</h4>
+          <div class="flex flex-col">
+            <a
+              href="mailto:sina@buchstabenfeder.de"
+              class="flex gap-2 items-center text-muted-foreground hover:text-primary w-fit transition-colors"
+              ><i class="ph ph-envelope"></i> sina@buchstabenfeder.de</a
+            >
+            <a
+              href="https://www.instagram.com/buchstabenfeder/"
+              target="_blank"
+              class="flex gap-2 items-center text-muted-foreground hover:text-primary w-fit transition-colors"
+              ><i class="ph ph-instagram-logo"></i> Instagram <i class="ph ph-arrow-square-out"></i></a
+            >
+          </div>
+        </div>
+        <a class="w-full" href="/kontakt">
+          <Button>Termin buchen</Button>
+        </a>
+      </div>
+    </div>
+
+    {/* Divider */}
+    <div class="border-border/40 my-8 border-t"></div>
+
+    {/* Bottom: Copyright */}
+    <div
+      class="text-muted-foreground/60 flex flex-col items-center justify-between gap-4 text-center text-sm md:flex-row"
+    >
+      <p>
+        &copy; {new Date().getFullYear()} Buchstabenfeder - Alle Rechte vorbehalten.
+      </p>
+      <p class="flex items-center justify-center gap-1">
+        Entwickelt von <a href="https://fredericbahr.github.io/">Frederic Bahr</a> mit <i class="ph ph-binary"></i>
+      </p>
+    </div>
+  </div>
+</footer>

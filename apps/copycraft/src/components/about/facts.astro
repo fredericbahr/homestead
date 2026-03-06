@@ -1,0 +1,64 @@
+---
+import Button from "../ui/button.astro";
+---
+
+<section class="relative bg-white/50 px-6 py-24 md:px-12 lg:px-24" id="features">
+  <div class="mx-auto max-w-7xl flex flex-col justify-center gap-12">
+    <div class="mx-auto max-w-7xl flex flex-col justify-center gap-12">
+      <div class="space-y-4 text-center">
+        <span class="font-hand text-primary text-xl md:text-2xl">Interessantes über mich</span>
+        <h2 class="font-heading text-foreground text-3xl font-bold md:text-5xl mt-2">Abseits der Feder</h2>
+      </div>
+
+      <p class="text-center text-lg md:text-xl">
+        Wenn ich nicht gerade an Sätzen feile, triffst du mich wahrscheinlich zwischen den Rhöner Hügeln auf dem <strong
+          >Motorrad</strong
+        >
+        an oder findest mich bei der <strong>Formel 1</strong> mitfiebern. Auch beim Tanzen bekomme ich den Kopf frei (Female,
+        Hip Hop & Showtanz).
+      </p>
+
+      <p class="text-center text-lg md:text-xl">
+        Zum Adrenalin-Ausgleich verschlinge ich regelmäßig <strong>Bücher</strong> und gieße leidenschaftlich gerne kreative
+        <strong>Kerzen</strong>. Ich entdecke gerne die Welt, indem ich sämtliche Länder bereise und gerne zu Fuß
+        erkunde. <strong>Madeira, Kreta & Norwegen</strong>
+        gehören definitiv zu meinen liebsten Plätzen.
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-6">
+      <p class="text-xl text-primary text-center font-bold">Knackige Fakten:</p>
+
+      <ul class="space-y-3 mx-auto max-w-2xl">
+        {
+          [
+            "Mein Soul-Food? Hauptsache, es sind Nudeln dabei.",
+            "Durch und durch Frühlingskind",
+            "Trotz Behörde nie zur Kaffee-Trinkerin mutiert (Cappuccino ist kein Kaffee!)",
+            "Sonnenuntergänge > Sonnenaufgänge",
+            "Autofahren und dabei zu alten Songs mitgrölen ist meine Therapie",
+            "Milou, meine Diva auf vier Katzentatzen, ist bei jedem deiner Texte mit am Start",
+          ].map((item) => (
+            <li class="flex items-start gap-3">
+              <i class="ph ph-arrow-circle-right text-primary mt-1 text-xl shrink-0 fill-current" />
+              <span class="text-muted-foreground text-lg">{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+
+      <p class="text-center text-lg md:text-xl">
+        Uff, jetzt habe ich die ganze Zeit nur von mir geredet.<br /> Wer sitzt da eigentlich auf der anderen Seite des Bildschirms?
+        Was macht dich aus?
+      </p>
+
+      <div class="flex flex-col items-center">
+        <a href="/kontakt">
+          <Button class="mt-8 px-8 py-2 text-md md:text-lg">Lass mal schnacken!</Button>
+        </a>
+
+        <p class="italic text-sm mt-2 text-center md:text-start">Kostenfreier und unverbindlicher Kennenlern-Call.</p>
+      </div>
+    </div>
+  </div>
+</section>

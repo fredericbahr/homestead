@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+import AboutLogo from "@assets/about.png";
+import Button from "../ui/button.astro";
+---
+
+<section class="bg-white/50 flex flex-col gap-8 md:gap-12 items-center justify-center px-6 py-24 text-center">
+  <div class="space-y-4 text-center">
+    <span class="font-hand text-primary text-xl md:text-2xl">Über mich</span>
+    <h2 class="font-heading text-foreground text-3xl font-bold md:text-5xl mt-2">Deine neue Schreibtante</h2>
+  </div>
+
+  <div class="flex flex-col gap-8 mx-auto justify-center items-center max-w-7xl md:flex-row">
+    <Image alt="Hero" class="h-auto w-[95%] mx-auto rounded-[3rem] shadow-2xl md:w-[45%]" src={AboutLogo} />
+
+    <div class="flex flex-col gap-4 text-start">
+      <p class="text-muted-foreground max-w-xl text-md leading-relaxed md:text-lg">
+        Ich weiß, wie es sich anfühlt, für seine Arbeit zu brennen – und leider trotzdem das Gefühl zu haben, dass es
+        <span class="font-bold">niemand sieht oder versteht</span>.
+      </p>
+
+      <p class="text-muted-foreground max-w-xl text-md leading-relaxed md:text-lg">
+        Als dein Partner in Rhyme helfe ich dir, deine Leidenschaft in Worte zu übersetzen, die sich für dich und deine
+        Kunden <span class="font-bold">echt anfühlen</span>.
+      </p>
+
+      <p class="text-muted-foreground max-w-xl text-md leading-relaxed md:text-lg">
+        <span class="font-bold">Herz vor Verkauf</span> – egal, ob du Menschen oder Tiere begleitest: Gemeinsam machen wir
+        deine wertvolle <span class="font-bold">Arbeit greifbar</span>. Mir ist es wichtig, dass dein Angebot am Ende
+        genau die richtigen Menschen findet – und sie somit auch zu dir.
+      </p>
+
+      <p class="text-muted-foreground max-w-xl text-md leading-relaxed md:text-lg">
+        Mit einer großen Portion <span class="font-bold">Begeisterung</span>, meinem <span class="font-bold"
+          >Erfahrungsschatz</span
+        > und einer Prise <span class="font-bold"> Humor</span> schreibe ich <span class="font-bold"
+          >die Kleinen groß</span
+        > und möchte dir zeigen, was alles möglich ist.
+      </p>
+      <p class="text-muted-foreground max-w-xl text-md leading-relaxed md:text-lg">Ich freue mich, von dir zu hören.</p>
+
+      <p class="text-muted-foreground max-w-xl text-md leading-relaxed md:text-lg">
+        Alles Liebe <br /><span class="text-muted-foreground font-quote text-4xl">Sina</span>
+      </p>
+
+      <div class="flex flex-col gap-0 md:gap-8 md:flex-row">
+        <a href="/ueber-mich">
+          <Button class="mt-8 px-8 py-2 text-md md:text-lg">Erfahre mehr über mich</Button>
+        </a>
+
+        <a href="/kontakt">
+          <Button class="mt-8 px-8 py-2 text-md md:text-lg">Direkt zum Portfolio</Button>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

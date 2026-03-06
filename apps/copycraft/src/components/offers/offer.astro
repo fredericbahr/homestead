@@ -1,0 +1,21 @@
+---
+import Footer from "../footer.astro";
+import { Navigation } from "../navigation";
+import Hero from "./hero.astro";
+import Intro from "./intro.astro";
+import Services from "./services.astro";
+import Reasons from "./reasons.astro";
+import Faq from "./faq.astro";
+import LastCall from "./last-call.astro";
+---
+
+<div class="bg-background selection:bg-primary/20 selection:text-primary-foreground min-h-screen">
+  <Navigation client:load />
+  <Hero />
+  <Intro />
+  <Services />
+  <Reasons />
+  <Faq />
+  <LastCall/>
+  <Footer />
+</div>

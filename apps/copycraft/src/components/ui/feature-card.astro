@@ -1,0 +1,28 @@
+---
+type FeatureCardProps = {
+  title: string;
+  desc: string;
+  img: string;
+  testId: string;
+};
+
+const { desc, img, testId, title } = Astro.props as FeatureCardProps;
+---
+
+<div data-testid={testId}>
+  <div
+    class="bg-card h-full overflow-hidden rounded-4xl border-none shadow-lg transition-shadow duration-300 hover:shadow-xl"
+  >
+    <div class="flex h-full flex-col p-0">
+      <div class="bg-secondary/30 flex h-48 items-center justify-center p-8">
+        <img alt={title} class="h-32 w-auto object-contain drop-shadow-md" src={img} />
+      </div>
+      <div class="flex flex-1 flex-col items-center p-8 text-center">
+        <h3 class="font-heading text-foreground mb-3 text-2xl font-bold">
+          {title}
+        </h3>
+        <p class="text-muted-foreground leading-relaxed">{desc}</p>
+      </div>
+    </div>
+  </div>
+</div>

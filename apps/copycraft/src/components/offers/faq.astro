@@ -1,0 +1,101 @@
+---
+const faqs = [
+  {
+    id: "faq-1",
+    question: "„Verkaufen“ fühlt sich für mich nicht richtig an – passt Copywriting trotzdem?",
+    answer:
+      "Na perfekt – dann bist du richtig bei mir! <br/> Ich biete kein Verkaufsgeschrei oder werfe mit Marketingfloskeln um mich. Du möchtest Menschen auf emotionaler Basis erreichen und nicht zu einem Kauf drängen. Vielen Menschen, die mit Herz arbeiten, geht es genauso wie dir. <br/> Meine Texte bauen Vertrauen und Verständnis und zeigen, was dich und deine Arbeit besonders macht. Du sollst dich dafür nicht verbiegen. <br/> Du weißt, was du tust, aber die passenden Worte fehlen: Zusammen schaffen wir Struktur und sorgen dafür, dass Anfragen ganz natürlich eintrudeln.",
+  },
+  {
+    id: "faq-2",
+    question: "Wie läuft die Zusammenarbeit ab?",
+    answer:
+      "Achtung, hier kommt der ultimative 6-Schritte-Plan zu deinen neuen Texten: <br/> 1. Buche dir ein kostenloses und unverbindliches Gespräch mit mir. Wir starten mit einem lockeren Schnack, indem du mir davon erzählst, wer du bist, was du machst und wo du Unterstützung benötigst. Frei heraus, ganz entspannt. <br/> 2. Ich schicke dir ein Angebot zu. Du entscheidest, ob es für dich passt und du das Angebot verbindlich annehmen möchtest. <br/> 3. Wir starten mit dem Realtalk. In diesem Schritt erfahre ich von dir, was dich und dein Projekt ausmacht, wie deine Zielgruppe tickt und was du wirklich erreichen möchtest. <br/> 4. Gemeinsam entwickeln wir ein Konzept, das sich für dich stimmig anfühlt. Hierzu treffen wir uns in einem Strategie-Call, ich stelle dir meine Ideen vor und zusammen klären wir, was der richtige Weg ist. <br/> 5. Danach gehe ich in die Erarbeitungsphase: Ich entwickle oder optimiere Texte, die deine Persönlichkeit widerspiegeln und klar strukturiert dazu führen, dass sich deine Wunschkunden angesprochen fühlen. Keine Sorge – du bist in den Prozess eingebunden. Meine Aufträge beinhalten zwei Feedbackschleifen, bevor die Texte finalisiert werden. <br/> 6. Texte gut, alles gut: Ich schicke dir die finalen Texte und du darfst deinem Marketing damit neues Leben einhauchen.",
+  },
+  {
+    id: "faq-3",
+    question: "Was kostet eine Zusammenarbeit?",
+    answer:
+      "Ich verkaufe kein Blabla und Tralala, sondern Klarheit, Verständnis und Vertrauen. Mir ist aber auch wichtig, dass es für dich passt und lade dich daher zu einem ersten Gespräch ein, um transparent über die Förmlichkeiten zu sprechen. <br/> Grundsätzlich variieren die Preise je nachdem, was du brauchst. Texte für eine umfangreiche Website (ab 1400 €) sind dabei kostspieliger als einzelne Social Media Captions (im Paket mit 5 Captions ab 300 €).",
+  },
+  {
+    id: "faq-4",
+    question: "Ich habe schon Texte – warum sollte ich mit dir arbeiten?",
+    answer:
+      "Du kennst deine Arbeit am besten und es ist großartig, wenn du sie verschriftlichen konntest. Doch sie muss auch für Außenstehende greifbar sein. Ich helfe dir dabei, dass deine Worte nicht nur geschrieben sind, sondern auch gefühlt werden. <br/> Gerne gebe ich dir ein ehrliches Feedback zu deinen Texten.",
+  },
+  {
+    id: "faq-5",
+    question: "Was bietest du an und wie trete ich mit dir in Kontakt?",
+    answer:
+      "Meditation has roots in many traditions, but modern mindfulness meditation is secular and evidence-based. Anyone can benefit, regardless of beliefs.",
+  },
+];
+---
+
+<section class="relative px-6 py-24 md:px-12 lg:px-24" id="features">
+  <div class="mx-auto max-w-7xl flex flex-col justify-center gap-12">
+    <div class="space-y-4 text-center">
+      <span class="font-hand text-primary text-xl md:text-2xl">FAQ for you</span>
+      <h2 class="font-heading text-foreground text-3xl font-bold md:text-5xl mt-2">Häufig gestellte Fragen</h2>
+    </div>
+
+    <div class="space-y-3">
+      {
+        faqs.map((faq) => (
+          <details
+            class="group bg-card overflow-hidden rounded-xl border shadow-lg transition-all duration-300 hover:shadow-xl"
+            data-faq-id={faq.id}
+          >
+            <summary class="flex cursor-pointer list-none items-center justify-between p-6 transition-colors hover:bg-card/80">
+              <h3 class="text-foreground text-lg font-bold pr-4">{faq.question}</h3>
+              <div class="text-accent transition-transform duration-300 group-open:rotate-180">
+                <ph class="ph ph-arrow-down" />
+              </div>
+            </summary>
+
+            <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out group-open:grid-rows-[1fr]">
+              <div class="overflow-hidden border-t border-border/40">
+                <p class="text-muted-foreground p-6 leading-relaxed" set:html={faq.answer} />
+              </div>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Remove the default arrow in Chrome/Safari */
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  /* Smooth height animation fix */
+  details > div {
+    display: grid;
+  }
+
+  details[open] > div {
+    grid-template-rows: 1fr;
+  }
+</style>
+
+<script>
+  // Optional: Implementation to ensure only one FAQ is open at a time (Accordion behavior)
+  const details = document.querySelectorAll("details");
+
+  details.forEach((targetDetail) => {
+    targetDetail.addEventListener("click", (e) => {
+      // Allow the summary to toggle, but close others
+      if (targetDetail.hasAttribute("open")) return;
+
+      details.forEach((detail) => {
+        if (detail !== targetDetail) {
+          detail.removeAttribute("open");
+        }
+      });
+    });
+  });
+</script>

@@ -1,0 +1,20 @@
+---
+import { Navigation } from "../navigation";
+import Footer from "../footer.astro";
+import Hero from "./hero.astro";
+import Conversion from "./conversion.astro";
+import About from "./about.astro";
+import Services from "./services.astro";
+import LastCall from "./last-call.astro";
+---
+
+<div class="bg-background selection:bg-primary/20 selection:text-primary-foreground min-h-screen">
+  <Navigation client:load />
+  <Hero />
+  <Conversion />
+  <Services />
+  <!-- <Testimonials /> -->
+  <About />
+  <LastCall />
+  <Footer />
+</div>
