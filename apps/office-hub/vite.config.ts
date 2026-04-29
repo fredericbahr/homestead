@@ -6,15 +6,28 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        manualChunks: {
-          react: ["react", "react-dom"],
-          "framer-motion": ["framer-motion"],
-          "chakra-ui": ["@chakra-ui/react", "@emotion/react", "@emotion/styled"],
-          "phosphor-icons": ["@phosphor-icons/react"],
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            if (id.includes("react") || id.includes("react-dom")) {
+              return "vendor-react";
+            }
+            if (id.includes("react-router")) {
+              return "react-router";
+            }
+            if (id.includes("framer-motion")) {
+              return "framer-motion";
+            }
+            if (id.includes("@chakra-ui") || id.includes("@emotion")) {
+              return "chakra-ui";
+            }
+            if (id.includes("@phosphor-icons")) {
+              return "phosphor-icons";
+            }
+          }
         },
       },
     },
-    minify: "esbuild",
+    minify: true,
   },
   server: {
     port: 3000,

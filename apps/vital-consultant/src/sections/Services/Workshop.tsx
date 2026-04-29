@@ -14,7 +14,7 @@ export const Workshop = () => {
         as={motion.img}
         borderRadius="lg"
         height="auto"
-        // eslint-disable-next-line @typescript-eslint/no-explicit-anyinitial={{ opacity: 0, x: -100 }}
+        
         src="./workshop.jpg"
         // biome-ignore lint/suspicious/noExplicitAny: <explanation>
         transition={{ delay: 0.1, duration: 0.3 } as any}
@@ -29,7 +29,7 @@ export const Workshop = () => {
         gap={4}
         initial={{ opacity: 0, x: 100 }}
         // biome-ignore lint/suspicious/noExplicitAny: <explanation>
-        transition={{ delay: 0.1, duration: 0.3 } as any} // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        transition={{ delay: 0.1, duration: 0.3 } as any}
         viewport={{ amount: "some", once: true }}
         whileInView={{ opacity: 1, x: 0 }}
       >

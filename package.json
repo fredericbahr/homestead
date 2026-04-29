@@ -1,17 +1,43 @@
 {
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.15",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.4",
+    "turbo": "^2.9.12",
+    "ultracite": "^7.7.0"
+  },
+  "lint-staged": {
+    "apps/**/*.{js,ts,jsx,tsx}": [
+      "npx ultracite fix"
+    ],
+    "packages/**/*.{js,ts,jsx,tsx}": [
+      "npx ultracite fix"
+    ],
+    "*.{json,md}": [
+      "npx ultracite fix"
+    ],
+    "*.{js,jsx,ts,tsx,json,jsonc,css,scss,md,mdx}": [
+      "npx ultracite fix"
+    ]
+  },
   "name": "homestead",
-  "version": "1.0.0",
-  "description": "A monorepo designed to unite personal and family-driven web projects under one roof.",
-  "main": "index.js",
   "scripts": {
     "clean": "rm -rf dist node_modules",
     "build": "tsc && vite build",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "check": "ultracite check",
+    "fix": "ultracite fix"
   },
+  "version": "1.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "configs/*"
+  ],
+  "description": "A monorepo designed to unite personal and family-driven web projects under one roof.",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fredericbahr/homestead.git"
@@ -28,35 +54,12 @@
     "url": "https://github.com/fredericbahr/homestead/issues"
   },
   "homepage": "https://github.com/fredericbahr/homestead#readme",
-  "workspaces": [
-    "apps/*",
-    "packages/*",
-    "configs/*"
-  ],
-  "devDependencies": {
-    "@biomejs/biome": "2.2.5",
-    "husky": "^9.1.7",
-    "lint-staged": "^15.5.2",
-    "turbo": "^2.5.8",
-    "ultracite": "5.6.1"
-  },
-  "lint-staged": {
-    "apps/**/*.{js,ts,jsx,tsx}": [
-      "npx ultracite format"
-    ],
-    "packages/**/*.{js,ts,jsx,tsx}": [
-      "npx ultracite format"
-    ],
-    "*.{json,md}": [
-      "npx ultracite format"
-    ]
-  },
   "volta": {
-    "node": "22.14.0"
+    "node": "24.15.0"
   },
   "engines": {
-    "node": "22.14.0",
-    "npm": "10.9.2"
+    "node": "24.15.0",
+    "npm": "11.12.1"
   },
-  "packageManager": "npm@10.9.4"
+  "packageManager": "npm@11.12.1"
 }
