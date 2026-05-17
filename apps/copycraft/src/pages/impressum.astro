@@ -1,0 +1,33 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Footer from "../components/footer.astro";
+import { Navigation } from "../components/navigation";
+---
+
+<Layout>
+  <div class="bg-background selection:bg-primary/20 selection:text-primary-foreground min-h-screen flex flex-col">
+    <Navigation client:load />
+    <section class="flex flex-col items-center overflow-hidden px-6 py-12 md:flex-row md:px-12 lg:px-24 flex-1">
+      <div class="w-full md:mt-0 md:w-1/2 flex-1 h-full">
+        <h1 class="text-4xl mb-4">Impressum</h1>
+
+        <p>
+          Sina Weichlein<br />
+          c/o IP-Management #10223 <br /> Ludwig-Erhard-Str. 18<br /> 20459 Hamburg
+        </p>
+
+        <h2 class="text-2xl my-2">Kontakt</h2>
+        <p>E-Mail: sina@buchstabenfeder.de</p>
+
+        <h2 class="text-2xl my-2">Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle</h2>
+        <p>
+          Ich bin nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
+          teilzunehmen.
+        </p>
+
+        <p class="text-xs">Quelle: <a href="https://www.e-recht24.de">eRecht24</a></p>
+      </div>
+    </section>
+    <Footer />
+  </div>
+</Layout>

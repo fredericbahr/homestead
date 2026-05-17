@@ -1,8 +1,22 @@
 ---
 import Button from "../ui/button.astro";
+
+interface Fact {
+  icon: string;
+  title: string;
+}
+
+const facts: Fact[] = [
+  { icon: "heart", title: "Mein Soul-Food? Hauptsache, es sind Nudeln dabei." },
+  { icon: "butterfly", title: "Durch und durch Frühlingskind" },
+  { icon: "coffee", title: "Trotz Behörde nie zur Kaffee-Trinkerin mutiert (Cappuccino ist kein Kaffee!)" },
+  { icon: "sun-horizon", title: "Sonnenuntergänge > Sonnenaufgänge" },
+  { icon: "car", title: "Autofahren und dabei zu alten Songs mitgrölen ist meine Therapie" },
+  { icon: "paw-print", title: "Milou, meine Diva auf vier Katzentatzen, ist bei jedem deiner Texte mit am Start" },
+];
 ---
 
-<section class="relative bg-white/50 px-6 py-24 md:px-12 lg:px-24" id="features">
+<section class="relative bg-white/50 px-6 py-24 md:px-12 lg:px-24">
   <div class="mx-auto max-w-7xl flex flex-col justify-center gap-12">
     <div class="mx-auto max-w-7xl flex flex-col justify-center gap-12">
       <div class="space-y-4 text-center">
@@ -11,17 +25,17 @@ import Button from "../ui/button.astro";
       </div>
 
       <p class="text-center text-lg md:text-xl">
-        Wenn ich nicht gerade an Sätzen feile, triffst du mich wahrscheinlich zwischen den Rhöner Hügeln auf dem <strong
-          >Motorrad</strong
+        Wenn ich nicht gerade an Sätzen feile, triffst du mich wahrscheinlich zwischen den Rhöner Hügeln auf dem <span class="font-bold"
+          >Motorrad</span
         >
-        an oder findest mich bei der <strong>Formel 1</strong> mitfiebern. Auch beim Tanzen bekomme ich den Kopf frei (Female,
+        an oder findest mich bei der <span class="font-bold">Formel 1</span> mitfiebern. Auch beim <span class="font-bold">Tanzen</span> bekomme ich den Kopf frei (Female,
         Hip Hop & Showtanz).
       </p>
 
       <p class="text-center text-lg md:text-xl">
         Zum Adrenalin-Ausgleich verschlinge ich regelmäßig <strong>Bücher</strong> und gieße leidenschaftlich gerne kreative
-        <strong>Kerzen</strong>. Ich entdecke gerne die Welt, indem ich sämtliche Länder bereise und gerne zu Fuß
-        erkunde. <strong>Madeira, Kreta & Norwegen</strong>
+        <span class="font-bold">Kerzen</span>. Ich entdecke gerne die Welt, indem ich sämtliche Länder bereise und gerne zu Fuß
+        erkunde. <span class="font-bold">Madeira, Kreta & Norwegen</span>
         gehören definitiv zu meinen liebsten Plätzen.
       </p>
     </div>
@@ -29,36 +43,31 @@ import Button from "../ui/button.astro";
     <div class="flex flex-col gap-6">
       <p class="text-xl text-primary text-center font-bold">Knackige Fakten:</p>
 
-      <ul class="space-y-3 mx-auto max-w-2xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {
-          [
-            "Mein Soul-Food? Hauptsache, es sind Nudeln dabei.",
-            "Durch und durch Frühlingskind",
-            "Trotz Behörde nie zur Kaffee-Trinkerin mutiert (Cappuccino ist kein Kaffee!)",
-            "Sonnenuntergänge > Sonnenaufgänge",
-            "Autofahren und dabei zu alten Songs mitgrölen ist meine Therapie",
-            "Milou, meine Diva auf vier Katzentatzen, ist bei jedem deiner Texte mit am Start",
-          ].map((item) => (
-            <li class="flex items-start gap-3">
-              <i class="ph ph-arrow-circle-right text-primary mt-1 text-xl shrink-0 fill-current" />
-              <span class="text-muted-foreground text-lg">{item}</span>
-            </li>
+          facts.map((fact: Fact) => (
+            <div class="flex items-center gap-4 p-5 rounded-xl bg-accent/7 hover:shadow-md transition-colors duration-200">
+              <div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center shrink-0 border border-white/50">
+                <i class={`ph ph-${fact.icon} text-accent text-2xl`} />
+              </div>
+              <p class="text-md mb-1 font-semibold">{fact.title}</p>
+            </div>
           ))
         }
-      </ul>
-
-      <p class="text-center text-lg md:text-xl">
-        Uff, jetzt habe ich die ganze Zeit nur von mir geredet.<br /> Wer sitzt da eigentlich auf der anderen Seite des Bildschirms?
-        Was macht dich aus?
-      </p>
-
-      <div class="flex flex-col items-center">
-        <a href="/kontakt">
-          <Button class="mt-8 px-8 py-2 text-md md:text-lg">Lass mal schnacken!</Button>
-        </a>
-
-        <p class="italic text-sm mt-2 text-center md:text-start">Kostenfreier und unverbindlicher Kennenlern-Call.</p>
       </div>
+    </div>
+
+    <p class="text-center text-lg md:text-xl">
+      Uff, jetzt habe ich die ganze Zeit nur von mir geredet.<br /> Wer sitzt da eigentlich auf der anderen Seite des Bildschirms?
+      Was macht dich aus?
+    </p>
+
+    <div class="flex flex-col items-center">
+      <Button href="/kontakt" title="Lass mal schnacken!" class="px-8 py-2 text-md md:text-lg"
+        >Lass mal schnacken!</Button
+      >
+
+      <p class="italic text-sm mt-2 text-center md:text-start">Kostenfreier und unverbindlicher Kennenlern-Call.</p>
     </div>
   </div>
 </section>

@@ -2,7 +2,7 @@
 import Button from "../ui/button.astro";
 ---
 
-<section class="relative bg-white/50 px-6 py-24 md:px-12 lg:px-24" id="features">
+<section class="relative bg-white/50 px-6 py-24 md:px-12 lg:px-24">
   <div class="mx-auto max-w-7xl flex flex-col justify-center gap-12">
     <div class="space-y-4 text-center">
       <span class="font-hand text-primary text-xl md:text-2xl">Deine neuen Texte warten auf dich</span>
@@ -19,9 +19,9 @@ import Button from "../ui/button.astro";
       </div>
 
       <div class="flex flex-col gap-0 self-center">
-        <a href="/kontakt">
-          <Button class="px-8 py-2 text-md md:text-lg">Zum Wortwechsel-Schnack</Button>
-        </a>
+        <Button href="/kontakt" title="Zum Wortwechsel-Schnack" class="px-8 py-2 text-md md:text-lg">
+          Zum Wortwechsel-Schnack
+        </Button>
 
         <p class="italic text-sm mt-2 text-center md:text-start">Kostenfreier und unverbindlicher Kennenlern-Call</p>
       </div>

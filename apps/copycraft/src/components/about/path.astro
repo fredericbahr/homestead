@@ -1,68 +1,125 @@
 ---
-
+import TimelineStep from "@components/ui/timeline/time-line-step.astro";
+import TimelineStepper from "@components/ui/timeline/time-line-stepper.astro";
+import Card from "../ui/card.astro";
+import Button from "../ui/button.astro";
 ---
 
 <section class="px-6 py-24" id="cta">
   <div class="mx-auto max-w-6xl flex flex-col gap-12">
-    <div class="space-y-4 flex flex-col gap-6">
-      <span class="font-hand my-0 text-primary text-xl text-center md:text-2xl">Das bin Ich</span>
-      <h2 class="font-heading text-foreground text-4xl text-center font-bold md:text-5xl">Mein Lebensweg</h2>
+    <div class="space-y-4 text-center">
+      <span class="font-hand text-primary text-xl md:text-2xl">Mein Lebensweg</span>
+      <h2 class="font-heading text-foreground text-4xl font-bold md:text-5xl">Wie ich zur Copywriterin wurde</h2>
     </div>
 
-    <div class="flex flex-col gap-4 text-balance md:max-w-[65%]">
-      <p class="text-lg text-muted-foreground underline">Der Traum der kleinen Sina</p>
+    <TimelineStepper>
+      <TimelineStep>
+        <Card class="max-w-xs md:max-w-xl">
+          <div class="flex flex-col gap-4 text-balance">
+            <div class="flex gap-4 items-center">
+              <div
+                class="w-10 h-10 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110 bg-primary/30"
+              >
+                <i class={`ph ph-sparkle text-xl text-accent`}></i>
+              </div>
+              <span>Der Traum der kleinen Sina</span>
+            </div>
 
-      <p class="text-lg text-muted-foreground">
-        … war es immer, <strong>Autorin zu werden</strong>! Ich schreibe Geschichten, seit ich meinen
-        Füller-Führerschein in der Tasche habe. Ich kann mich noch gut erinnern, wie ich mit 10 Jahren im Türkei-Urlaub
-        im Hotelzimmer saß und ganze 63 DIN A4-Schreibblätter an einem Tag volltextete.
-      </p>
+            <h3 class="text-xl font-sans">… war es immer, <strong>Autorin zu werden!</strong></h3>
 
-      <p class="text-lg text-muted-foreground">
-        Meine Liebe zu Büchern hat dazu maßgeblich beigetragen und ich war immer ganz stolz, mit Wörtern neue Welten zu
-        erschaffen. Doch leider zog es mich erstmal in die „Realität“.
-      </p>
-    </div>
+            <div class="flex flex-col gap-4">
+              <p class="text-lg text-muted-foreground">
+                Ich schreibe Geschichten, seit ich meinen Füller-Führerschein in der Tasche habe. Ich kann mich noch gut
+                erinnern, wie ich mit 10 Jahren im Türkei-Urlaub im Hotelzimmer saß und ganze 63 DIN A4-Schreibblätter
+                an einem Tag volltextete.
+              </p>
 
-    <div class="flex flex-col gap-4 text-balance md:max-w-[65%] md:self-end">
-      <p class="text-lg text-muted-foreground underline">Vom Behördendeutsch zur Kommunikationspsychologie</p>
+              <p class="text-lg text-muted-foreground">
+                Meine Liebe zu Büchern hat dazu maßgeblich beigetragen und ich war immer ganz stolz, mit Wörtern neue
+                Welten zu erschaffen. Doch leider zog es mich erstmal in die „Realität“.
+              </p>
+            </div>
+          </div>
+        </Card>
+      </TimelineStep>
 
-      <p class="text-lg text-muted-foreground">
-        Es folgten viele Jahre öffentlicher Dienst. Ich suchte mein Glück in mehreren sozial-geprägten Arbeitsbereichen,
-        doch irgendwie fehlte mir etwas.
-      </p>
+      <TimelineStep side="right">
+        <Card class="max-w-xs md:max-w-xl">
+          <div class="flex flex-col gap-4 text-balance">
+            <div class="flex gap-4 items-center">
+              <div
+                class="w-10 h-10 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110 bg-primary/30"
+              >
+                <i class={`ph ph-sparkle text-xl text-accent`}></i>
+              </div>
+              <span>Vom Behördendeutsch zur Kommunikationspsychologie</span>
+            </div>
 
-      <p class="text-lg text-muted-foreground">
-        2021 wollte ich es dann doch noch einmal wissen: Neben dem Job habe ich mich ins Studium gestürzt und tief in
-        die Welt der Gesprächsführung und Psychologie hineingefuchst. Dabei habe ich ein echtes Gespür dafür entwickelt,
-        was Menschen bewegt und wie ich sie genau dort abhole, wo sie gerade feststecken.
-      </p>
+            <h3 class="text-xl font-sans">Irgendwann hat‘s <i class="italic">Klick</i> gemacht</h3>
 
-      <p class="text-lg text-muted-foreground">
-        Im Behördenalltag merkte ich allerdings immer mehr, dass Paragrafen Grenzen setzen, wo eigentlich echte, freie
-        Kommunikation nötig wäre.
-      </p>
+            <div class="flex flex-col gap-4">
+              <p class="text-lg text-muted-foreground">
+                Es folgten viele Jahre öffentlicher Dienst. Ich suchte mein Glück in mehreren sozial-geprägten
+                Arbeitsbereichen, doch irgendwie fehlte mir etwas.
+              </p>
 
-      <p class="text-lg text-muted-foreground">
-        Mir war klar: „<strong>Ja, ich möchte Menschen helfen – aber anders.</strong>“
-      </p>
-    </div>
+              <p class="text-lg text-muted-foreground">
+                2021 wollte ich es dann doch noch einmal wissen: Neben dem Job habe ich mich ins Studium gestürzt und
+                tief in die Welt der Gesprächsführung und Psychologie hineingefuchst. Dabei habe ich ein echtes Gespür
+                dafür entwickelt, was Menschen bewegt und wie ich sie genau dort abhole, wo sie gerade feststecken.
+              </p>
 
-    <div class="flex flex-col gap-4 text-balance md:max-w-[65%]">
-      <p class="text-lg text-muted-foreground underline">Raus aus der Sicherheit und rein in die Freiheit</p>
+              <p class="text-lg text-muted-foreground">
+                Im Behördenalltag merkte ich allerdings immer mehr, dass Paragrafen Grenzen setzen, wo eigentlich ehrliche
+                und freie Kommunikation nötig wäre.
+              </p>
 
-      <p class="text-lg text-muted-foreground">
-        Somit war der erste Schritt getan, meine zwei Leidenschaften – das Schreiben und Gesprächspsychologie – zu
-        vereinen und zu meinem Job zu machen: Ich begann nebenbei eine <strong>Weiterbildung zur Copywriterin</strong> bei
-        ausgeschrieben gut®.
-      </p>
+              <p class="text-lg text-muted-foreground">
+                Mir war klar: „<strong>Ja, ich möchte Menschen helfen – aber anders.</strong>“
+              </p>
+            </div>
+          </div>
+        </Card>
+      </TimelineStep>
 
-      <p class="text-lg text-muted-foreground">
-        Ich lernte die Verkaufspsychologie kennen und lieben, entdeckte eine ganz neue Art des empathischen Textens für
-        mich. So, und jetzt sitze ich hier und schreibe meine eigene Website – und hoffentlich auch ganz bald deine ;)
-      </p>
+      <TimelineStep>
+        <Card class="max-w-xs md:max-w-xl">
+          <div class="flex flex-col gap-4 text-balance">
+            <div class="flex gap-4 items-center">
+              <div
+                class="w-10 h-10 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110 bg-primary/30"
+              >
+                <i class={`ph ph-sparkle text-xl text-accent`}></i>
+              </div>
+              <span>Raus aus der Sicherheit und rein in die Freiheit</span>
+            </div>
 
-      <a href="/portfolio">Portfolio</a>
-    </div>
+            <h3 class="text-xl font-sans">Einfach mal machen!</h3>
+
+            <div class="flex flex-col gap-4">
+              <p class="text-lg text-muted-foreground">
+                Somit war der erste Schritt getan, meine zwei Leidenschaften – das Schreiben und Gesprächspsychologie –
+                zu vereinen und zu meinem Job zu machen: Ich begann nebenbei eine <strong
+                  >Weiterbildung zur Copywriterin</strong
+                > bei ausgeschrieben gut®.
+              </p>
+
+              <p class="text-lg text-muted-foreground">
+                Ich lernte die Verkaufspsychologie kennen und lieben, entdeckte eine ganz neue Art des empathischen
+                Textens für mich. So, und jetzt sitze ich hier und schreibe meine eigene Website – und hoffentlich auch
+                ganz bald deine ;)
+              </p>
+
+              <div>
+                <Button href="/portfolio.pdf" external title="Direkt zum Portfolio" class="text-sm lg:px-4">
+                  Portfolio
+                  <i class="ph ph-arrow-square-out"></i>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </Card>
+      </TimelineStep>
+    </TimelineStepper>
   </div>
 </section>

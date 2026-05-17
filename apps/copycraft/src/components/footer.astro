@@ -1,34 +1,44 @@
 ---
 import Button from "./ui/button.astro";
 import { Image } from "astro:assets";
-import LogoImage from "@assets/logo.png";
+import LogoImage from "@assets/logo.webp";
 ---
 
 <footer class="border-border/40 relative border-t bg-white px-6 py-16">
   <div class="mx-auto max-w-7xl">
     <div class="grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-8 lg:gap-12 items-start">
       {/* Left Column: Brand */}
-      <Image alt="Logo" class="h-auto w-[95%] rounded-[3rem] md:w-[45%]" src={LogoImage} />
+      <Image
+        alt="Logo"
+        title="Logo"
+        class="mx-auto h-auto w-[75%] rounded-[3rem] md:w-[45%]"
+        src={LogoImage}
+        loading="lazy"
+        fetchpriority="low"
+      />
 
       {/* Center Column: Links by Category */}
       <div class="flex flex-col justify-center space-y-4">
         <div class="space-y-2">
-          <h4 class="font-heading text-foreground font-bold">Seiten</h4>
+          <p class="font-heading text-foreground font-bold">Seiten</p>
           <div class="flex flex-col">
             <a
               href="/"
+              title="Start"
               class="flex gap-2 items-center text-muted-foreground hover:text-primary w-fit transition-colors"
             >
               Start
             </a>
             <a
               href="/angebote"
+              title="Angebote"
               class="flex gap-2 items-center text-muted-foreground hover:text-primary w-fit transition-colors"
             >
               Angebote
             </a>
             <a
               href="/ueber-mich"
+              title="Über mich"
               class="flex gap-2 items-center text-muted-foreground hover:text-primary w-fit transition-colors"
             >
               Über mich
@@ -40,17 +50,21 @@ import LogoImage from "@assets/logo.png";
       {/* Center Column: Links by Category */}
       <div class="flex flex-col justify-center space-y-4">
         <div class="space-y-2">
-          <h4 class="font-heading text-foreground font-bold">Rechtliches</h4>
+          <p class="font-heading text-foreground font-bold">Rechtliches</p>
           <div class="flex flex-col">
             <a
               href="/impressum"
+              title="Impressum"
               class="flex gap-2 items-center text-muted-foreground hover:text-primary w-fit transition-colors"
-              ><i class="ph ph-user"></i>Impressum</a
+            >
+              <i class="ph ph-user"></i>Impressum</a
             >
             <a
               href="/datenschutz"
+              title="Datenschutz"
               class="flex gap-2 items-center text-muted-foreground hover:text-primary w-fit transition-colors"
-              ><i class="ph ph-cookie"></i> Datenschutz</a
+            >
+              <i class="ph ph-cookie"></i> Datenschutz</a
             >
           </div>
         </div>
@@ -59,7 +73,7 @@ import LogoImage from "@assets/logo.png";
       {/* Right Column: CTA */}
       <div class="flex flex-col justify-center space-y-4">
         <div class="space-y-2">
-          <h4 class="font-heading text-foreground font-bold">Kontakt</h4>
+          <p class="font-heading text-foreground font-bold">Kontakt</p>
           <div class="flex flex-col">
             <a
               href="mailto:sina@buchstabenfeder.de"
@@ -68,15 +82,17 @@ import LogoImage from "@assets/logo.png";
             >
             <a
               href="https://www.instagram.com/buchstabenfeder/"
+              title="Instagram von Buchstabenfeder"
               target="_blank"
               class="flex gap-2 items-center text-muted-foreground hover:text-primary w-fit transition-colors"
               ><i class="ph ph-instagram-logo"></i> Instagram <i class="ph ph-arrow-square-out"></i></a
             >
           </div>
         </div>
-        <a class="w-full" href="/kontakt">
-          <Button>Termin buchen</Button>
-        </a>
+
+        <div class="w-full">
+          <Button href="/kontakt" title="Termin buchen">Termin buchen</Button>
+        </div>
       </div>
     </div>
 
@@ -91,7 +107,8 @@ import LogoImage from "@assets/logo.png";
         &copy; {new Date().getFullYear()} Buchstabenfeder - Alle Rechte vorbehalten.
       </p>
       <p class="flex items-center justify-center gap-1">
-        Entwickelt von <a href="https://fredericbahr.github.io/">Frederic Bahr</a> mit <i class="ph ph-binary"></i>
+        Entwickelt von <a href="https://fredericbahr.github.io/" title="Frederic Bahrs Webseite">Frederic Bahr</a> mit <i
+          class="ph ph-binary"></i>
       </p>
     </div>
   </div>

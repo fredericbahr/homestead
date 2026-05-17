@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import AboutLogo from "@assets/about.png";
+import AboutLogo from "@assets/about.webp";
 import Button from "../ui/button.astro";
 ---
 
@@ -11,46 +11,52 @@ import Button from "../ui/button.astro";
   </div>
 
   <div class="flex flex-col gap-8 mx-auto justify-center items-center max-w-7xl md:flex-row">
-    <Image alt="Hero" class="h-auto w-[95%] mx-auto rounded-[3rem] shadow-2xl md:w-[45%]" src={AboutLogo} />
+    <Image
+      alt="Porträt von Sina Weichlein, professionelle Texterin und Gründerin von Buchstabenfeder"
+      title="Sina Weichlein – Deine Schreibtante"
+      class="h-auto w-[95%] mx-auto rounded-[3rem] shadow-2xl md:w-[45%]"
+      loading="lazy"
+      src={AboutLogo}
+    />
 
     <div class="flex flex-col gap-4 text-start">
       <p class="text-muted-foreground max-w-xl text-md leading-relaxed md:text-lg">
         Ich weiß, wie es sich anfühlt, für seine Arbeit zu brennen – und leider trotzdem das Gefühl zu haben, dass es
-        <span class="font-bold">niemand sieht oder versteht</span>.
+        <strong>niemand sieht oder versteht</strong>.
       </p>
 
       <p class="text-muted-foreground max-w-xl text-md leading-relaxed md:text-lg">
         Als dein Partner in Rhyme helfe ich dir, deine Leidenschaft in Worte zu übersetzen, die sich für dich und deine
-        Kunden <span class="font-bold">echt anfühlen</span>.
+        Kunden <strong>echt anfühlen</strong>.
       </p>
 
       <p class="text-muted-foreground max-w-xl text-md leading-relaxed md:text-lg">
-        <span class="font-bold">Herz vor Verkauf</span> – egal, ob du Menschen oder Tiere begleitest: Gemeinsam machen wir
-        deine wertvolle <span class="font-bold">Arbeit greifbar</span>. Mir ist es wichtig, dass dein Angebot am Ende
-        genau die richtigen Menschen findet – und sie somit auch zu dir.
+        <strong>Herz vor Verkauf</strong> – egal, ob du Menschen oder Tiere begleitest: Gemeinsam machen wir deine wertvolle
+        <strong>Arbeit greifbar</strong>. Mir ist es wichtig, dass dein Angebot am Ende genau die richtigen Menschen
+        findet – und sie somit auch zu dir.
       </p>
 
       <p class="text-muted-foreground max-w-xl text-md leading-relaxed md:text-lg">
-        Mit einer großen Portion <span class="font-bold">Begeisterung</span>, meinem <span class="font-bold"
-          >Erfahrungsschatz</span
-        > und einer Prise <span class="font-bold"> Humor</span> schreibe ich <span class="font-bold"
-          >die Kleinen groß</span
-        > und möchte dir zeigen, was alles möglich ist.
+        Mit einer großen Portion <strong>Begeisterung</strong>, meinem <strong>Erfahrungsschatz</strong> und einer Prise <strong
+        >
+          Humor</strong
+        > schreibe ich <strong>die Kleinen groß</strong> und möchte dir zeigen, was alles möglich ist.
       </p>
       <p class="text-muted-foreground max-w-xl text-md leading-relaxed md:text-lg">Ich freue mich, von dir zu hören.</p>
 
       <p class="text-muted-foreground max-w-xl text-md leading-relaxed md:text-lg">
-        Alles Liebe <br /><span class="text-muted-foreground font-quote text-4xl">Sina</span>
+        Alles Liebe <br /><span class="text-muted-foreground font-quote text-4xl">Sina Weichlein</span>
       </p>
 
       <div class="flex flex-col gap-0 md:gap-8 md:flex-row">
-        <a href="/ueber-mich">
-          <Button class="mt-8 px-8 py-2 text-md md:text-lg">Erfahre mehr über mich</Button>
-        </a>
+        <Button href="/ueber-mich" title="Erfahre mehr über mich!" class="mt-8 text-md md:text-lg">
+          Erfahre mehr über mich
+        </Button>
 
-        <a href="/kontakt">
-          <Button class="mt-8 px-8 py-2 text-md md:text-lg">Direkt zum Portfolio</Button>
-        </a>
+        <Button href="/portfolio.pdf" external title="Direkt zum Portfolio" class="mt-8 text-md md:text-lg">
+          Direkt zum Portfolio
+          <i class="ph ph-arrow-square-out"></i>
+        </Button>
       </div>
     </div>
   </div>

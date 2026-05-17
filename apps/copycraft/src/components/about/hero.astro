@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Button from "../ui/button.astro";
-import HeroImage from "@assets/offers.png";
+import HeroImage from "@assets/about-hero.webp";
 ---
 
 <section
@@ -20,9 +20,13 @@ import HeroImage from "@assets/offers.png";
         Meine Superkraft sind Texte mit Feingefühl, Persönlichkeit und ganz viel Liebe fürs Detail.
       </p>
 
-      <a href="/kontakt">
-        <Button class="mt-8 px-8 py-2 text-md md:text-lg">Lust auf einen virtuellen Cappuccino?</Button>
-      </a>
+      <div class="flex">
+        <Button
+          href="/kontakt"
+          title="Lust auf einen virtuellen Cappuccino?"
+          class="block mt-8 px-8 py-2 text-md md:text-lg">Lust auf einen virtuellen Cappuccino?</Button
+        >
+      </div>
 
       <p class="italic text-sm mt-2 text-center md:text-start">Ich lade dich herzlich zum Wortwechsel-Schnack ein.</p>
     </div>
@@ -30,7 +34,13 @@ import HeroImage from "@assets/offers.png";
 
   <div class="relative mt-12 w-full md:mt-0 md:w-1/2">
     <div class="relative z-10">
-      <Image alt="Hero" class="h-auto w-[95%] mx-auto rounded-[3rem] md:w-[65%]" src={HeroImage} />
+      <Image
+        alt="Porträt einer professionellen Texterin mit Leidenschaft für Worte und Details"
+        title="Die Textexpertin hinter Buchstabenfeder"
+        class="h-auto w-[95%] mx-auto rounded-[3rem] md:w-[65%]"
+        fetchpriority="high"
+        src={HeroImage}
+      />
     </div>
   </div>
 </section>

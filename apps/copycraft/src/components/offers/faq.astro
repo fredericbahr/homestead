@@ -1,39 +1,8 @@
 ---
-const faqs = [
-  {
-    id: "faq-1",
-    question: "„Verkaufen“ fühlt sich für mich nicht richtig an – passt Copywriting trotzdem?",
-    answer:
-      "Na perfekt – dann bist du richtig bei mir! <br/> Ich biete kein Verkaufsgeschrei oder werfe mit Marketingfloskeln um mich. Du möchtest Menschen auf emotionaler Basis erreichen und nicht zu einem Kauf drängen. Vielen Menschen, die mit Herz arbeiten, geht es genauso wie dir. <br/> Meine Texte bauen Vertrauen und Verständnis und zeigen, was dich und deine Arbeit besonders macht. Du sollst dich dafür nicht verbiegen. <br/> Du weißt, was du tust, aber die passenden Worte fehlen: Zusammen schaffen wir Struktur und sorgen dafür, dass Anfragen ganz natürlich eintrudeln.",
-  },
-  {
-    id: "faq-2",
-    question: "Wie läuft die Zusammenarbeit ab?",
-    answer:
-      "Achtung, hier kommt der ultimative 6-Schritte-Plan zu deinen neuen Texten: <br/> 1. Buche dir ein kostenloses und unverbindliches Gespräch mit mir. Wir starten mit einem lockeren Schnack, indem du mir davon erzählst, wer du bist, was du machst und wo du Unterstützung benötigst. Frei heraus, ganz entspannt. <br/> 2. Ich schicke dir ein Angebot zu. Du entscheidest, ob es für dich passt und du das Angebot verbindlich annehmen möchtest. <br/> 3. Wir starten mit dem Realtalk. In diesem Schritt erfahre ich von dir, was dich und dein Projekt ausmacht, wie deine Zielgruppe tickt und was du wirklich erreichen möchtest. <br/> 4. Gemeinsam entwickeln wir ein Konzept, das sich für dich stimmig anfühlt. Hierzu treffen wir uns in einem Strategie-Call, ich stelle dir meine Ideen vor und zusammen klären wir, was der richtige Weg ist. <br/> 5. Danach gehe ich in die Erarbeitungsphase: Ich entwickle oder optimiere Texte, die deine Persönlichkeit widerspiegeln und klar strukturiert dazu führen, dass sich deine Wunschkunden angesprochen fühlen. Keine Sorge – du bist in den Prozess eingebunden. Meine Aufträge beinhalten zwei Feedbackschleifen, bevor die Texte finalisiert werden. <br/> 6. Texte gut, alles gut: Ich schicke dir die finalen Texte und du darfst deinem Marketing damit neues Leben einhauchen.",
-  },
-  {
-    id: "faq-3",
-    question: "Was kostet eine Zusammenarbeit?",
-    answer:
-      "Ich verkaufe kein Blabla und Tralala, sondern Klarheit, Verständnis und Vertrauen. Mir ist aber auch wichtig, dass es für dich passt und lade dich daher zu einem ersten Gespräch ein, um transparent über die Förmlichkeiten zu sprechen. <br/> Grundsätzlich variieren die Preise je nachdem, was du brauchst. Texte für eine umfangreiche Website (ab 1400 €) sind dabei kostspieliger als einzelne Social Media Captions (im Paket mit 5 Captions ab 300 €).",
-  },
-  {
-    id: "faq-4",
-    question: "Ich habe schon Texte – warum sollte ich mit dir arbeiten?",
-    answer:
-      "Du kennst deine Arbeit am besten und es ist großartig, wenn du sie verschriftlichen konntest. Doch sie muss auch für Außenstehende greifbar sein. Ich helfe dir dabei, dass deine Worte nicht nur geschrieben sind, sondern auch gefühlt werden. <br/> Gerne gebe ich dir ein ehrliches Feedback zu deinen Texten.",
-  },
-  {
-    id: "faq-5",
-    question: "Was bietest du an und wie trete ich mit dir in Kontakt?",
-    answer:
-      "Meditation has roots in many traditions, but modern mindfulness meditation is secular and evidence-based. Anyone can benefit, regardless of beliefs.",
-  },
-];
+import QuestionAnswer from "../ui/question-answer.astro";
 ---
 
-<section class="relative px-6 py-24 md:px-12 lg:px-24" id="features">
+<section class="relative px-6 py-24 md:px-12 lg:px-24">
   <div class="mx-auto max-w-7xl flex flex-col justify-center gap-12">
     <div class="space-y-4 text-center">
       <span class="font-hand text-primary text-xl md:text-2xl">FAQ for you</span>
@@ -41,27 +10,108 @@ const faqs = [
     </div>
 
     <div class="space-y-3">
-      {
-        faqs.map((faq) => (
-          <details
-            class="group bg-card overflow-hidden rounded-xl border shadow-lg transition-all duration-300 hover:shadow-xl"
-            data-faq-id={faq.id}
-          >
-            <summary class="flex cursor-pointer list-none items-center justify-between p-6 transition-colors hover:bg-card/80">
-              <h3 class="text-foreground text-lg font-bold pr-4">{faq.question}</h3>
-              <div class="text-accent transition-transform duration-300 group-open:rotate-180">
-                <ph class="ph ph-arrow-down" />
-              </div>
-            </summary>
+      <QuestionAnswer
+        question="„Verkaufen“ fühlt sich für mich nicht richtig an – passt Copywriting trotzdem?"
+        id="faq-1"
+      >
+        <p class="text-muted-foreground py-2 leading-relaxed">Na perfekt – dann bist du richtig bei mir!</p>
 
-            <div class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-in-out group-open:grid-rows-[1fr]">
-              <div class="overflow-hidden border-t border-border/40">
-                <p class="text-muted-foreground p-6 leading-relaxed" set:html={faq.answer} />
-              </div>
-            </div>
-          </details>
-        ))
-      }
+        <p class="text-muted-foreground py-2 leading-relaxed">
+          Ich biete kein Verkaufsgeschrei oder werfe mit Marketingfloskeln um mich. Du möchtest Menschen auf emotionaler
+          Basis erreichen und nicht zu einem Kauf drängen. Vielen Menschen, die mit Herz arbeiten, geht es genauso wie
+          dir.
+        </p>
+
+        <p class="text-muted-foreground py-2 leading-relaxed">
+          Meine Texte bauen Vertrauen und Verständnis und zeigen, was dich und deine Arbeit besonders macht. Du sollst
+          dich dafür nicht verbiegen.
+        </p>
+
+        <p class="text-muted-foreground py-2 leading-relaxed">
+          Du weißt, was du tust, aber die passenden Worte fehlen: Zusammen schaffen wir Struktur und sorgen dafür, dass
+          Anfragen ganz natürlich eintrudeln.
+        </p>
+      </QuestionAnswer>
+
+      <QuestionAnswer question="Wie läuft die Zusammenarbeit ab?" id="faq-2">
+        <p class="text-muted-foreground py-2 leading-relaxed">
+          Achtung, hier kommt der ultimative 6-Schritte-Plan zu deinen neuen Texten:
+        </p>
+
+        <ol class="list-decimal space-y-3 px-4 py-2">
+          <li>
+            <span class="font-bold">Buche dir ein kostenloses und unverbindliches Gespräch mit mir.</span> Wir starten mit
+            einem lockeren Schnack, indem du mir davon erzählst, wer du bist, was du machst und wo du Unterstützung benötigst.
+            Frei heraus, ganz entspannt.
+          </li>
+          <li>
+            <span class="font-bold">Ich schicke dir ein Angebot zu.</span> Du entscheidest, ob es für dich passt und du das
+            Angebot verbindlich annehmen möchtest.
+          </li>
+          <li>
+            <span class="font-bold">Wir starten mit dem Realtalk.</span> In diesem Schritt erfahre ich von dir, was dich und
+            dein Projekt ausmacht, wie deine Zielgruppe tickt und was du wirklich erreichen möchtest.
+          </li>
+          <li>
+            <span class="font-bold">Gemeinsam entwickeln wir ein Konzept</span>, das sich für dich stimmig anfühlt.
+            Hierzu treffen wir uns in einem Strategie-Call, ich stelle dir meine Ideen vor und zusammen klären wir, was
+            der richtige Weg ist.
+          </li>
+          <li>
+            <span class="font-bold">Danach gehe ich in die Erarbeitungsphase</span> (die wohl entspannteste Phase für dich
+            im Copywriting): Ich entwickle oder optimiere Texte, die deine Persönlichkeit widerspiegeln und klar strukturiert
+            dazu führen, dass sich deine Wunschkunden angesprochen fühlen. Keine Sorge – du bist in den Prozess eingebunden.
+            Meine Aufträge beinhalten zwei Feedbackschleifen, bevor die Texte finalisiert werden.
+          </li>
+          <li>
+            <span class="font-bold">Texte gut, alles gut:</span> Ich schicke dir dein finales Copywriting zu und du darfst
+            deinem Marketing damit neues Leben einhauchen.
+          </li>
+        </ol>
+
+        <p class="text-muted-foreground py-2 leading-relaxed">
+          Die Dauer der Auftragsfertigstellung variiert. Gerne besprechen wir die geplanten Fristen in einem Gespräch.
+          Ich lege grundsätzlich Wert auf eine zügige und transparente Umsetzung.
+        </p>
+      </QuestionAnswer>
+
+      <QuestionAnswer question="Was kostet eine Zusammenarbeit im Copywriting?" id="faq-3">
+        <p class="text-muted-foreground py-2 leading-relaxed">
+          Ich verkaufe kein Blabla und Tralala, sondern Klarheit, Verständnis und Vertrauen – eben waschechtes
+          Conversion Copywriting. Mir ist aber auch wichtig, dass es für dich passt und lade dich daher zu einem ersten
+          Gespräch ein, um transparent über die Förmlichkeiten zu sprechen.
+        </p>
+      </QuestionAnswer>
+
+      <QuestionAnswer question="Ich habe schon Texte – warum sollte ich mit dir arbeiten?" id="faq-4">
+        <p class="text-muted-foreground py-2 leading-relaxed">
+          Du kennst deine Arbeit am besten und es ist großartig, wenn du sie verschriftlichen konntest. Doch sie muss
+          auch für Außenstehende greifbar sein. Ich helfe dir dabei, dass deine Worte nicht nur geschrieben sind,
+          sondern auch gefühlt werden.
+        </p>
+
+        <p class="text-muted-foreground py-2 leading-relaxed">
+          Gerne gebe ich dir ein ehrliches Feedback zu deinen Texten.
+        </p>
+      </QuestionAnswer>
+
+      <QuestionAnswer question="Was bietest du an und wie trete ich mit dir in Kontakt?" id="faq-5">
+        <p class="text-muted-foreground py-2 leading-relaxed">
+          Mit meiner Expertise im Copywriting unterstütze ich dich mit Texten in folgenden Bereichen:
+        </p>
+
+        <ul class="list-disc space-y-3 px-4 py-2">
+          <li>Alles für deinen Internetauftritt (Website, Onepager, Angebotsseiten, Über-Mich-Seite)</li>
+          <li>Landing- und Salespages (0 €-Produkte, Leadmagneten, Coaching-Programme)</li>
+          <li>Newsletter & E-Mail-Sequenzen (Willkommens-Mails, Story-Mails)</li>
+          <li>Meta-Werbeanzeigen (Instagram & Facebook)</li>
+          <li>Social Media-Texte (Captions, Hooks, Primärtexte, etc. für Instagram & Facebook)</li>
+        </ul>
+
+        <p class="text-muted-foreground py-2 leading-relaxed">
+          Nutze hierfür gerne mein kostenfreies und unverbindliches Angebot eines Kennenlern-Calls!
+        </p>
+      </QuestionAnswer>
     </div>
   </div>
 </section>

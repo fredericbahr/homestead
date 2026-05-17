@@ -1,0 +1,44 @@
+---
+interface Props {
+  side?: "left" | "right"
+  dotClass?: string
+  class?: string
+}
+
+const {
+  side = "left",
+  dotClass = "bg-primary",
+  class: className,
+} = Astro.props
+
+const isRight = side === "right"
+---
+
+<div
+  class:list={[
+    "relative flex flex-col gap-8 md:gap-12",
+    isRight ? "md:flex-row-reverse" : "md:flex-row",
+    className,
+  ]}
+>
+  <!-- Dot -->
+  <div
+    class:list={[
+      "absolute left-2 top-8 z-10 h-4 w-4 -translate-x-1/2 rounded-full border-4 border-background shadow-sm md:left-1/2",
+      dotClass,
+    ]}
+  />
+
+  <!-- Content -->
+  <div
+    class:list={[
+      "ml-4 md:ml-0 md:w-[calc(50%-2rem)] flex justify-end",
+      isRight ? "md:pl-4" : "md:pr-4",
+    ]}
+  >
+    <slot />
+  </div>
+
+  <!-- Spacer -->
+  <div class="hidden md:block md:w-[calc(50%-2rem)]" />
+</div>

@@ -1,39 +1,59 @@
-<section class="relative bg-white/50 px-6 py-24 md:px-12 lg:px-24" id="features">
+---
+import Card from "../ui/card.astro";
+---
+
+<section class="relative bg-white/50 px-6 py-24 md:px-12 lg:px-24">
   <div class="mx-auto max-w-7xl flex flex-col justify-center gap-12">
     <div class="space-y-4 text-center">
+      <span class="font-hand text-primary text-xl md:text-2xl">Einblicke in meine Arbeit</span>
       <h2 class="font-heading text-foreground text-3xl font-bold md:text-5xl mt-2">Was meine Texte besonders macht</h2>
     </div>
 
-    <div class="relative self-center flex flex-col gap-4">
-      <h3 class="font-quote text-foreground/80 text-3xl leading-relaxed md:text-4xl" data-testid="text-quote">
-        Worte haben Macht - und das Potenzial, etwas ganz Großes zu erschaffen.
-      </h3>
-    </div>
+    <blockquote class="relative self-center flex flex-col gap-4">
+      <p
+        class="font-quote text-foreground/80 text-3xl leading-relaxed md:text-4xl text-center lg:text-start"
+        data-testid="text-quote"
+      >
+        Worte haben die Macht und das Potenzial, etwas ganz Großes zu erschaffen.
+      </p>
 
-    <div class="flex flex-col gap-12">
-      <div class="flex gap-6">
-        <p class="mx-auto text-lg md:text-xl text-muted-foreground md:text-center">
-          <span class="block underline mb-2">Persönlichkeit & Werte</span>
-          <span>
-            Die wichtigste Komponente in den Texten deines Business bist du selbst. Du bist dein wichtigstes
-            Alleinstellungsmerkmal und mit
-            <strong>empathischem Storytelling</strong> lassen wir Persönlichkeit in deine Texte einfließen. Damit machst du
-            genau die Menschen auf dich aufmerksam, mit denen du zusammenarbeiten möchtest.
-          </span>
+      <cite class="font-heading text-primary font-bold self-end">— Sina Weichlein</cite>
+    </blockquote>
+
+    <div class="flex flex-col md:grid md:grid-cols-2 gap-8">
+      <Card class="max-w-xl w-full h-full">
+        <div
+          class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 bg-primary/30"
+        >
+          <i class={`ph ph-sparkle text-3xl text-accent`}></i>
+        </div>
+
+        <p class="font-heading text-foreground text-xl font-bold md:text-2xl mb-2">Persönlichkeit & Werte</p>
+        <p class="mx-auto text-lg text-muted-foreground">
+          Die wichtigste Komponente in den Texten deines Business bist du selbst. Du bist dein bestes
+          Alleinstellungsmerkmal und mit
+          <strong>empathischem Storytelling</strong> lassen wir Persönlichkeit in deine Texte einfließen. Damit machst du
+          genau die Menschen auf dich aufmerksam, mit denen du zusammenarbeiten möchtest. Genau das macht Copywriting aus.
         </p>
+      </Card>
 
-        <p class="mx-auto text-lg md:text-xl text-muted-foreground md:text-center">
-          <span class="block underline mb-2">Lebendigkeit & Menschlichkeit</span>
-          <span>
-            Nur Worte sind nicht alles. Der gewisse Touch macht Texte erst richtig spürbar und lässt dich viel nahbarer
-            wirken. Daher arbeite ich gerne mit <strong>Wortmalerei</strong>. Ein gewisses Augenzwinkern entlockt deiner
-            Zielgruppe ein Schmunzeln – und <i>schwupps</i>: Deine Kunden fühlen sich wohl und die Hürde zur
-            Kontaktaufnahme wirkt plötzlich viel niedriger.
-          </span>
+      <Card class="max-w-xl w-full h-full">
+        <div
+          class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 bg-primary/30"
+        >
+          <i class={`ph ph-heart text-3xl text-accent`}></i>
+        </div>
+
+        <p class="font-heading text-foreground text-xl font-bold md:text-2xl mb-2">Lebendigkeit & Menschlichkeit</p>
+        <p class="mx-auto text-lg text-muted-foreground">
+          Nur Worte sind nicht alles. Der gewisse Touch macht Texte erst richtig spürbar und lässt dich viel nahbarer
+          wirken. Daher arbeite ich gerne mit <strong>Wortmalerei</strong>. Ein gewisses Augenzwinkern entlockt deiner
+          Zielgruppe ein Schmunzeln – und <i>schwupps</i>: Deine Kunden fühlen sich wohl und die Hürde zur
+          Kontaktaufnahme wirkt plötzlich viel niedriger.
         </p>
-      </div>
+      </Card>
 
-      <div class="text-center">
+      <div class="text-center col-span-2">
         <span class="font-hand text-primary text-xl md:text-2xl">Und was bringt’s?</span>
         <p class="text-lg md:text-xl text-muted-foreground mt-2">
           Worte erzeugen immerzu eine Wirkung. Mit authentischem Copywriting

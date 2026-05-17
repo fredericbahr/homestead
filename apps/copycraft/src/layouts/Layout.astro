@@ -1,19 +1,17 @@
 ---
 import "../styles/global.css";
 import { SEO } from "astro-seo";
-import logo from "../assets/logo.png";
+import logo from "../assets/logo.webp";
 import { Font } from "astro:assets";
 
 interface Props {
   title?: string;
   description?: string;
-  noindex?: boolean;
 }
 
 const {
-  title = "Buchstabenfeder - Copywriting by Sina",
-  description = "Find your zen with cat-inspired meditation. Guided breathing exercises, mindfulness sessions, and feline wisdom to help you relax.",
-  noindex = false,
+  title = "Buchstabenfeder by Sina Weichlein | Copywriting für Arbeit mit Mensch oder Tier",
+  description = "Als Werbetexterin für Dienstleistungen in der Arbeit mit Menschen oder Tieren übersetze ich dein Angebot in eine Sprache, die deine Zielgruppe versteht.",
 } = Astro.props as Props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -24,34 +22,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content={description} />
     <meta name="theme-color" content="#c98e52" />
     <meta name="generator" content={Astro.generator} />
-    {noindex && <meta name="robots" content="noindex, nofollow" />}
-
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="canonical" href={canonicalURL} />
-
-    <title>{title}</title>
-
-    <Font cssVariable="--font-sans" preload />
-    <Font cssVariable="--font-heading" />
-    <Font cssVariable="--font-hand" />
-    <Font cssVariable="--font-quote" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Phosphor Icons -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      rel="preconnect"
-      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"
-    />
 
     <SEO
       title={title}
       description={description}
+      canonical={canonicalURL}
       openGraph={{
         basic: {
           type: "website",
@@ -79,12 +56,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       }}
     />
 
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+
+    <Font cssVariable="--font-sans" preload />
+    <Font cssVariable="--font-heading" />
+    <Font cssVariable="--font-hand" />
+    <Font cssVariable="--font-quote" />
+
     <script
       type="application/ld+json"
       set:html={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebApplication",
-        name: "Purrfectly Zen",
+        name: "Buchstabenfeder by Sina Weichlein | Copywriting für Arbeit mit Mensch oder Tier",
         description: description,
         applicationCategory: "Agency",
         operatingSystem: "Web",
@@ -92,6 +81,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     />
   </head>
   <body>
-    <slot />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>

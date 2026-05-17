@@ -8,38 +8,46 @@ import robotsTxt from "astro-robots-txt";
 
 export default defineConfig({
   site: "https://buchstabenfeder.de",
-  integrations: [react(), sitemap(), swup({ progress: true, smoothScrolling: false }), compressor(), robotsTxt()],
+  trailingSlash: "never",
+  integrations: [react(), sitemap({lastmod: new Date('2026-05-18')}), swup({ progress: true, smoothScrolling: false }), compressor(), robotsTxt()],
   vite: { plugins: [tailwindcss()] },
   server: {
     port: 3001,
     open: true,
+  },
+  build: {
+    format: "file",
   },
   fonts: [{
     provider: fontProviders.google(),
     name: "Delius",
     cssVariable: "--font-hand",
     weights: [300, 400, 500, 600, 700, 800],
-    fallbacks: ["serif"]
+    fallbacks: ["serif"],
+    display: "swap"
   },
   {
     provider: fontProviders.google(),
     name: "Open Sans",
     cssVariable: "--font-sans",
     weights: [300, 400, 500, 600, 700, 800],
-    fallbacks: ["sans-serif"]
+    fallbacks: ["sans-serif"],
+    display: "swap"
   },
   {
     provider: fontProviders.google(),
     name: "Marcellus",
     cssVariable: "--font-heading",
     weights: [300, 400, 500, 600, 700, 800],
-    fallbacks: ["serif"]
+    fallbacks: ["serif"],
+    display: "swap"
   },
   {
     provider: fontProviders.google(),
     name: "Indie Flower",
     cssVariable: "--font-quote",
     weights: [300, 400, 500, 600, 700, 800],
-    fallbacks: ["cursive"]
+    fallbacks: ["cursive"],
+    display: "swap"
   }]
 });

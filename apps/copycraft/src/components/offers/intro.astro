@@ -1,45 +1,39 @@
+---
+import Card from "../ui/card.astro";
+---
+
 <section class="bg-white/50 flex flex-col gap-8 md:gap-12 items-center justify-center px-6 py-24 text-center">
   <div class="space-y-4 text-center">
+    <span class="font-hand text-primary text-xl md:text-2xl">Bitte nicht ertappt fühlen, aber...</span>
     <h2 class="font-heading text-foreground text-3xl font-bold md:text-5xl mt-2">
-      Tippst du die Lösch-Taste immer an oder <br />hältst du sie schon frustriert gedrückt?
+      Tippst du noch die Lösch-Taste oder <br />hältst du sie schon frustriert gedrückt?
     </h2>
   </div>
 
-  <div class="flex flex-col gap-8 mx-auto items-start max-w-7xl">
-    <ul class="space-y-3 mx-auto max-w-2xl">
-      {
-        [
-          "Du schreibst – und löschst.",
-          "Du suchst dir Inspiration im Internet – und nichts passt zu dir.",
-          "Du nimmst dir extra Zeit für deine Werbetexte – und erwischst dich doch, wie du gedanklich beim Haushalt, dem nächsten Termin oder Auftrag bist.",
-        ].map((item) => (
-          <li class="flex items-start gap-3 text-start">
-            <i class="ph ph-x-circle text-primary mt-1 text-xl shrink-0 fill-current" />
-            <span class="text-muted-foreground text-lg">{item}</span>
-          </li>
-        ))
-      }
-    </ul>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-auto items-start max-w-7xl">
+    <Card class="max-w-full w-full h-full">
+      <p class="text-lg font-bold text-start mb-4">Einmal die Hand heben, wenn dir das bekannt vorkommt:</p>
+      <ul class="space-y-3 mx-auto max-w-2xl">
+        {
+          [
+            "Du schreibst – und löschst.",
+            "Du suchst dir Inspiration im Internet – und nichts passt zu dir.",
+            "Du nimmst dir extra Zeit für deine Werbetexte – und erwischst dich doch, wie du gedanklich beim Haushalt, dem nächsten Termin oder Auftrag bist.",
+          ].map((item) => (
+            <li class="flex items-start gap-3 text-start">
+              <i class="ph ph-x-circle text-red-500 mt-1 text-2xl shrink-0 fill-current" />
+              <span class="text-muted-foreground text-lg">{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </Card>
 
-    <div>
-      <p class="text-muted-foreground text-md leading-relaxed md:text-lg">Ist doch nervig, oder nicht?</p>
-      <p class="text-muted-foreground text-md leading-relaxed md:text-lg">
-        Irgendwann hast du einfach nur noch einen <strong>Knoten im Kopf</strong> – Mensch, ich kenn das! (So geht’s mir mit
-        der Buchhaltung ;))
-      </p>
+    <Card class="max-w-full w-full h-full">
+      <p class="text-lg font-bold text-start mb-4">Wie wär’s also damit:</p>
 
-      <p class="text-muted-foreground text-md leading-relaxed md:text-lg">
-        Schreiben muss sich nicht wie Schwerstarbeit anfühlen, <strong
-          >manchmal fehlt der Blick aus der Bubble hinaus</strong
-        >. Und dabei helfe ich dir:
-      </p>
-
-      <p class="text-muted-foreground text-md leading-relaxed md:text-lg">
-        Ich übersetze deine Persönlichkeit in Worte, damit
-      </p>
-      </div>
-
-      <ul class="my-4 space-y-3 mx-auto max-w-2xl">
+      <p class="text-md text-start mb-4">Ich übersetze deine Persönlichkeit in Worte, damit...</p>
+      <ul class="space-y-3 mx-auto max-w-2xl">
         {
           [
             "deine Website-Besucher keine 1000 Fragezeichen mehr im Kopf haben.",
@@ -47,15 +41,25 @@
             "dich die Menschen finden, mit denen du gerne zusammenarbeiten möchtest.",
           ].map((item) => (
             <li class="flex items-start gap-3 text-start">
-              <i class="ph ph-check-circle text-primary mt-1 text-xl shrink-0 fill-current" />
+              <i class="ph ph-check-circle text-green-500 mt-1 text-2xl shrink-0 fill-current" />
               <span class="text-muted-foreground text-lg">{item}</span>
             </li>
           ))
         }
       </ul>
+    </Card>
 
-      <p class="text-muted-foreground text-md leading-relaxed md:text-lg text-center w-full">
-        <strong>Ich schreibe, du generierst Anfragen.</strong> Deal?
+    <div class="col-span-full">
+      <p class="text-muted-foreground text-md leading-relaxed md:text-lg">Ist doch verrückt, oder nicht?</p>
+      <p class="text-muted-foreground text-md leading-relaxed md:text-lg">
+        Irgendwann hast du einfach nur noch einen <strong>Knoten im Kopf</strong> – Mensch, ich kenn das (so geht’s mir
+        mit der Buchhaltung :P)!
+      </p>
+
+      <p class="text-muted-foreground text-md leading-relaxed md:text-lg">
+        Schreiben muss sich nicht wie Schwerstarbeit anfühlen, <strong
+          >manchmal fehlt der Blick aus der Bubble hinaus</strong
+        >. Keine Sorge, I got you.
       </p>
     </div>
   </div>

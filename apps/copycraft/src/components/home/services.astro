@@ -5,23 +5,32 @@ import Card from "../ui/card.astro";
 interface Service {
   icon: string;
   title: string;
-  image: string;
   description: string;
+}
+
+interface Offer {
+  title: string;
+  icon: string;
 }
 
 const services: Service[] = [
   {
     icon: "heart",
     title: "Wegbegleiter & Herzenslehrer",
-    image: "https://picsum.photos/200/300",
     description: "u.a. Coaches, Tanzlehrer, Bewegungstrainer, Berater & Therapeuten",
   },
   {
     icon: "leaf",
     title: "Naturliebhaber & Tierversteher",
-    image: "https://picsum.photos/200/300",
     description: "u.a. Hundetrainer, Tierbetreuung, Naturpädagogik & Erlebnisanbieter",
   },
+];
+
+const offers: Offer[] = [
+  { icon: "globe-simple", title: "Website & Onepager" },
+  { icon: "share-network", title: "Werbeanzeigen & Social Media" },
+  { icon: "file-text", title: "Landingpages & Salespages" },
+  { icon: "envelope-simple", title: "Newsletter & E-Mail-Marketing" },
 ];
 ---
 
@@ -38,18 +47,19 @@ const services: Service[] = [
       <p class="mx-auto my-0 text-lg text-muted-foreground md:text-center">
         Ich arbeite besonders gern mit kleinen Unternehmen und (Solo-)Selbstständigen zusammen, die andere bewegen
         wollen. Mit Menschen, die ihre Dienstleistung nicht einfach nur als „Verkauf“ ansehen. Manche
-        <span class="font-bold">Arbeit funktioniert nur mit Vertrauen und Beziehung</span>, wie zum Beispiel die der
+        <span class="font-bold">Arbeit funktioniert nur mit Vertrauen und Beziehung</span>. Conversion Copywriting
+        eignet sich daher besonders für
       </p>
     </div>
 
     <div class="flex flex-col gap-6">
-      <div class="flex gap-8 self-center">
+      <div class="flex flex-col md:flex-row gap-8 self-center">
         {
           services.map((service) => (
-            <Card>
+            <Card class="max-w-4xl">
               <div class="text-start">
-                <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 bg-primary/70">
-                  <i class={`ph ph-${service.icon} text-3xl`} />
+                <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 bg-primary/30">
+                  <i class={`ph ph-${service.icon} text-3xl text-accent`} />
                 </div>
 
                 <p class="text-2xl font-bold leading-none tracking-[-0.03em]">{service.title}</p>
@@ -63,32 +73,37 @@ const services: Service[] = [
       </div>
 
       <p class="text-lg text-muted-foreground text-center">
-        … aber auch anderer Businessprojekte, die ihren Fokus auf Miteinander und gemeinsame Erfolgsprozesse legen.
+        … aber auch andere Businessprojekte, die ihren Fokus auf Miteinander und gemeinsame Erfolgsprozesse legen.
       </p>
     </div>
 
     <div class="flex flex-col gap-6">
-      <p class="text-xl text-primary text-center font-bold">In folgenden Bereichen kann ich dich unterstützen:</p>
+      <p class="text-xl text-center font-bold">In folgenden Bereichen kann ich dich unterstützen:</p>
 
-      <ul class="space-y-3 mx-auto max-w-2xl">
+      <div class="grid sm:grid-cols-2 gap-4">
         {
-          [
-            "Website & Onepager",
-            "Landingpages & Salespages",
-            "Werbeanzeigen & Social Media",
-            "E-Mail-Marketing & Newsletter",
-          ].map((item) => (
-            <li class="flex items-start gap-3">
-              <i class="ph ph-arrow-circle-right text-primary mt-1 text-xl shrink-0 fill-current" />
-              <span class="text-muted-foreground text-lg">{item}</span>
-            </li>
+          offers.map((offer) => (
+            <div class="flex items-center gap-4 p-5 rounded-xl bg-accent/7 hover:shadow-md transition-colors duration-200">
+              <div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center shrink-0 border border-white/50">
+                <i class={`ph ph-${offer.icon} text-accent text-xl`} />
+              </div>
+              <p class="text-md mb-1 font-semibold">{offer.title}</p>
+            </div>
           ))
         }
-      </ul>
+      </div>
     </div>
 
-    <a href="/angebote" class="flex justify-center">
-      <Button class="mt-8 px-8 py-2 text-md md:text-lg">Näheres zu meinen Angeboten</Button>
-    </a>
+    <div class="flex flex-col gap-4">
+      <p class="text-lg text-muted-foreground text-center">
+        Du willst mehr über Copywriting erfahren oder durch meine Angebote stöbern? Klick dich durch:
+      </p>
+
+      <div class="flex justify-center">
+        <Button href="/angebote" title="Näheres zu meinen Angeboten" class="px-8 py-2 text-md md:text-lg"
+          >Näheres zu meinen Angeboten
+        </Button>
+      </div>
+    </div>
   </div>
 </section>

@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import Badge from "../ui/badge.astro";
 import Button from "../ui/button.astro";
-import HeroImage from "@assets/hero.png";
+import HeroImage from "@assets/hero.webp";
 
 interface Badge {
   label: string;
@@ -44,9 +44,15 @@ const badges: Badge[] = [
         {badges.map((badge: Badge) => <Badge label={badge.label} icon={badge.icon} color={badge.color} />)}
       </div>
 
-      <a href="/kontakt">
-        <Button class="mt-8 px-8 py-2 text-md md:text-lg">Hier geht´s zum Kennnenlern-Call</Button>
-      </a>
+      <div class="flex">
+        <Button
+          href="/kontakt"
+          title="Hier geht´s zum Kennenlern-Call"
+          class="block mt-8 px-8 py-2 text-md md:text-lg"
+        >
+          Hier geht´s zum Kennenlern-Call
+        </Button>
+      </div>
 
       <p class="italic text-sm mt-2 text-center md:text-start">Unverbindlich und kostenfrei</p>
     </div>
@@ -55,14 +61,16 @@ const badges: Badge[] = [
   <div class="relative mt-12 w-full md:mt-0 md:w-1/2">
     <div class="relative z-10">
       <Image
-        alt="Hero"
-        class="h-auto w-[95%] mx-auto transform rounded-[3rem] shadow-2xl transition-transform duration-700 hover:rotate-0 md:rotate-3 md:w-[65%]"
+        alt="Sina Weichlein, Copywriterin für Dienstleister – Texte mit Herzblut und Expertise"
+        title="Die Textexpertin hinter Buchstabenfeder"
+        class="h-auto w-[95%] mx-auto transform rounded-[3rem] shadow-2xl transition-transform duration-700 hover:rotate-0 md:rotate-3 md:w-[80%] lg:w-[65%]"
+        fetchpriority="high"
         src={HeroImage}
       />
 
       {/* Floating Cards */}
       <div
-        class="bg-card hidden absolute bottom-14 -left-18 max-w-75 items-center gap-3 rounded-2xl p-4 shadow-lg md:-left-18 md:flex"
+        class="bg-card hidden absolute bottom-14 -left-18 max-w-75 items-center gap-3 rounded-2xl p-4 shadow-lg md:-left-18 lg:flex"
       >
         <div class="rounded-full bg-green-100 px-2 py-1 text-green-600">
           <i class="ph ph-handshake text-lg"></i>
@@ -75,7 +83,7 @@ const badges: Badge[] = [
 
       {/* Second Badge */}
       <div
-        class="bg-card hidden absolute top-4 -right-4 max-w-75 items-center gap-3 rounded-2xl p-4 shadow-lg md:-right-8 md:flex"
+        class="bg-card hidden absolute top-4 -right-4 max-w-75 items-center gap-3 rounded-2xl p-4 shadow-lg md:-right-8 lg:flex"
       >
         <div class="rounded-full bg-blue-100 px-2 py-1 text-blue-600">
           <i class="ph ph-users"></i>
