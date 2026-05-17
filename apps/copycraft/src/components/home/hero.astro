@@ -1,0 +1,90 @@
+---
+import { Image } from "astro:assets";
+import Badge from "../ui/badge.astro";
+import Button from "../ui/button.astro";
+import HeroImage from "@assets/hero.png";
+
+interface Badge {
+  label: string;
+  color: string;
+  icon: string;
+}
+
+const badges: Badge[] = [
+  { label: "100% Herzblut", color: "text-green-600", icon: "heart" },
+  {
+    label: "Handverlesene Worte",
+    color: "text-green-600",
+    icon: "pen-nib",
+  },
+  { label: "Persönlich & nah", color: "text-green-600", icon: "hand-heart" },
+];
+---
+
+<section
+  class="relative flex min-h-[90vh] flex-col items-center overflow-hidden px-6 py-12 md:flex-row md:px-12 lg:px-24"
+  id="home"
+>
+  <div class="relative z-10 w-full space-y-8 md:w-1/2">
+    <div>
+      <span class="font-hand text-primary mb-4 inline-block text-xl md:text-2xl">
+        Copywriting für Dienstleister rund um Mensch und Tier
+      </span>
+      <h1 class="font-heading text-foreground mb-6 text-4xl leading-[1.1] font-bold md:text-5xl">
+        Mach deine Texte zu dem
+        <span class="text-primary relative inline-block">Teamkollegen </span>, der niemals schläft
+      </h1>
+      <p class="text-muted-foreground max-w-xl text-md leading-relaxed md:text-xl">
+        Dein Angebot hat das Potenzial, etwas zu verändern. <br />
+        Mit der Power aus deiner Expertise und meinen starken Worten bringen wir es an die richtigen Menschen, damit du endlich
+        gefunden, verstanden und gebucht wirst.
+      </p>
+
+      <div class="hidden md:flex flex-wrap gap-4 pt-4">
+        {badges.map((badge: Badge) => <Badge label={badge.label} icon={badge.icon} color={badge.color} />)}
+      </div>
+
+      <a href="/kontakt">
+        <Button class="mt-8 px-8 py-2 text-md md:text-lg">Hier geht´s zum Kennnenlern-Call</Button>
+      </a>
+
+      <p class="italic text-sm mt-2 text-center md:text-start">Unverbindlich und kostenfrei</p>
+    </div>
+  </div>
+
+  <div class="relative mt-12 w-full md:mt-0 md:w-1/2">
+    <div class="relative z-10">
+      <Image
+        alt="Hero"
+        class="h-auto w-[95%] mx-auto transform rounded-[3rem] shadow-2xl transition-transform duration-700 hover:rotate-0 md:rotate-3 md:w-[65%]"
+        src={HeroImage}
+      />
+
+      {/* Floating Cards */}
+      <div
+        class="bg-card hidden absolute bottom-14 -left-18 max-w-75 items-center gap-3 rounded-2xl p-4 shadow-lg md:-left-18 md:flex"
+      >
+        <div class="rounded-full bg-green-100 px-2 py-1 text-green-600">
+          <i class="ph ph-handshake text-lg"></i>
+        </div>
+        <div>
+          <p class="text-sm font-bold">Exklusive Betreuung</p>
+          <p class="text-muted-foreground text-xs">Voller Fokus auf dein Projekt</p>
+        </div>
+      </div>
+
+      {/* Second Badge */}
+      <div
+        class="bg-card hidden absolute top-4 -right-4 max-w-75 items-center gap-3 rounded-2xl p-4 shadow-lg md:-right-8 md:flex"
+      >
+        <div class="rounded-full bg-blue-100 px-2 py-1 text-blue-600">
+          <i class="ph ph-users"></i>
+        </div>
+        <div>
+          <p class="text-sm font-bold">Sorgenfrei</p>
+          <p class="text-muted-foreground text-xs">Vom Satzanfang bis zum Punkt</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

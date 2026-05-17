@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import Button from "../ui/button.astro";
+import HeroImage from "@assets/offers.png";
+---
+
+<section
+  class="relative flex min-h-[90vh] flex-col items-center overflow-hidden px-6 py-12 md:flex-row md:px-12 lg:px-24"
+  id="home"
+>
+  <div class="relative z-10 w-full space-y-8 md:w-1/2 justify-items-center">
+    <div>
+      <span class="font-hand text-primary mb-4 inline-block text-xl md:text-2xl">
+        Von der Sozialverwaltungswirtin zur Wortakrobatin
+      </span>
+      <h1 class="font-heading text-foreground mb-6 text-4xl leading-[1.1] font-bold md:text-5xl">
+        Ich bin die, die gern mit Buchstaben hantiert.
+      </h1>
+      <p class="text-muted-foreground max-w-xl text-md leading-relaxed md:text-xl">
+        Meine Superkraft sind Texte mit Feingefühl, Persönlichkeit und ganz viel Liebe fürs Detail.
+      </p>
+
+      <a href="/kontakt">
+        <Button class="mt-8 px-8 py-2 text-md md:text-lg">Lust auf einen virtuellen Cappuccino?</Button>
+      </a>
+
+      <p class="italic text-sm mt-2 text-center md:text-start">Ich lade dich herzlich zum Wortwechsel-Schnack ein.</p>
+    </div>
+  </div>
+
+  <div class="relative mt-12 w-full md:mt-0 md:w-1/2">
+    <div class="relative z-10">
+      <Image alt="Hero" class="h-auto w-[95%] mx-auto rounded-[3rem] md:w-[65%]" src={HeroImage} />
+    </div>
+  </div>
+</section>

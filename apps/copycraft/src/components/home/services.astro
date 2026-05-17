@@ -1,0 +1,94 @@
+---
+import Button from "../ui/button.astro";
+import Card from "../ui/card.astro";
+
+interface Service {
+  icon: string;
+  title: string;
+  image: string;
+  description: string;
+}
+
+const services: Service[] = [
+  {
+    icon: "heart",
+    title: "Wegbegleiter & Herzenslehrer",
+    image: "https://picsum.photos/200/300",
+    description: "u.a. Coaches, Tanzlehrer, Bewegungstrainer, Berater & Therapeuten",
+  },
+  {
+    icon: "leaf",
+    title: "Naturliebhaber & Tierversteher",
+    image: "https://picsum.photos/200/300",
+    description: "u.a. Hundetrainer, Tierbetreuung, Naturpädagogik & Erlebnisanbieter",
+  },
+];
+---
+
+<section class="px-6 py-24" id="cta">
+  <div class="mx-auto max-w-6xl flex flex-col gap-12">
+    <div class="space-y-4 flex flex-col gap-6">
+      <span class="font-hand my-0 text-primary text-xl text-center md:text-2xl"
+        >Weil ich die Kleinen großschreiben möchte</span
+      >
+      <h2 class="font-heading text-foreground text-4xl text-center font-bold md:text-5xl">
+        Angebote und Dienstleistungen
+      </h2>
+
+      <p class="mx-auto my-0 text-lg text-muted-foreground md:text-center">
+        Ich arbeite besonders gern mit kleinen Unternehmen und (Solo-)Selbstständigen zusammen, die andere bewegen
+        wollen. Mit Menschen, die ihre Dienstleistung nicht einfach nur als „Verkauf“ ansehen. Manche
+        <span class="font-bold">Arbeit funktioniert nur mit Vertrauen und Beziehung</span>, wie zum Beispiel die der
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-6">
+      <div class="flex gap-8 self-center">
+        {
+          services.map((service) => (
+            <Card>
+              <div class="text-start">
+                <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 bg-primary/70">
+                  <i class={`ph ph-${service.icon} text-3xl`} />
+                </div>
+
+                <p class="text-2xl font-bold leading-none tracking-[-0.03em]">{service.title}</p>
+                <p class="mt-4 text-sm">{service.description}</p>
+
+                <div class="mt-6 h-1 w-16 rounded-full group-hover:w-24 transition-all duration-300 bg-accent/50" />
+              </div>
+            </Card>
+          ))
+        }
+      </div>
+
+      <p class="text-lg text-muted-foreground text-center">
+        … aber auch anderer Businessprojekte, die ihren Fokus auf Miteinander und gemeinsame Erfolgsprozesse legen.
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-6">
+      <p class="text-xl text-primary text-center font-bold">In folgenden Bereichen kann ich dich unterstützen:</p>
+
+      <ul class="space-y-3 mx-auto max-w-2xl">
+        {
+          [
+            "Website & Onepager",
+            "Landingpages & Salespages",
+            "Werbeanzeigen & Social Media",
+            "E-Mail-Marketing & Newsletter",
+          ].map((item) => (
+            <li class="flex items-start gap-3">
+              <i class="ph ph-arrow-circle-right text-primary mt-1 text-xl shrink-0 fill-current" />
+              <span class="text-muted-foreground text-lg">{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <a href="/angebote" class="flex justify-center">
+      <Button class="mt-8 px-8 py-2 text-md md:text-lg">Näheres zu meinen Angeboten</Button>
+    </a>
+  </div>
+</section>

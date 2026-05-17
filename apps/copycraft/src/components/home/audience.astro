@@ -1,0 +1,29 @@
+<section class="relative bg-white/50 px-6 py-24 md:px-12 lg:px-24" id="features">
+  <div class="mx-auto max-w-7xl flex flex-col justify-center gap-8">
+    <div class="space-y-4 text-center">
+      <span class="font-hand text-primary text-xl md:text-2xl">Schön, dass du hergefunden hast.</span>
+      <h2 class="font-heading text-foreground text-3xl font-bold md:text-5xl mt-2">
+        Fühl dich wie Zuhause, wenn du ...
+      </h2>
+    </div>
+
+    <ul class="space-y-3 mx-auto">
+      {
+        [
+          "... nach Texten suchst, die bei deiner Zielgruppe wirklich fruchten.",
+          "... Wert auf Empathie und Authentizität legst.",
+          "... dein Herzensprojekt an die passenden Menschen bringen möchtest.",
+        ].map((item) => (
+          <li class="flex items-start gap-3">
+            <i class="ph ph-feather text-primary mt-1 text-lg shrink-0 fill-current" />
+            <span class="text-muted-foreground text-lg md:text-xl">{item}</span>
+          </li>
+        ))
+      }
+    </ul>
+
+    <p class="mx-auto text-lg md:text-xl text-muted-foreground md:text-center">
+      Bei mir findest du kein penetrantes Aufschwatzen oder leere Versprechungen.
+    </p>
+  </div>
+</section>

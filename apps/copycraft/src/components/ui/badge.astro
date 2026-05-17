@@ -1,0 +1,14 @@
+---
+interface BadgeProps {
+  icon: string;
+  color: string;
+  label: string;
+}
+
+const { color, icon, label } = Astro.props as BadgeProps;
+---
+
+<div class="bg-secondary/30 flex items-center justify-center gap-2 rounded-full px-3 py-2">
+  <i class={`ph ph-${icon} h-4 w-4 shrink-0 ${color}`}></i>
+  <span class="text-foreground text-xs md:text-sm">{label}</span>
+</div>
