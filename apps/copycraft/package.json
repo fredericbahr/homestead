@@ -1,8 +1,8 @@
 {
   "name": "copycraft",
   "private": true,
-  "description": "Find your zen. One breath, one paw print at a time.",
-  "license": "MIT",
+  "description": "Website of Buchstabenfeder, the copywriting business of Sina Weichlein.",
+  "license": "UNLICENSED",
   "author": "Frederic Bahr",
   "scripts": {
     "astro": "astro",
@@ -27,6 +27,7 @@
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
+    "@homestead/config-prettier": "*",
     "@tailwindcss/vite": "^4.3.0",
     "@types/node": "^25.9.1",
     "@types/react": "^19.2.15",

@@ -1,12 +1,14 @@
 # Homestead 🏠
 
-Welcome to **Homestead**, a monorepo that unites my personal portfolio and my family’s business websites. This repository is designed to provide a centralized, simple, and organized space for my digital projects.
+Welcome to **Homestead**, a monorepo that unites my family’s business websites. This repository is designed to provide a centralized, simple, and organized space for my digital projects.
 
 ## Contents
 
-- **`portfolio/`**: My personal portfolio, showcasing my work, skills, and projects.
-- **`marketing/`**: The marketing website for my family’s business, designed to attract customers and provide key business information.
-- **`contact/`**: A contact page for the family business, making it easy for potential clients to reach out.
+- **`apps/copycraft/`**: Buchstabenfeder, the copywriting business of Sina Weichlein (Astro, Tailwind).
+- **`apps/office-hub/`**: Gabriela Bahr's bookkeeping and office services (Vite, React, Chakra UI).
+- **`apps/vital-consultant/`**: Madita Bahr's sport and health consulting (Vite, React, Chakra UI).
+- **`packages/components/`**: Shared Chakra UI components for the two Chakra apps.
+- **`configs/`**: Shared TypeScript and Prettier configs.
 
 ## Why "Homestead"?
 
@@ -25,8 +27,14 @@ Make sure you have the following installed:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/homestead.git
+   git clone https://github.com/fredericbahr/homestead.git
    cd homestead
+   ```
+
+2. Install dependencies and start the dev servers:
+   ```bash
+   npm install
+   npm run dev
    ```
 
 ## License

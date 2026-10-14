@@ -9,15 +9,10 @@
     "react-swipeable": "^7.0.2"
   },
   "devDependencies": {
-    "@homestead/config-prettier": "*",
     "@homestead/config-ts": "*"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Frederic Bahr",
   "license": "UNLICENSED",
-  "prettier": "@homestead/config-prettier",
   "volta": {
     "extends": "../../package.json"
   }

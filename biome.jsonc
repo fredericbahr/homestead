@@ -1,6 +1,5 @@
 {
   "extends": [
-    "ultracite",
     "ultracite/biome/core",
     "ultracite/biome/type-aware",
     "ultracite/biome/react",
@@ -8,10 +7,10 @@
   ],
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "formatter": {
-    "lineWidth": 120,
+    "lineWidth": 120
   },
   "files": {
-    "includes": ["!apps/copycraft"],
+    "includes": ["!apps/copycraft"]
   },
   "linter": {
     "rules": {
@@ -21,15 +20,15 @@
           "options": {
             "requireAscii": true,
             "filenameCases": ["kebab-case"],
-            "match": "[\\-$]?(.+?)[.](.+)",
-          },
-        },
-      },
-    },
+            "match": "[\\-$]?(.+?)[.](.+)"
+          }
+        }
+      }
+    }
   },
   "javascript": {
     "formatter": {
-      "quoteStyle": "double",
-    },
-  },
+      "quoteStyle": "double"
+    }
+  }
 }
