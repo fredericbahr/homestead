@@ -10,6 +10,8 @@ npm-workspaces monorepo with the websites of Frederic Bahr's family businesses. 
 - `packages/components` (`@homestead/components`): shared components for the Chakra apps.
 - `configs/config-ts`: shared tsconfig base.
 
+Each app has a `GLOSSARY.md` of its business terms, listed in [GLOSSARY-MAP.md](GLOSSARY-MAP.md). Use those terms when you name code or write copy for an app.
+
 ## Deployment
 
 Netlify deploys all three sites automatically on every push to `main`. A push to `main` is a release. Work on a branch, and push or merge to `main` only when the user asks.

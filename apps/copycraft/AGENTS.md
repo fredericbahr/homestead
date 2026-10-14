@@ -8,3 +8,4 @@ Static Astro 6 site with Tailwind CSS v4 (through the Vite plugin) and Swup page
 - Biome's Astro support is partial. Its parser rejects `{/* … */}` comments in templates, so put comments in the frontmatter.
 - The sitemap's `lastmod` is a fixed date in [astro.config.mjs](astro.config.mjs). Update it when you change page content.
 - Fonts come from Google through Astro's `fonts` config and are exposed as CSS variables (`--font-heading`, `--font-hand`, …).
+- Business terms are in [GLOSSARY.md](GLOSSARY.md). Read it before you name code or write copy here, and use its terms instead of the ones listed under _Avoid_.
