@@ -25,17 +25,18 @@ const facts: Fact[] = [
       </div>
 
       <p class="text-center text-lg md:text-xl">
-        Wenn ich nicht gerade an Sätzen feile, triffst du mich wahrscheinlich zwischen den Rhöner Hügeln auf dem <span class="font-bold"
-          >Motorrad</span
-        >
-        an oder findest mich bei der <span class="font-bold">Formel 1</span> mitfiebern. Auch beim <span class="font-bold">Tanzen</span> bekomme ich den Kopf frei (Female,
-        Hip Hop & Showtanz).
+        Wenn ich nicht gerade an Sätzen feile, triffst du mich wahrscheinlich zwischen den Rhöner Hügeln auf dem
+        <span class="font-bold">Motorrad</span>
+        an oder findest mich bei der <span class="font-bold">Formel 1</span> mitfiebern. Auch beim
+        <span class="font-bold">Tanzen</span>
+        bekomme ich den Kopf frei (Female, Hip Hop & Showtanz).
       </p>
 
       <p class="text-center text-lg md:text-xl">
-        Zum Adrenalin-Ausgleich verschlinge ich regelmäßig <strong>Bücher</strong> und gieße leidenschaftlich gerne kreative
-        <span class="font-bold">Kerzen</span>. Ich entdecke gerne die Welt, indem ich sämtliche Länder bereise und gerne zu Fuß
-        erkunde. <span class="font-bold">Madeira, Kreta & Norwegen</span>
+        Zum Adrenalin-Ausgleich verschlinge ich regelmäßig <strong>Bücher</strong> und gieße leidenschaftlich gerne
+        kreative
+        <span class="font-bold">Kerzen</span>. Ich entdecke gerne die Welt, indem ich sämtliche Länder bereise und gerne
+        zu Fuß erkunde. <span class="font-bold">Madeira, Kreta & Norwegen</span>
         gehören definitiv zu meinen liebsten Plätzen.
       </p>
     </div>
@@ -44,22 +45,20 @@ const facts: Fact[] = [
       <p class="text-xl text-primary text-center font-bold">Knackige Fakten:</p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {
-          facts.map((fact: Fact) => (
+        {facts.map((fact: Fact) => (
             <div class="flex items-center gap-4 p-5 rounded-xl bg-accent/7 hover:shadow-md transition-colors duration-200">
               <div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center shrink-0 border border-white/50">
                 <i class={`ph ph-${fact.icon} text-accent text-2xl`} />
               </div>
               <p class="text-md mb-1 font-semibold">{fact.title}</p>
             </div>
-          ))
-        }
+          ))}
       </div>
     </div>
 
     <p class="text-center text-lg md:text-xl">
-      Uff, jetzt habe ich die ganze Zeit nur von mir geredet.<br /> Wer sitzt da eigentlich auf der anderen Seite des Bildschirms?
-      Was macht dich aus?
+      Uff, jetzt habe ich die ganze Zeit nur von mir geredet.<br>
+      Wer sitzt da eigentlich auf der anderen Seite des Bildschirms? Was macht dich aus?
     </p>
 
     <div class="flex flex-col items-center">

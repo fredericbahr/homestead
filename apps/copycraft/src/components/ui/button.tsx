@@ -1,11 +1,11 @@
 import type React from "react";
 
-type ButtonProps = {
+interface ButtonProps {
   children: React.ReactNode;
+  className?: string;
   href?: string;
   title?: string;
-  className?: string;
-};
+}
 
 const classes =
   "cursor-pointer rounded-sm bg-accent px-6 py-2 font-bold text-sm text-background shadow-md transition-colors hover:bg-accent/90";
@@ -13,14 +13,14 @@ const classes =
 export const Button = ({ children, href, title, className = "" }: ButtonProps) => {
   if (href) {
     return (
-      <a href={href} title={title} className={`${classes} ${className}`}>
+      <a className={`${classes} ${className}`} href={href} title={title}>
         {children}
       </a>
     );
   }
 
   return (
-    <button title={title} className={`${classes} ${className}`}>
+    <button className={`${classes} ${className}`} title={title} type="button">
       {children}
     </button>
   );

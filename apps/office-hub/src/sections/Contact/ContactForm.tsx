@@ -27,9 +27,9 @@ import { PaperPlaneTiltIcon } from "@phosphor-icons/react";
 import { Select, type SingleValue } from "chakra-react-select";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router";
 
-import { useValidation } from "./useValidation";
+import { useValidation } from "./useValidation.ts";
 
 export const ContactForm = () => {
   const [searchParams] = useSearchParams();

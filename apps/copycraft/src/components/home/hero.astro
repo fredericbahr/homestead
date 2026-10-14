@@ -1,16 +1,16 @@
 ---
 import { Image } from "astro:assets";
+import HeroImage from "@assets/hero.webp";
 import Badge from "../ui/badge.astro";
 import Button from "../ui/button.astro";
-import HeroImage from "@assets/hero.webp";
 
-interface Badge {
-  label: string;
+interface BadgeItem {
   color: string;
   icon: string;
+  label: string;
 }
 
-const badges: Badge[] = [
+const badges: BadgeItem[] = [
   { label: "100% Herzblut", color: "text-green-600", icon: "heart" },
   {
     label: "Handverlesene Worte",
@@ -35,21 +35,17 @@ const badges: Badge[] = [
         <span class="text-primary relative inline-block">Teamkollegen </span>, der niemals schläft
       </h1>
       <p class="text-muted-foreground max-w-xl text-md leading-relaxed md:text-xl">
-        Dein Angebot hat das Potenzial, etwas zu verändern. <br />
-        Mit der Power aus deiner Expertise und meinen starken Worten bringen wir es an die richtigen Menschen, damit du endlich
-        gefunden, verstanden und gebucht wirst.
+        Dein Angebot hat das Potenzial, etwas zu verändern. <br>
+        Mit der Power aus deiner Expertise und meinen starken Worten bringen wir es an die richtigen Menschen, damit du
+        endlich gefunden, verstanden und gebucht wirst.
       </p>
 
       <div class="hidden md:flex flex-wrap gap-4 pt-4">
-        {badges.map((badge: Badge) => <Badge label={badge.label} icon={badge.icon} color={badge.color} />)}
+        {badges.map((badge: BadgeItem) => <Badge color={badge.color} icon={badge.icon} label={badge.label} />)}
       </div>
 
       <div class="flex">
-        <Button
-          href="/kontakt"
-          title="Hier geht´s zum Kennenlern-Call"
-          class="block mt-8 px-8 py-2 text-md md:text-lg"
-        >
+        <Button href="/kontakt" title="Hier geht´s zum Kennenlern-Call" class="block mt-8 px-8 py-2 text-md md:text-lg">
           Hier geht´s zum Kennenlern-Call
         </Button>
       </div>
@@ -68,7 +64,6 @@ const badges: Badge[] = [
         src={HeroImage}
       />
 
-      {/* Floating Cards */}
       <div
         class="bg-card hidden absolute bottom-14 -left-18 max-w-75 items-center gap-3 rounded-2xl p-4 shadow-lg md:-left-18 lg:flex"
       >
@@ -81,7 +76,6 @@ const badges: Badge[] = [
         </div>
       </div>
 
-      {/* Second Badge */}
       <div
         class="bg-card hidden absolute top-4 -right-4 max-w-75 items-center gap-3 rounded-2xl p-4 shadow-lg md:-right-8 lg:flex"
       >

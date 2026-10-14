@@ -1,3 +1,1 @@
-export const DataProtection = () => {
-  return <div>DataProtection</div>;
-};
+export const DataProtection = () => <div>DataProtection</div>;

@@ -1,5 +1,6 @@
-export * from "./ColorThemeSwitch";
-export * from "./Layout";
-export * from "./SubHeading";
-export * from "./Testimonial/Testimonial";
-export * from "./Testimonial/TestimonialSlider";
+// biome-ignore-all lint/performance/noBarrelFile: this is the package entry point.
+export * from "./ColorThemeSwitch.tsx";
+export * from "./Layout.tsx";
+export * from "./SubHeading.tsx";
+export * from "./Testimonial/Testimonial.tsx";
+export * from "./Testimonial/TestimonialSlider.tsx";

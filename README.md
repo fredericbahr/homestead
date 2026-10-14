@@ -4,11 +4,11 @@ Welcome to **Homestead**, a monorepo that unites my family’s business websites
 
 ## Contents
 
-- **`apps/copycraft/`**: Buchstabenfeder, the copywriting business of Sina Weichlein (Astro, Tailwind).
+- **`apps/copycraft/`**: Buchstabenfeder, the copywriting business of Sina Weichlein (Astro, Tailwind CSS).
 - **`apps/office-hub/`**: Gabriela Bahr's bookkeeping and office services (Vite, React, Chakra UI).
 - **`apps/vital-consultant/`**: Madita Bahr's sport and health consulting (Vite, React, Chakra UI).
 - **`packages/components/`**: Shared Chakra UI components for the two Chakra apps.
-- **`configs/`**: Shared TypeScript and Prettier configs.
+- **`configs/`**: Shared TypeScript config.
 
 ## Why "Homestead"?
 

@@ -9,5 +9,4 @@ Built with Astro, React islands, and Tailwind CSS. Started from the "Purrfectly 
 ```bash
 npm run dev      # start the dev server
 npm run build    # production build into dist/
-npm run format   # format with Prettier
 ```

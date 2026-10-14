@@ -13,10 +13,10 @@
 import { Box, Button, Collapse, HStack, Icon, IconButton, Link, useDisclosure, useMediaQuery } from "@chakra-ui/react";
 import { ColorThemeSwitch } from "@homestead/components";
 import { ListIcon, XIcon } from "@phosphor-icons/react";
-import { Link as RouterLink, useNavigate } from "react-router-dom";
-import { Logo } from "../Logo";
-import { MobileNavigation } from "./Navigation/MobileNavigation";
-import { Navigation } from "./Navigation/Navigation";
+import { Link as RouterLink, useNavigate } from "react-router";
+import { Logo } from "../Logo.tsx";
+import { MobileNavigation } from "./Navigation/MobileNavigation.tsx";
+import { Navigation } from "./Navigation/Navigation.tsx";
 
 export const Header = () => {
   const [isMobile] = useMediaQuery("(max-width: 62em)");

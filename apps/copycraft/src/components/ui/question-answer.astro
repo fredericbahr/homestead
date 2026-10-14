@@ -2,9 +2,9 @@
 import { cn } from "@/lib/utils";
 
 interface QuestionAnswerProps {
+  class?: string;
   id: string;
   question: string;
-  class?: string;
 }
 
 const { id, question, class: className } = Astro.props as QuestionAnswerProps;

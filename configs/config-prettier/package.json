@@ -1,7 +1,0 @@
-{
-  "name": "@homestead/config-prettier",
-  "version": "1.0.0",
-  "main": ".prettierrc.json",
-  "author": "Frederic Bahr",
-  "license": "UNLICENSED"
-}

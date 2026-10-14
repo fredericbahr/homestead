@@ -40,17 +40,18 @@ import QuestionAnswer from "../ui/question-answer.astro";
 
         <ol class="list-decimal space-y-3 px-4 py-2">
           <li>
-            <span class="font-bold">Buche dir ein kostenloses und unverbindliches Gespräch mit mir.</span> Wir starten mit
-            einem lockeren Schnack, indem du mir davon erzählst, wer du bist, was du machst und wo du Unterstützung benötigst.
-            Frei heraus, ganz entspannt.
+            <span class="font-bold">Buche dir ein kostenloses und unverbindliches Gespräch mit mir.</span>
+            Wir starten mit einem lockeren Schnack, indem du mir davon erzählst, wer du bist, was du machst und wo du
+            Unterstützung benötigst. Frei heraus, ganz entspannt.
           </li>
           <li>
-            <span class="font-bold">Ich schicke dir ein Angebot zu.</span> Du entscheidest, ob es für dich passt und du das
-            Angebot verbindlich annehmen möchtest.
+            <span class="font-bold">Ich schicke dir ein Angebot zu.</span>
+            Du entscheidest, ob es für dich passt und du das Angebot verbindlich annehmen möchtest.
           </li>
           <li>
-            <span class="font-bold">Wir starten mit dem Realtalk.</span> In diesem Schritt erfahre ich von dir, was dich und
-            dein Projekt ausmacht, wie deine Zielgruppe tickt und was du wirklich erreichen möchtest.
+            <span class="font-bold">Wir starten mit dem Realtalk.</span>
+            In diesem Schritt erfahre ich von dir, was dich und dein Projekt ausmacht, wie deine Zielgruppe tickt und
+            was du wirklich erreichen möchtest.
           </li>
           <li>
             <span class="font-bold">Gemeinsam entwickeln wir ein Konzept</span>, das sich für dich stimmig anfühlt.
@@ -58,14 +59,15 @@ import QuestionAnswer from "../ui/question-answer.astro";
             der richtige Weg ist.
           </li>
           <li>
-            <span class="font-bold">Danach gehe ich in die Erarbeitungsphase</span> (die wohl entspannteste Phase für dich
-            im Copywriting): Ich entwickle oder optimiere Texte, die deine Persönlichkeit widerspiegeln und klar strukturiert
-            dazu führen, dass sich deine Wunschkunden angesprochen fühlen. Keine Sorge – du bist in den Prozess eingebunden.
-            Meine Aufträge beinhalten zwei Feedbackschleifen, bevor die Texte finalisiert werden.
+            <span class="font-bold">Danach gehe ich in die Erarbeitungsphase</span>
+            (die wohl entspannteste Phase für dich im Copywriting): Ich entwickle oder optimiere Texte, die deine
+            Persönlichkeit widerspiegeln und klar strukturiert dazu führen, dass sich deine Wunschkunden angesprochen
+            fühlen. Keine Sorge – du bist in den Prozess eingebunden. Meine Aufträge beinhalten zwei Feedbackschleifen,
+            bevor die Texte finalisiert werden.
           </li>
           <li>
-            <span class="font-bold">Texte gut, alles gut:</span> Ich schicke dir dein finales Copywriting zu und du darfst
-            deinem Marketing damit neues Leben einhauchen.
+            <span class="font-bold">Texte gut, alles gut:</span>
+            Ich schicke dir dein finales Copywriting zu und du darfst deinem Marketing damit neues Leben einhauchen.
           </li>
         </ol>
 
@@ -136,16 +138,18 @@ import QuestionAnswer from "../ui/question-answer.astro";
   // Optional: Implementation to ensure only one FAQ is open at a time (Accordion behavior)
   const details = document.querySelectorAll("details");
 
-  details.forEach((targetDetail) => {
-    targetDetail.addEventListener("click", (e) => {
+  for (const targetDetail of details) {
+    targetDetail.addEventListener("click", () => {
       // Allow the summary to toggle, but close others
-      if (targetDetail.hasAttribute("open")) return;
+      if (targetDetail.hasAttribute("open")) {
+        return;
+      }
 
-      details.forEach((detail) => {
+      for (const detail of details) {
         if (detail !== targetDetail) {
           detail.removeAttribute("open");
         }
-      });
+      }
     });
-  });
+  }
 </script>

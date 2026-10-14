@@ -6,14 +6,18 @@
     "ultracite/biome/astro"
   ],
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "files": {
+    "includes": ["!.claude"]
+  },
   "formatter": {
     "lineWidth": 120
   },
-  "files": {
-    "includes": ["!apps/copycraft"]
-  },
   "linter": {
     "rules": {
+      "correctness": {
+        // Misreads React's CommonJS typings (e.g. "react has no export named StrictMode"); tsc covers unresolved imports.
+        "noUnresolvedImports": "off"
+      },
       "style": {
         "useFilenamingConvention": {
           "level": "warn",
@@ -30,5 +34,25 @@
     "formatter": {
       "quoteStyle": "double"
     }
-  }
+  },
+  "overrides": [
+    {
+      // copycraft imports through tsconfig path aliases (@assets/*, @components/*, ...), which this rule reads as packages.
+      "includes": ["apps/copycraft/**"],
+      "linter": {
+        "rules": { "correctness": { "noUndeclaredDependencies": "off" } }
+      }
+    },
+    {
+      // Astro renders plain HTML, so iterated elements need no React key, and
+      // useSortedClasses only sees classes inside {expressions} here and cannot write its fix back.
+      "includes": ["**/*.astro"],
+      "linter": {
+        "rules": {
+          "correctness": { "useJsxKeyInIterable": "off" },
+          "nursery": { "useSortedClasses": "off" }
+        }
+      }
+    }
+  ]
 }

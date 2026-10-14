@@ -1,17 +1,13 @@
 ---
 interface Props {
-  side?: "left" | "right"
-  dotClass?: string
-  class?: string
+  class?: string;
+  dotClass?: string;
+  side?: "left" | "right";
 }
 
-const {
-  side = "left",
-  dotClass = "bg-primary",
-  class: className,
-} = Astro.props
+const { side = "left", dotClass = "bg-primary", class: className } = Astro.props;
 
-const isRight = side === "right"
+const isRight = side === "right";
 ---
 
 <div

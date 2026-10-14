@@ -1,13 +1,12 @@
 ---
-import Button from "./ui/button.astro";
 import { Image } from "astro:assets";
 import LogoImage from "@assets/logo.webp";
+import Button from "./ui/button.astro";
 ---
 
 <footer class="border-border/40 relative border-t bg-white px-6 py-16">
   <div class="mx-auto max-w-7xl">
     <div class="grid grid-cols-1 gap-12 md:grid-cols-4 md:gap-8 lg:gap-12 items-start">
-      {/* Left Column: Brand */}
       <Image
         alt="Logo"
         title="Logo"
@@ -17,7 +16,6 @@ import LogoImage from "@assets/logo.webp";
         fetchpriority="low"
       />
 
-      {/* Center Column: Links by Category */}
       <div class="flex flex-col justify-center space-y-4">
         <div class="space-y-2">
           <p class="font-heading text-foreground font-bold">Seiten</p>
@@ -47,7 +45,6 @@ import LogoImage from "@assets/logo.webp";
         </div>
       </div>
 
-      {/* Center Column: Links by Category */}
       <div class="flex flex-col justify-center space-y-4">
         <div class="space-y-2">
           <p class="font-heading text-foreground font-bold">Rechtliches</p>
@@ -64,13 +61,13 @@ import LogoImage from "@assets/logo.webp";
               title="Datenschutz"
               class="flex gap-2 items-center text-muted-foreground hover:text-primary w-fit transition-colors"
             >
-              <i class="ph ph-cookie"></i> Datenschutz</a
+              <i class="ph ph-cookie"></i>
+              Datenschutz</a
             >
           </div>
         </div>
       </div>
 
-      {/* Right Column: CTA */}
       <div class="flex flex-col justify-center space-y-4">
         <div class="space-y-2">
           <p class="font-heading text-foreground font-bold">Kontakt</p>
@@ -78,14 +75,16 @@ import LogoImage from "@assets/logo.webp";
             <a
               href="mailto:sina@buchstabenfeder.de"
               class="flex gap-2 items-center text-muted-foreground hover:text-primary w-fit transition-colors"
-              ><i class="ph ph-envelope"></i> sina@buchstabenfeder.de</a
+              ><i class="ph ph-envelope"></i>
+              sina@buchstabenfeder.de</a
             >
             <a
               href="https://www.instagram.com/buchstabenfeder/"
               title="Instagram von Buchstabenfeder"
               target="_blank"
               class="flex gap-2 items-center text-muted-foreground hover:text-primary w-fit transition-colors"
-              ><i class="ph ph-instagram-logo"></i> Instagram <i class="ph ph-arrow-square-out"></i></a
+              ><i class="ph ph-instagram-logo"></i>
+              Instagram <i class="ph ph-arrow-square-out"></i></a
             >
           </div>
         </div>
@@ -96,19 +95,15 @@ import LogoImage from "@assets/logo.webp";
       </div>
     </div>
 
-    {/* Divider */}
     <div class="border-border/40 my-8 border-t"></div>
 
-    {/* Bottom: Copyright */}
     <div
       class="text-muted-foreground/60 flex flex-col items-center justify-between gap-4 text-center text-sm md:flex-row"
     >
-      <p>
-        &copy; {new Date().getFullYear()} Buchstabenfeder - Alle Rechte vorbehalten.
-      </p>
+      <p>&copy; {new Date().getFullYear()} Buchstabenfeder - Alle Rechte vorbehalten.</p>
       <p class="flex items-center justify-center gap-1">
-        Entwickelt von <a href="https://fredericbahr.github.io/" title="Frederic Bahrs Webseite">Frederic Bahr</a> mit <i
-          class="ph ph-binary"></i>
+        Entwickelt von <a href="https://fredericbahr.github.io/" title="Frederic Bahrs Webseite">Frederic Bahr</a> mit
+        <i class="ph ph-binary"></i>
       </p>
     </div>
   </div>
