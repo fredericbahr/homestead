@@ -13,70 +13,68 @@
 import { HStack, Icon, Link, List, ListItem, Text, VStack } from "@chakra-ui/react";
 import { ColorThemeSwitch } from "@homestead/components";
 import { BinaryIcon } from "@phosphor-icons/react";
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink } from "react-router";
 
-export const MobileFooter = () => {
-  return (
-    <VStack
-      backgroundColor="brand.500"
-      clipPath="polygon(0 15%, 100% 0, 100% 100%, 0% 100%);"
-      color="white"
-      gap={4}
-      justifyContent="space-around"
-      paddingBottom={6}
-      paddingTop={16}
-      width="full"
-    >
-      <VStack alignItems="center" gap={6} width="full">
-        <VStack alignItems="center">
-          <Text fontSize="xl" textAlign="center">
-            Leistungen
-          </Text>
-          <List textAlign="center">
-            <ListItem>
-              <Link href="/#school">Sport- und Sozialunterricht</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="/#training">Gerätetraining und Trainingsberatung</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="/#workshop">Vorträge und Workshops</Link>
-            </ListItem>
-          </List>
-        </VStack>
-        <VStack alignItems="center">
-          <Text fontSize="xl" textAlign="center">
-            Anderes
-          </Text>
-          <List textAlign="center">
-            <ListItem>
-              <Link href="/#about-me">Über mich</Link>
-            </ListItem>
-            <ListItem>
-              <Link href="/#references">Referenzen</Link>
-            </ListItem>
-          </List>
-        </VStack>
+export const MobileFooter = () => (
+  <VStack
+    backgroundColor="brand.500"
+    clipPath="polygon(0 15%, 100% 0, 100% 100%, 0% 100%);"
+    color="white"
+    gap={4}
+    justifyContent="space-around"
+    paddingBottom={6}
+    paddingTop={16}
+    width="full"
+  >
+    <VStack alignItems="center" gap={6} width="full">
+      <VStack alignItems="center">
+        <Text fontSize="xl" textAlign="center">
+          Leistungen
+        </Text>
+        <List textAlign="center">
+          <ListItem>
+            <Link href="/#school">Sport- und Sozialunterricht</Link>
+          </ListItem>
+          <ListItem>
+            <Link href="/#training">Gerätetraining und Trainingsberatung</Link>
+          </ListItem>
+          <ListItem>
+            <Link href="/#workshop">Vorträge und Workshops</Link>
+          </ListItem>
+        </List>
       </VStack>
-
-      <HStack justifyContent="space-around" width="full">
-        <ColorThemeSwitch boxSize={6} color="white" />
-      </HStack>
-
-      <HStack justifyContent="space-around" width="full">
-        <Link as={RouterLink} to="/imprint">
-          <Text>Impressum</Text>
-        </Link>
-      </HStack>
-
-      <VStack alignItems="center" gap={0} gridColumn="1/span 5">
-        <Text justifySelf="end" textAlign="center" width="full">
-          © {new Date().getFullYear()} Madita Bahr - Alle Rechte vorbehalten
+      <VStack alignItems="center">
+        <Text fontSize="xl" textAlign="center">
+          Anderes
         </Text>
-        <Text>
-          Entwickelt von <Link href="https://fredericbahr.github.io">Frederic Bahr</Link> mit <Icon as={BinaryIcon} />
-        </Text>
+        <List textAlign="center">
+          <ListItem>
+            <Link href="/#about-me">Über mich</Link>
+          </ListItem>
+          <ListItem>
+            <Link href="/#references">Referenzen</Link>
+          </ListItem>
+        </List>
       </VStack>
     </VStack>
-  );
-};
+
+    <HStack justifyContent="space-around" width="full">
+      <ColorThemeSwitch boxSize={6} color="white" />
+    </HStack>
+
+    <HStack justifyContent="space-around" width="full">
+      <Link as={RouterLink} to="/imprint">
+        <Text>Impressum</Text>
+      </Link>
+    </HStack>
+
+    <VStack alignItems="center" gap={0} gridColumn="1/span 5">
+      <Text justifySelf="end" textAlign="center" width="full">
+        © {new Date().getFullYear()} Madita Bahr - Alle Rechte vorbehalten
+      </Text>
+      <Text>
+        Entwickelt von <Link href="https://fredericbahr.github.io">Frederic Bahr</Link> mit <Icon as={BinaryIcon} />
+      </Text>
+    </VStack>
+  </VStack>
+);

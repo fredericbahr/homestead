@@ -13,22 +13,22 @@
 import { Center, ChakraProvider, Spinner, useMediaQuery } from "@chakra-ui/react";
 import { Layout } from "@homestead/components";
 import { lazy, Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
-import { mainTheme } from "./color-scheme";
-import { KeyServices } from "./KeyServices";
-import { AboutMe } from "./sections/AboutMe";
-import { Contact } from "./sections/Contact/Contact";
-import { Footer } from "./sections/Footer/Footer";
-import { MobileFooter } from "./sections/Footer/MobileFooter";
-import { Header } from "./sections/Header";
-import { Hero } from "./sections/Hero";
-import { DataProtection } from "./sections/Legal/DataProtection";
-import { Imprint } from "./sections/Legal/Imprint";
-import { Services } from "./sections/Services/Services";
-import { Testimonials } from "./sections/Testimonials/Testimonials";
+import { Route, Routes } from "react-router";
+import { mainTheme } from "./color-scheme.ts";
+import { KeyServices } from "./KeyServices.tsx";
+import { AboutMe } from "./sections/AboutMe.tsx";
+import { Contact } from "./sections/Contact/Contact.tsx";
+import { Footer } from "./sections/Footer/Footer.tsx";
+import { MobileFooter } from "./sections/Footer/MobileFooter.tsx";
+import { Header } from "./sections/Header.tsx";
+import { Hero } from "./sections/Hero.tsx";
+import { DataProtection } from "./sections/Legal/DataProtection.tsx";
+import { Imprint } from "./sections/Legal/Imprint.tsx";
+import { Services } from "./sections/Services/Services.tsx";
+import { Testimonials } from "./sections/Testimonials/Testimonials.tsx";
 
 const Error404 = lazy(() =>
-  import("./sections/ErrorPages/Error404").then((module) => ({
+  import("./sections/ErrorPages/Error404.tsx").then((module) => ({
     default: module.Error404,
   }))
 );

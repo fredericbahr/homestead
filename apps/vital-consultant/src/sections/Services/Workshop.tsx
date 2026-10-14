@@ -1,7 +1,7 @@
 import { Button, Flex, Heading, Icon, Image, Stack, Text, VStack } from "@chakra-ui/react";
 import { ArrowRightIcon } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 export const Workshop = () => {
   const navigate = useNavigate();
@@ -14,7 +14,6 @@ export const Workshop = () => {
         as={motion.img}
         borderRadius="lg"
         height="auto"
-        
         src="./workshop.jpg"
         // biome-ignore lint/suspicious/noExplicitAny: <explanation>
         transition={{ delay: 0.1, duration: 0.3 } as any}

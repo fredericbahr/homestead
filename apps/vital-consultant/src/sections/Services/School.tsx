@@ -1,7 +1,7 @@
 import { Button, Flex, Heading, Icon, Image, Stack, Text, VStack } from "@chakra-ui/react";
 import { ArrowRightIcon } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
-import { type NavigateFunction, useNavigate } from "react-router-dom";
+import { type NavigateFunction, useNavigate } from "react-router";
 
 export const School = () => {
   const navigate: NavigateFunction = useNavigate();

@@ -3,14 +3,14 @@ import Button from "../ui/button.astro";
 import Card from "../ui/card.astro";
 
 interface Service {
+  description: string;
   icon: string;
   title: string;
-  description: string;
 }
 
 interface Offer {
-  title: string;
   icon: string;
+  title: string;
 }
 
 const services: Service[] = [
@@ -54,8 +54,7 @@ const offers: Offer[] = [
 
     <div class="flex flex-col gap-6">
       <div class="flex flex-col md:flex-row gap-8 self-center">
-        {
-          services.map((service) => (
+        {services.map((service) => (
             <Card class="max-w-4xl">
               <div class="text-start">
                 <div class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 bg-primary/30">
@@ -68,8 +67,7 @@ const offers: Offer[] = [
                 <div class="mt-6 h-1 w-16 rounded-full group-hover:w-24 transition-all duration-300 bg-accent/50" />
               </div>
             </Card>
-          ))
-        }
+          ))}
       </div>
 
       <p class="text-lg text-muted-foreground text-center">
@@ -81,16 +79,14 @@ const offers: Offer[] = [
       <p class="text-xl text-center font-bold">In folgenden Bereichen kann ich dich unterstützen:</p>
 
       <div class="grid sm:grid-cols-2 gap-4">
-        {
-          offers.map((offer) => (
+        {offers.map((offer) => (
             <div class="flex items-center gap-4 p-5 rounded-xl bg-accent/7 hover:shadow-md transition-colors duration-200">
               <div class="w-10 h-10 rounded-lg bg-white flex items-center justify-center shrink-0 border border-white/50">
                 <i class={`ph ph-${offer.icon} text-accent text-xl`} />
               </div>
               <p class="text-md mb-1 font-semibold">{offer.title}</p>
             </div>
-          ))
-        }
+          ))}
       </div>
     </div>
 

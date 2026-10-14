@@ -13,7 +13,7 @@
 import { Button, Grid, Heading, Icon, Image, Text, useColorModeValue, VStack } from "@chakra-ui/react";
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 export const Hero = () => {
   const navigate = useNavigate();

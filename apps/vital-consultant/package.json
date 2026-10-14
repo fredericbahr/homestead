@@ -6,8 +6,6 @@
     "clean": "rm -rf dist node_modules",
     "build": "tsc && vite build",
     "dev": "vite --host --open",
-    "prettier": "prettier --check .",
-    "prettier:fix": "prettier --write .",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -26,7 +24,6 @@
     "react-swipeable": "^7.0.2"
   },
   "devDependencies": {
-    "@homestead/config-prettier": "*",
     "@homestead/config-ts": "*",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
@@ -36,7 +33,6 @@
     "typescript": "~6.0.3",
     "vite": "^8.0.12"
   },
-  "prettier": "@homestead/config-prettier",
   "volta": {
     "extends": "../../package.json"
   }

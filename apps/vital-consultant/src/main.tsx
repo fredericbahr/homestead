@@ -13,10 +13,10 @@
 import { ColorModeScript } from "@chakra-ui/react";
 import { StrictMode } from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router";
 
-import App from "./App";
-import { mainTheme } from "./color-scheme";
+import App from "./App.tsx";
+import { mainTheme } from "./color-scheme.ts";
 
 // biome-ignore lint/style/noNonNullAssertion: react handling
 ReactDOM.createRoot(document.getElementById("root")!).render(

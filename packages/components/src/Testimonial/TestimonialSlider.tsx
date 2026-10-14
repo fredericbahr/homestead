@@ -14,12 +14,12 @@ import { Box, Grid, HStack, Icon, IconButton, Tooltip, VStack } from "@chakra-ui
 import { CaretLeftIcon, CaretRightIcon } from "@phosphor-icons/react";
 import { motion } from "framer-motion";
 import { useSwipeable } from "react-swipeable";
-import { Testimonial, type TestimonialProps } from "./Testimonial";
+import { Testimonial, type TestimonialProps } from "./Testimonial.tsx";
 
 export interface TestimonialSliderProps {
-  testimonials: TestimonialProps[];
   index: number;
   onIndexChange: (index: number) => void;
+  testimonials: TestimonialProps[];
 }
 
 /** A testimonial slider carousel with swipe support.*/
@@ -78,6 +78,7 @@ export const TestimonialSlider = ({ testimonials, index = 0, onIndexChange }: Te
             <Box
               _hover={{ cursor: "pointer", transform: "scale(1.2)" }}
               backgroundColor={index === idx ? "accent.600" : "brand.900"}
+              // biome-ignore lint/suspicious/noArrayIndexKey: the dots are positional; the index is their identity.
               key={`${testimonial.title}-${idx}`}
               minHeight={1}
               minWidth={4}

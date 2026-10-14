@@ -12,7 +12,7 @@
 
 import { Button, Flex, Grid, HStack, Icon, Link, List, ListItem, Text, VStack } from "@chakra-ui/react";
 import { BinaryIcon } from "@phosphor-icons/react";
-import { Link as RouterLink, useNavigate } from "react-router-dom";
+import { Link as RouterLink, useNavigate } from "react-router";
 
 export const Footer = () => {
   const navigate = useNavigate();

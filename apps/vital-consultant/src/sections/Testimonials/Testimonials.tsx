@@ -1,7 +1,7 @@
 import { VStack } from "@chakra-ui/react";
 import { SubHeading, TestimonialSlider } from "@homestead/components";
 import { useState } from "react";
-import { testimonials } from "./testimonials";
+import { testimonials } from "./testimonials.ts";
 
 export const Testimonials = () => {
   const [index, setIndex] = useState(0);

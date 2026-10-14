@@ -7,13 +7,11 @@ export interface SubHeadingProps {
   dash?: boolean;
 }
 
-export const SubHeading = ({ children, dash }: SubHeadingProps) => {
-  return (
-    <HStack alignItems="center" gap={2} width="full">
-      {dash && <Box backgroundColor="brand.500" height="5px" width={{ base: "60px", lg: "100px" }} />}
-      <Heading as="h2" color="brand.500" fontSize={{ base: "3xl", lg: "4xl" }} fontWeight="semibold">
-        {children}
-      </Heading>
-    </HStack>
-  );
-};
+export const SubHeading = ({ children, dash }: SubHeadingProps) => (
+  <HStack alignItems="center" gap={2} width="full">
+    {dash && <Box backgroundColor="brand.500" height="5px" width={{ base: "60px", lg: "100px" }} />}
+    <Heading as="h2" color="brand.500" fontSize={{ base: "3xl", lg: "4xl" }} fontWeight="semibold">
+      {children}
+    </Heading>
+  </HStack>
+);

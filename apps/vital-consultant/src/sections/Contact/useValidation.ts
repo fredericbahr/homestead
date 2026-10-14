@@ -20,18 +20,14 @@ export const useValidation = () => {
    * @param email - email to be validated
    * @returns true if email is valid, false otherwise
    */
-  const verifyEmail = (email: string): boolean => {
-    return emailRegex.test(email);
-  };
+  const verifyEmail = (email: string): boolean => emailRegex.test(email);
 
   /**
    * Verifies if the given phone number is valid
    * @param phone - phone number to be validated
    * @returns true if phone number is valid, false otherwise
    */
-  const verifyPhone = (phone: string): boolean => {
-    return phoneRegex.test(phone);
-  };
+  const verifyPhone = (phone: string): boolean => phoneRegex.test(phone);
 
   return {
     verifyEmail,

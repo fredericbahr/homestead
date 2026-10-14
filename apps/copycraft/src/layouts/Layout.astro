@@ -1,12 +1,12 @@
 ---
 import "../styles/global.css";
+import { Font } from "astro:assets";
 import { SEO } from "astro-seo";
 import logo from "../assets/logo.webp";
-import { Font } from "astro:assets";
 
 interface Props {
-  title?: string;
   description?: string;
+  title?: string;
 }
 
 const {
@@ -20,10 +20,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <!doctype html>
 <html lang="de">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#c98e52" />
-    <meta name="generator" content={Astro.generator} />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#c98e52">
+    <meta name="generator" content={Astro.generator}>
 
     <SEO
       title={title}
@@ -56,12 +56,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       }}
     />
 
-    <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+    <link rel="sitemap" href="/sitemap-index.xml">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
 
     <Font cssVariable="--font-sans" preload />
     <Font cssVariable="--font-heading" />
@@ -74,7 +74,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         "@context": "https://schema.org",
         "@type": "WebApplication",
         name: "Buchstabenfeder by Sina Weichlein | Copywriting für Arbeit mit Mensch oder Tier",
-        description: description,
+        description,
         applicationCategory: "Agency",
         operatingSystem: "Web",
       })}

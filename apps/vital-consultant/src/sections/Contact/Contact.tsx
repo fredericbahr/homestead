@@ -14,8 +14,8 @@ import { Center, Grid, GridItem } from "@chakra-ui/react";
 import emailjs from "@emailjs/browser";
 import { useEffect } from "react";
 
-import { ContactForm } from "./ContactForm";
-import { ContactInfo } from "./ContactInfo";
+import { ContactForm } from "./ContactForm.tsx";
+import { ContactInfo } from "./ContactInfo.tsx";
 
 export const Contact = () => {
   useEffect(() => {

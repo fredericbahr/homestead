@@ -25,15 +25,16 @@ import Card from "../ui/card.astro";
         <div
           class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 bg-primary/30"
         >
-          <i class={`ph ph-sparkle text-3xl text-accent`}></i>
+          <i class="ph ph-sparkle text-3xl text-accent"></i>
         </div>
 
         <p class="font-heading text-foreground text-xl font-bold md:text-2xl mb-2">Persönlichkeit & Werte</p>
         <p class="mx-auto text-lg text-muted-foreground">
           Die wichtigste Komponente in den Texten deines Business bist du selbst. Du bist dein bestes
           Alleinstellungsmerkmal und mit
-          <strong>empathischem Storytelling</strong> lassen wir Persönlichkeit in deine Texte einfließen. Damit machst du
-          genau die Menschen auf dich aufmerksam, mit denen du zusammenarbeiten möchtest. Genau das macht Copywriting aus.
+          <strong>empathischem Storytelling</strong>
+          lassen wir Persönlichkeit in deine Texte einfließen. Damit machst du genau die Menschen auf dich aufmerksam,
+          mit denen du zusammenarbeiten möchtest. Genau das macht Copywriting aus.
         </p>
       </Card>
 
@@ -41,7 +42,7 @@ import Card from "../ui/card.astro";
         <div
           class="w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 bg-primary/30"
         >
-          <i class={`ph ph-heart text-3xl text-accent`}></i>
+          <i class="ph ph-heart text-3xl text-accent"></i>
         </div>
 
         <p class="font-heading text-foreground text-xl font-bold md:text-2xl mb-2">Lebendigkeit & Menschlichkeit</p>
@@ -60,8 +61,7 @@ import Card from "../ui/card.astro";
         </p>
 
         <ul class="space-y-3 mx-auto max-w-2xl mt-4">
-          {
-            [
+          {[
               "begegnest du deiner Zielgruppe auf Augenhöhe und schaffst Vertrauen.",
               "ziehst du Menschen an, die deine Arbeit wertschätzen (und bereit sind, dafür zu zahlen).",
               "steigert sich der Wiedererkennungswert deines Businesses und deine Conversion.",
@@ -71,8 +71,7 @@ import Card from "../ui/card.astro";
                 <i class="ph ph-arrow-circle-right text-primary mt-1 text-xl shrink-0 fill-current" />
                 <span class="text-muted-foreground text-lg">{item}</span>
               </li>
-            ))
-          }
+            ))}
         </ul>
       </div>
     </div>

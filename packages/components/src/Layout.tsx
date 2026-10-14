@@ -14,15 +14,13 @@ import { VStack } from "@chakra-ui/react";
 import type React from "react";
 
 interface LayoutProps {
-  header: React.ReactNode;
   children: React.ReactNode;
+  header: React.ReactNode;
 }
 
-export const Layout = ({ header, children }: LayoutProps) => {
-  return (
-    <VStack gap={12} minHeight="100vh" width="100%">
-      {header}
-      {children}
-    </VStack>
-  );
-};
+export const Layout = ({ header, children }: LayoutProps) => (
+  <VStack gap={12} minHeight="100vh" width="100%">
+    {header}
+    {children}
+  </VStack>
+);
